@@ -1,11 +1,4 @@
-﻿/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    .jumbotron {
-        margin-top: 20px;
-    }
-}
-
-/* Below are from template*/
+﻿/* Below are from template*/
 /*==================
 Author       : Dreambuzz
 Template Name: Tutori- Education Html Template by dreambuzzs
@@ -28,12 +21,11 @@ Version      : 1.0
 10. Footer / #footer
 -------------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap");
-
 :root {
     --theme-heading-font: 'Gilroy', sans-serif;
     --theme-secondary-font: 'Jost', sans-serif;
     --theme-primary-color: #3083b1;
-    --theme-secondary-color: #015ABD;
+    --theme-secondary-color: #1E526E;
     --theme-heading-color: #0c0b22;
     --theme-text-color: #2a2e33;
     --theme-white-color: #fff;

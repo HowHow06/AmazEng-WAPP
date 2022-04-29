@@ -13,7 +13,7 @@
     </asp:PlaceHolder>
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
-     <webopt:BundleReference runat="server" Path="~/iconfont/css" />
+    <webopt:BundleReference runat="server" Path="~/iconfont/css" />
     <webopt:BundleReference runat="server" Path="~/animate/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
@@ -59,39 +59,12 @@
                         <nav class="site-navbar ms-auto">
 
                             <ul class="primary-menu">
-                                <li class="current">
-                                    <a href="index.html">Home</a>
-                                    <ul class="submenu">
-                                        <li><a href="index.html">Home One</a></li>
-                                        <li><a href="index-2.html">Home Two</a></li>
-                                        <li><a href="index-3.html">Home Three</a></li>
-                                        <li><a href="index-4.html">Home Four</a></li>
-                                    </ul>
-                                </li>
+                                <li><a href="/">Home</a></li>
                                 <li><a href="about.html">About</a></li>
+                                <li><a href="about.html">Explore Idioms</a></li>
+                                <li><a href="about.html">Contact Us</a></li>
 
-                                <li>
-                                    <a href="courses.html">Courses</a>
-                                    <ul class="submenu">
-                                        <li><a href="courses.html">Courses</a></li>
-                                        <li><a href="courses-2.html">Course Grid 2 </a></li>
-                                        <li><a href="courses-3.html">Course Grid 3</a></li>
-                                        <li><a href="courses-4.html">Course Grid 4</a></li>
-                                        <li><a href="courses-5-list.html">Course List</a></li>
-                                        <li class="has-submenu">
-                                            <a href="#">Single Layout</a>
-                                            <ul class="submenu">
-                                                <li><a href="course-single.html">Course Single 1</a></li>
-                                                <li><a href="course-single-2.html">Course Single 2</a></li>
-                                                <li><a href="course-single-3.html">Course Single 3</a></li>
-                                                <li><a href="course-single-4.html">Course Single 4</a></li>
-                                                <li><a href="course-single-5.html">Course Single 5</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li>
+                             <%--   <li>
                                     <a href="#">Pages</a>
                                     <ul class="submenu">
                                         <li><a href="instructor.html">Instructors</a></li>
@@ -100,27 +73,20 @@
                                         <li><a href="login.html">Login</a></li>
                                         <li><a href="Register.html">Register</a></li>
                                     </ul>
-                                </li>
-
-                                <li>
-                                    <a href="blog.html">Blog</a>
-                                    <ul class="submenu">
-                                        <li><a href="blog-grid.html">Blog</a></li>
-                                        <li><a href="blog-single.html">Blog Details</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="contact.html">Contact</a>
-                                </li>
+                                </li>--%>
                             </ul>
 
                             <a href="#" class="nav-close"><i class="fal fa-times"></i></a>
                         </nav>
+                        <div class="header-btn d-none d-xl-block">
+                            <a href="login.html" class="login">Login</a>
+                            <a href="register.html" class="btn btn-main btn-sm-2 rounded">Sign up</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
-<%--        <hr class="header-divider"/>--%>
+        <%--        <hr class="header-divider"/>--%>
         <%--<div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
