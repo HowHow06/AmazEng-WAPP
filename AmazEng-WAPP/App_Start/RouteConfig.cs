@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Web;
-using System.Web.Routing;
 using Microsoft.AspNet.FriendlyUrls;
+using System.Web.Routing;
 
 namespace AmazEng_WAPP
 {
@@ -13,6 +10,17 @@ namespace AmazEng_WAPP
             var settings = new FriendlyUrlSettings();
             settings.AutoRedirectMode = RedirectMode.Permanent;
             routes.EnableFriendlyUrls(settings);
+            routes.MapPageRoute(
+                 "DefaultRoute",
+                 "",
+                 "~/Default.aspx"
+             );
+            routes.MapPageRoute(
+                  "HomeRoute",
+                  "Home",
+                  "~/Default.aspx"
+              );
+
         }
     }
 }

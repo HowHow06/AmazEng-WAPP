@@ -103,8 +103,40 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Assets\css\home.css" />
     <Content Include="Assets\css\responsive.css" />
     <Content Include="Assets\css\Site.css" />
+    <Content Include="Assets\vendors\animate-css\animate.css" />
+    <Content Include="Assets\vendors\animate-css\wow.min.js" />
+    <Content Include="Assets\vendors\animated-headline\animated-headline.css" />
+    <Content Include="Assets\vendors\animated-headline\animated-headline.js" />
+    <Content Include="Assets\vendors\awesome\css\fontawesome-all.min.css" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-brands-400.svg" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-duotone-900.svg" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-light-300.svg" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Assets\vendors\counterup\jquery.counterup.min.js" />
+    <Content Include="Assets\vendors\counterup\waypoint.js" />
+    <Content Include="Assets\vendors\flaticon\flaticon.css" />
+    <Content Include="Assets\vendors\flaticon\flaticon.svg" />
+    <Content Include="Assets\vendors\fontawesome\css\all.css" />
+    <Content Include="Assets\vendors\fontawesome\webfonts\fa-brands-400.svg" />
+    <Content Include="Assets\vendors\fontawesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Assets\vendors\fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="Assets\vendors\isotope\imagelaoded.min.js" />
+    <Content Include="Assets\vendors\isotope\jquery.isotope.js" />
+    <Content Include="Assets\vendors\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="Assets\vendors\magnific-popup\magnific-popup.css" />
+    <Content Include="Assets\vendors\owl\assets\ajax-loader.gif" />
+    <Content Include="Assets\vendors\owl\assets\owl.carousel.css" />
+    <Content Include="Assets\vendors\owl\assets\owl.carousel.min.css" />
+    <Content Include="Assets\vendors\owl\assets\owl.theme.default.css" />
+    <Content Include="Assets\vendors\owl\assets\owl.theme.default.min.css" />
+    <Content Include="Assets\vendors\owl\assets\owl.theme.green.css" />
+    <Content Include="Assets\vendors\owl\assets\owl.theme.green.min.css" />
+    <Content Include="Assets\vendors\owl\assets\owl.video.play.png" />
+    <Content Include="Assets\vendors\owl\owl.carousel.min.js" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -162,6 +194,43 @@
     <Content Include="Content\bootstrap-grid.rtl.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-duotone-900.eot" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-duotone-900.ttf" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-duotone-900.woff" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-duotone-900.woff2" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-light-300.eot" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-light-300.ttf" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-light-300.woff" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-light-300.woff2" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Assets\vendors\awesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="Assets\vendors\flaticon\flaticon.eot" />
+    <Content Include="Assets\vendors\flaticon\flaticon.scss" />
+    <Content Include="Assets\vendors\flaticon\flaticon.ttf" />
+    <Content Include="Assets\vendors\flaticon\flaticon.woff" />
+    <Content Include="Assets\vendors\flaticon\flaticon.woff2" />
+    <Content Include="Assets\vendors\fontawesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Assets\vendors\fontawesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Assets\vendors\fontawesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Assets\vendors\fontawesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Assets\vendors\fontawesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Assets\vendors\fontawesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Assets\vendors\fontawesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Assets\vendors\fontawesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Assets\vendors\fontawesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Assets\vendors\fontawesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Assets\vendors\fontawesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Assets\vendors\fontawesome\webfonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -328,6 +397,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\images\" />
     <Folder Include="Assets\js\" />
   </ItemGroup>
   <ItemGroup>

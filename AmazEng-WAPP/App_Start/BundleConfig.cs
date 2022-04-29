@@ -28,6 +28,24 @@ namespace AmazEng_WAPP
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                             "~/Scripts/modernizr-*"));
+
+            bundles.Add(new Bundle("~/bundles/bootstrap5").Include(
+                           "~/Scripts/bootstrap.js",
+                           "~/Scripts/umd/popper.min.js"
+                           ));
+
+            bundles.Add(new Bundle("~/bundles/vendors").Include(
+                     "~/Assets/vendors/counterup/waypoint.js",
+                     "~/Assets/vendors/counterup/jquery.counterup.min.js",
+                    "~/Assets/vendors/owl/owl.carousel.min.js",
+                    "~/Assets/vendors/isotope/jquery.isotope.js",
+                    "~/Assets/vendors/isotope/imagelaoded.min.js",
+                    "~/Assets/vendors/animated-headline/animated-headline.js",
+                    "~/Assets/vendors/magnific-popup/jquery.magnific-popup.min.js"
+                     ));
+
+
+
         }
     }
 }

@@ -13,6 +13,8 @@
     </asp:PlaceHolder>
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
+     <webopt:BundleReference runat="server" Path="~/iconfont/css" />
+    <webopt:BundleReference runat="server" Path="~/animate/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
@@ -24,7 +26,6 @@
                 <%--Framework Scripts--%>
                 <asp:ScriptReference Name="MsAjaxBundle" />
                 <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="bootstrap" />
                 <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
                 <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
                 <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
@@ -34,87 +35,25 @@
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
                 <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
                 <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
+
             </Scripts>
         </asp:ScriptManager>
+        <%--Site Scripts--%>
+        <%: Scripts.Render("~/bundles/bootstrap5") %>
+        <%: Scripts.Render("~/bundles/vendors") %>
         <header class="header-style-1">
-            <div class="header-topbar topbar-style-2">
-                <div class="container">
-                    <div class="row justify-content-between">
-                        <div class="col-xl-8 col-lg-6 col-md-12">
-                            <div class="header-contact text-center text-lg-start d-none d-sm-block">
-                                <ul class="list-inline">
-                                    <li class="list-inline-item">
-                                        <span class="text-color me-2"><i class="fa fa-phone-alt"></i></span><a href="tel:+(354) 6800 37849">+(354) 6800 37849</a>
-                                    </li>
-
-                                    <li class="list-inline-item">
-                                        <span class="text-color me-2"><i class="fa fa-envelope"></i></span><a href="malito:hello@edumel.com">hello@edumel.com</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-4 col-lg-6 col-md-12">
-                            <div class="d-sm-flex justify-content-center justify-content-lg-end">
-                                <div class="header-socials text-center text-lg-end">
-                                    <ul class="list-inline">
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-pinterest"></i></a></li>
-                                        <li class="list-inline-item"><a href="#"><i class="fab fa-youtube"></i></a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="header-btn text-center text-lg-end">
-                                    <a href="#"><i class="fa fa-user-alt"></i>Login/Register</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="header-navbar navbar-sticky">
                 <div class="container">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="site-logo">
-                            <a href="index.html">
-                                <img src="assets/images/logo.png" alt="" class="img-fluid" />
+                            <a href="/home">
+                                <img src="Assets/images/logo-long.png" alt="logo" class="img-fluid" />
                             </a>
                         </div>
 
-                        <div class="offcanvas-icon d-block d-lg-none">
-                            <a href="#" class="nav-toggler"><i class="fal fa-bars"></i></a>
-                        </div>
-
-                        <div class="header-category-menu d-none d-xl-block">
-                            <ul>
-                                <li class="has-submenu">
-                                    <a href="#"><i class="fa fa-th me-2"></i>Categories</a>
-                                    <ul class="submenu">
-                                        <li>
-                                            <a href="#">Design</a>
-                                            <ul class="submenu">
-                                                <li><a href="#">Design Tools</a></li>
-                                                <li><a href="#">Photoshop mastering</a></li>
-                                                <li><a href="#">Adobe Xd Deisgn</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="#">Developemnt</a></li>
-                                        <li><a href="#">Marketing</a></li>
-                                        <li><a href="#">Freelancing</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="header-search-bar d-none d-xl-block ms-4">
-                            <form action="#">
-                                <input type="text" class="form-control" placeholder="Search for Course">
-                                <a href="#" class="search-submit"><i class="far fa-search"></i></a>
-                            </form>
+                        <div class="header-search-bar d-none d-md-block">
+                            <input type="text" class="form-control" placeholder="Search for Course">
+                            <a href="#" class="search-submit"><i class="far fa-search"></i></a>
                         </div>
 
                         <nav class="site-navbar ms-auto">
@@ -181,7 +120,7 @@
                 </div>
             </div>
         </header>
-
+<%--        <hr class="header-divider"/>--%>
         <%--<div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
@@ -209,7 +148,6 @@
                 <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
             </footer>
         </div>
-
     </form>
 </body>
 </html>
