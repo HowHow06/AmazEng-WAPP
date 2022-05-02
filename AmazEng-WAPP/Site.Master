@@ -41,8 +41,9 @@
         <%--Site Scripts--%>
         <%: Scripts.Render("~/bundles/bootstrap5") %>
         <%: Scripts.Render("~/bundles/vendors") %>
+        <script src="/Assets/js/Site.js"></script>
         <header class="header-style-1">
-            <div class="header-navbar navbar-sticky">
+            <div class="header-navbar fixed-top">
                 <div class="container">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="site-logo">
@@ -64,7 +65,7 @@
                                 <li><a href="about.html">Explore Idioms</a></li>
                                 <li><a href="about.html">Contact Us</a></li>
 
-                             <%--   <li>
+                                <%--   <li>
                                     <a href="#">Pages</a>
                                     <ul class="submenu">
                                         <li><a href="instructor.html">Instructors</a></li>
@@ -106,14 +107,82 @@
                 </div>
             </div>
         </div>--%>
-        <div class="container body-content">
+        <div class="container body-content pt-80">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
         </div>
+
+        <footer class="footer footer-3 pt-60 pb-20">
+            <div class="footer-mid pb-40">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-sm-3 me-auto">
+                            <div class="widget footer-widget mb-0">
+                                <div class="footer-logo">
+                                    <img src="/Assets/images/logo-long-white-v2.png" alt="logo" class="img-fluid">
+                                </div>
+
+                                <p class="mt-4">
+                                    AmazEng is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur risus erat, viverra nec ante eu, elementum luctus arcu. Fusce at.
+                                </p>
+
+                                <%-- <div class="footer-socials mt-5">
+                                    <span class="me-2">Connect :</span>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                                </div>--%>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-2 col-sm-3">
+                            <div class="footer-widget mb-0 mt-20">
+                                <h5 class="widget-title">Get Started</h5>
+                                <button>Explore Now</button>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-2 col-sm-3">
+                            <div class="footer-widget mb-0 mt-20">
+                                <h5 class="widget-title">Links</h5>
+                                <ul class="list-unstyled footer-links">
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Explore Idioms</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-4 col-sm-3">
+                            <div class="footer-widget mb-0 mt-20">
+                                <h5 class="widget-title">Contact Us</h5>
+                                <ul class="list-unstyled footer-links">
+                                    <li><a href="#">TP055278@mail.apu.edu.my</a></li>
+                                    <li><a href="#">+60111111111</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-btm">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <p class="mb-0 copyright text-center">© <%: DateTime.Now.Year %> AmazEng All rights reserved by AmazEng </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fixed-btm-top">
+                <a href="#top-header" class="js-scroll-trigger scroll-to-top"><i class="fa fa-angle-up"></i></a>
+            </div>
+
+        </footer>
     </form>
 </body>
 </html>

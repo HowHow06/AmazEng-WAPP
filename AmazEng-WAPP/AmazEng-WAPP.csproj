@@ -106,6 +106,7 @@
     <Content Include="Assets\css\home.css" />
     <Content Include="Assets\css\responsive.css" />
     <Content Include="Assets\css\Site.css" />
+    <Content Include="Assets\js\Site.js" />
     <Content Include="Assets\vendors\animate-css\animate.css" />
     <Content Include="Assets\vendors\animate-css\wow.min.js" />
     <Content Include="Assets\vendors\animated-headline\animated-headline.css" />
@@ -398,7 +399,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\images\" />
-    <Folder Include="Assets\js\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
