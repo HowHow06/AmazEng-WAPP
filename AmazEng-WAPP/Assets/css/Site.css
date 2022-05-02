@@ -21,9 +21,11 @@ Version      : 1.0
 10. Footer / #footer
 -------------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap");
+
 :root {
     --theme-heading-font: 'Gilroy', sans-serif;
     --theme-secondary-font: 'Jost', sans-serif;
+    --theme-cta-color: #F02432;
     --theme-primary-color: #3083b1;
     --theme-secondary-color: #1E526E;
     --theme-heading-color: #0c0b22;
@@ -618,9 +620,9 @@ BUTTONS STYLE
 }
 
     .btn-white:hover {
-        border-color: var(--theme-primary-color);
+        border-color: var(--theme-secondary-color);
         color: #fff;
-        background: var(--theme-primary-color);
+        background: var(--theme-secondary-color);
     }
 
 .btn-white-outline {
@@ -1503,8 +1505,8 @@ BAnner
 Banner style 2
 -------------------*/
 .banner-style-2 {
-    padding: 140px 0px 160px;
-    background: url("../images/banner/banner-2.jpg") no-repeat center center;
+    padding: 140px 0px 300px;
+    background: url("../images/home-banner.jpg") no-repeat center center;
     background-size: cover;
     position: relative;
     z-index: 1;
@@ -1518,13 +1520,13 @@ Banner style 2
         width: 100%;
         height: 100%;
         background-color: transparent;
-        background: #120F2D;
-        opacity: .6;
+        background: #041039;
+        opacity: .35;
         z-index: -1;
     }
 
     .banner-style-2 .banner-content h1 {
-        font-size: 70px;
+        font-size: 66px;
         margin: 15px 0px 15px;
         line-height: 1.2;
         color: #fff;
@@ -1685,11 +1687,6 @@ Counter
     .counter-box p {
         margin-bottom: 0px;
         font-weight: 600;
-        color: #fff;
-    }
-
-    .counter-box:hover i {
-        background: var(--theme-secondary-color);
         color: #fff;
     }
 
@@ -4977,7 +4974,7 @@ Fixed top top bottom
         }
 
 .footer-3 {
-    background: #120F2D;
+    background: #0d0b21;
 }
 
     .footer-3 .fixed-btm-top a {
@@ -5002,4 +4999,14 @@ Fixed top top bottom
     margin: 0;
     padding: 0;
     border: 0.5px solid transparent;
+}
+
+.counter:not(.is-visible) {
+    visibility: hidden;
+}
+
+
+.btn-cta {
+    background: var(--theme-cta-color);
+    border-color: var(--theme-cta-color);
 }

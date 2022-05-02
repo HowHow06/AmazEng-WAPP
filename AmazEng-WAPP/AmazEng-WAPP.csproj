@@ -106,6 +106,12 @@
     <Content Include="Assets\css\home.css" />
     <Content Include="Assets\css\responsive.css" />
     <Content Include="Assets\css\Site.css" />
+    <Content Include="Assets\images\feature-image.jpg" />
+    <Content Include="Assets\images\home-banner.jpg" />
+    <Content Include="Assets\images\logo-long-white-v1.png" />
+    <Content Include="Assets\images\logo-long-white-v2.png" />
+    <Content Include="Assets\images\logo-long.png" />
+    <Content Include="Assets\images\logo-trimmed.png" />
     <Content Include="Assets\js\Site.js" />
     <Content Include="Assets\vendors\animate-css\animate.css" />
     <Content Include="Assets\vendors\animate-css\wow.min.js" />
@@ -117,8 +123,7 @@
     <Content Include="Assets\vendors\awesome\webfonts\fa-light-300.svg" />
     <Content Include="Assets\vendors\awesome\webfonts\fa-regular-400.svg" />
     <Content Include="Assets\vendors\awesome\webfonts\fa-solid-900.svg" />
-    <Content Include="Assets\vendors\counterup\jquery.counterup.min.js" />
-    <Content Include="Assets\vendors\counterup\waypoint.js" />
+    <Content Include="Assets\vendors\counterup\counterup2.min.js" />
     <Content Include="Assets\vendors\flaticon\flaticon.css" />
     <Content Include="Assets\vendors\flaticon\flaticon.svg" />
     <Content Include="Assets\vendors\fontawesome\css\all.css" />
@@ -232,6 +237,7 @@
     <Content Include="Assets\vendors\fontawesome\webfonts\fa-solid-900.ttf" />
     <Content Include="Assets\vendors\fontawesome\webfonts\fa-solid-900.woff" />
     <Content Include="Assets\vendors\fontawesome\webfonts\fa-solid-900.woff2" />
+    <Content Include="Home.aspx" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -395,10 +401,16 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\images\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

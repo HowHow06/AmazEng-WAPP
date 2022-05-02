@@ -13,12 +13,12 @@ namespace AmazEng_WAPP
             routes.MapPageRoute(
                  "DefaultRoute",
                  "",
-                 "~/Default.aspx"
+                 "~/Home.aspx"
              );
             routes.MapPageRoute(
                   "HomeRoute",
                   "Home",
-                  "~/Default.aspx"
+                  "~/Home.aspx"
               );
 
         }

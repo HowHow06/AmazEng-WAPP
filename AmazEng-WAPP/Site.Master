@@ -11,12 +11,15 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
+     
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <webopt:BundleReference runat="server" Path="~/iconfont/css" />
     <webopt:BundleReference runat="server" Path="~/animate/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">  
+    </asp:ContentPlaceHolder>  
 </head>
 <body id="site-top">
     <form runat="server">
@@ -107,7 +110,7 @@
                 </div>
             </div>
         </div>--%>
-        <div class="container body-content pt-80">
+        <div class="body-content pt-80">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
@@ -139,7 +142,7 @@
                         <div class="col-xl-3 col-sm-3">
                             <div class="footer-widget mb-0 mt-20">
                                 <h5 class="widget-title">Get Started</h5>
-                                <a href="#" class="btn btn-white-outline">Explore Now</a>
+                                <a href="#" class="btn btn-white-outline rounded">Explore Now</a>
                             </div>
                         </div>
 

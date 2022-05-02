@@ -35,16 +35,13 @@ namespace AmazEng_WAPP
                            ));
 
             bundles.Add(new Bundle("~/bundles/vendors").Include(
-                     "~/Assets/vendors/counterup/waypoint.js",
-                     "~/Assets/vendors/counterup/jquery.counterup.min.js",
+                     "~/Assets/vendors/counterup/counterup2.min.js",
                     "~/Assets/vendors/owl/owl.carousel.min.js",
                     "~/Assets/vendors/isotope/jquery.isotope.js",
                     "~/Assets/vendors/isotope/imagelaoded.min.js",
                     "~/Assets/vendors/animated-headline/animated-headline.js",
                     "~/Assets/vendors/magnific-popup/jquery.magnific-popup.min.js"
                      ));
-
-
 
         }
     }

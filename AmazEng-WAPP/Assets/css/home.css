@@ -1,1 +1,66 @@
 ﻿
+/*-----------------------------------------*/
+/*  Our Quote CSS
+/*----------------------------------------*/
+.choose-area {
+    /*   background: url(../img/choose/choose-bd.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;*/
+    position: relative;
+}
+
+    .choose-area:after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        content: "";
+        background: #353f60;
+    }
+
+/*    .choose-area:before {
+        position: absolute;
+        right: 130px;
+        bottom: 0;
+        width: 293px;
+        height: 506px;
+        content: "";
+        background: url(../img/choose/choose.png);
+        background-repeat: no-repeat;
+        z-index: 1;
+    }*/
+
+.choose-content {
+    position: relative;
+    z-index: 1;
+}
+
+    .choose-content h2 {
+        color: var(--theme-white-color);
+        text-transform: uppercase;
+        margin-bottom: 15px;
+    }
+
+    .choose-content p {
+        color: var(--theme-white-color);
+        margin-bottom: 20px;
+    }
+
+    .choose-content a {
+        margin-top: 15px;
+    }
+
+
+.quote-icon {
+    color: var(--theme-white-color);
+    position: absolute;
+    left: 30px;
+    top: 0px;
+}
+
+.quote-text {
+    font-size: 24px;
+}
