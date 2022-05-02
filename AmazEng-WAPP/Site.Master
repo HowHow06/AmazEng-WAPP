@@ -18,7 +18,7 @@
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 
 </head>
-<body id="top-header">
+<body id="site-top">
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -122,7 +122,7 @@
                                     <img src="/Assets/images/logo-long-white-v2.png" alt="logo" class="img-fluid">
                                 </div>
 
-                                <p class="mt-4">
+                                <p class="mt-4 me-4">
                                     AmazEng is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur risus erat, viverra nec ante eu, elementum luctus arcu. Fusce at.
                                 </p>
 
@@ -136,14 +136,14 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-2 col-sm-3">
+                        <div class="col-xl-3 col-sm-3">
                             <div class="footer-widget mb-0 mt-20">
                                 <h5 class="widget-title">Get Started</h5>
-                                <button>Explore Now</button>
+                                <a href="#" class="btn btn-white-outline">Explore Now</a>
                             </div>
                         </div>
 
-                        <div class="col-xl-2 col-sm-3">
+                        <div class="col-xl-3 col-sm-3">
                             <div class="footer-widget mb-0 mt-20">
                                 <h5 class="widget-title">Links</h5>
                                 <ul class="list-unstyled footer-links">
@@ -155,7 +155,7 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-4 col-sm-3">
+                        <div class="col-xl-3 col-sm-3">
                             <div class="footer-widget mb-0 mt-20">
                                 <h5 class="widget-title">Contact Us</h5>
                                 <ul class="list-unstyled footer-links">
@@ -179,7 +179,7 @@
             </div>
 
             <div class="fixed-btm-top">
-                <a href="#top-header" class="js-scroll-trigger scroll-to-top"><i class="fa fa-angle-up"></i></a>
+                <a href="#site-top" class="js-scroll-trigger scroll-to-top"><i class="fa fa-angle-up"></i></a>
             </div>
 
         </footer>

@@ -630,9 +630,9 @@ BUTTONS STYLE
 }
 
     .btn-white-outline:hover {
-        border-color: var(--theme-primary-color);
+        border-color: var(--theme-secondary-color);
         color: #fff;
-        background: var(--theme-primary-color);
+        background: var(--theme-secondary-color);
     }
 
 .btn-grey {
