@@ -22,12 +22,16 @@ Version      : 1.0
 -------------------------------------------------------------------*/
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap");
 
+
+
 :root {
     --theme-heading-font: 'Gilroy', sans-serif;
     --theme-secondary-font: 'Jost', sans-serif;
     --theme-cta-color: #F02432;
     --theme-primary-color: #3083b1;
     --theme-secondary-color: #1E526E;
+    --theme-tertiary-color: #6CA1BD;
+    --theme-light-color: #90D6FC;
     --theme-heading-color: #0c0b22;
     --theme-text-color: #2a2e33;
     --theme-white-color: #fff;
@@ -5009,4 +5013,9 @@ Fixed top top bottom
 .btn-cta {
     background: var(--theme-cta-color);
     border-color: var(--theme-cta-color);
+}
+
+
+.bg-9 {
+    background: var(--theme-light-color);
 }

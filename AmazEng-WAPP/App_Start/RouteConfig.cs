@@ -20,7 +20,42 @@ namespace AmazEng_WAPP
                   "Home",
                   "~/Home.aspx"
               );
-
+            routes.MapPageRoute(
+                  "AboutRoute",
+                  "About",
+                  "~/About.aspx"
+              );
+            routes.MapPageRoute(
+                  "ExploreRoute",
+                  "Explore",
+                  "~/ExploreIdioms.aspx"
+              );
+            routes.MapPageRoute(
+                  "ContactRoute",
+                  "Contact",
+                  "~/Contact.aspx"
+              );
+            routes.MapPageRoute(
+                 "LoginRoute",
+                 "Login",
+                 "~/Login.aspx"
+             );
+            routes.MapPageRoute(
+                "RegisterRoute",
+                "Register",
+                "~/Register.aspx"
+            );
+            routes.MapPageRoute(
+                "SearchRoute",
+                "Search",
+                "~/Search.aspx"
+            );
+            routes.MapPageRoute(
+                "IdiomRoute",
+                "Idiom",
+                "~/Idiom.aspx"
+            );
+            //more routes to go...
         }
     }
 }
