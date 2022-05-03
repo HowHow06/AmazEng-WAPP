@@ -36,6 +36,18 @@ namespace AmazEng_WAPP.Models
             //    .HasOptional<Standard>(s => s.Standard)
             //    .WithMany()
             //    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Quiz>().HasMany(q => q.Idioms).WithMany(i => i.Quizzes).Map(qi =>
+                {
+                    qi.MapLeftKey("QuizId");
+                    qi.MapRightKey("IdiomId");
+                    qi.ToTable("QuizIdioms");
+                });
+            modelBuilder.Entity<Idiom>().HasMany(i => i.Tags).WithMany(t => t.Idioms).Map(it =>
+            {
+                it.MapLeftKey("IdiomId");
+                it.MapRightKey("TagId");
+                it.ToTable("IdiomTags");
+            });
         }
 
         public override int SaveChanges()
