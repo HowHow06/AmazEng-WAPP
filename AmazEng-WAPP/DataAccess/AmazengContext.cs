@@ -1,8 +1,10 @@
+using AmazEng_WAPP.Models;
 using System;
 using System.Data.Entity;
 using System.Linq;
 
-namespace AmazEng_WAPP.Models
+
+namespace AmazEng_WAPP.DataAccess
 {
     public class AmazengContext : DbContext
     {
@@ -48,6 +50,8 @@ namespace AmazEng_WAPP.Models
                 it.MapRightKey("TagId");
                 it.ToTable("IdiomTags");
             });
+
+            //modelBuilder.Entity<ICustomSoftDelete>().MapToStoredProcedures();
         }
 
         public override int SaveChanges()

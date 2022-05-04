@@ -14,6 +14,7 @@ namespace AmazEng_WAPP.Models
         public int LibraryId { get; set; }
         [Key, Column(Order = 2)]
         public int IdiomId { get; set; }
+        [Required]
         public DateTime AddedAt { get; set; }
 
         public virtual Library Library { get; set; }

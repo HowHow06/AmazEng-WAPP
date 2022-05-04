@@ -23,7 +23,5 @@ namespace AmazEng_WAPP.Models
         {
             return LibraryIdioms.Select(e => e.Idiom).ToList();
         }
-
-
     }
 }

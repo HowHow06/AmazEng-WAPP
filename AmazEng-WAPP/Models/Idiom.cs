@@ -14,6 +14,7 @@ namespace AmazEng_WAPP.Models
         [Required]
         public string Meaning { get; set; }
         public string Pronunciation { get; set; }
+        public int ViewCount { get; set; }//default 0
         public string Example { get; set; }
         public string Origin { get; set; }
         public DateTime? DeletedAt { get; set; }

@@ -19,6 +19,7 @@ namespace AmazEng_WAPP.Models
         public string ProfilePicture { get; set; }
         public DateTime? EmailVerifiedAt { get; set; }
         public string RememberToken { get; set; }
+        public int BrowsedIdiomCount { get; set; }//default 0
         public DateTime? DeletedAt { get; set; }
 
         public virtual ICollection<Message> Messages { get; set; }
