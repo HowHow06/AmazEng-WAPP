@@ -10,7 +10,8 @@ namespace AmazEng_WAPP.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<Idiom> Idioms { get; set; }
+        //public virtual ICollection<Idiom> Idioms { get; set; }
+        public virtual ICollection<IdiomTag> IdiomTags { get; set; }
 
     }
 }

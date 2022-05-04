@@ -23,7 +23,8 @@ namespace AmazEng_WAPP.Models
         public DateTime? DeletedAt { get; set; }
 
         public virtual Member Member { get; set; }
-        public virtual ICollection<Idiom> Idioms { get; set; }
+        //public virtual ICollection<Idiom> Idioms { get; set; }
+        public virtual ICollection<QuizIdiom> QuizIdioms { get; set; }
 
     }
 }
