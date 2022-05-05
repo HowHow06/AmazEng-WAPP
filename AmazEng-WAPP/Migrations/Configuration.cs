@@ -19,11 +19,24 @@
 
         protected override void Seed(AmazEng_WAPP.DataAccess.AmazengContext context)
         {
+            ClearIdiomsAndTagsTable(context);
             //  This method will be called after migrating to the latest version.
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
             InitialiseTagData(context);
             InitialiseIdiomData(context);
+        }
+
+        private void ClearIdiomsAndTagsTable(AmazengContext context)
+        {
+            context.Database.ExecuteSqlCommand(@"
+                DELETE FROM [dbo].Idioms;
+                DELETE FROM [dbo].Tags;
+                DELETE FROM [dbo].IdiomTags;
+                DBCC CHECKIDENT ('Idioms', RESEED, 0);
+                DBCC CHECKIDENT ('Tags', RESEED, 0);
+            ");
+            Console.WriteLine("Cleared Idiom and Tag data");
         }
 
         private void InitialiseIdiomData(AmazengContext context)
@@ -34,6 +47,10 @@
                 int i = 0;
                 while (!reader.EndOfStream)
                 {
+                    if (i > 20)
+                    {
+                        break;
+                    }
                     var line = reader.ReadLine();
                     var values = line.Split('\t');
                     if (isFirstLine)
@@ -63,17 +80,18 @@
                         Meaning = meaning,
                         Example = example,
                         Origin = origin,
-                        Tags = new List<Tag>(),
+                        Tags = tags,
                         Pronunciation = pronunciation,
                     };
-                    foreach (var tag in tags)
-                    {
-                        idiom.Tags.Add(tag);
-                    }
+                    //foreach (var tag in tags)
+                    //{
+                    //    idiom.Tags.Add(tag);
+                    //}
                     context.Idioms.AddOrUpdate(idiom);
                     i++;
                 }
             }
+            context.SaveChanges();
             Console.WriteLine("Completed creating Idiom data");
         }
 
@@ -102,6 +120,7 @@
                 }
             }
 
+            context.SaveChanges();
             Console.WriteLine("Completed creating Tag data");
 
         }
