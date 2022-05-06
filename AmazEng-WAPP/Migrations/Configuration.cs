@@ -1,8 +1,8 @@
 ﻿namespace AmazEng_WAPP.Migrations
 {
+    using AmazEng_WAPP.Class.Auth;
     using AmazEng_WAPP.DataAccess;
     using AmazEng_WAPP.Models;
-    using BCrypt.Net;
     using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
@@ -82,7 +82,7 @@
                     Id = 1,
                     Name = "John the Member",
                     Username = "member",
-                    Password = BCrypt.HashPassword("member"),
+                    Password = Auth.CreatePasswordHash("member"),
                     Email = "limhowardbb+member01@gmail.com",
                 }
                 );
@@ -98,7 +98,7 @@
                     Id = 1,
                     Name = "Jerry the Admin",
                     Username = "admin",
-                    Password = BCrypt.HashPassword("admin"),
+                    Password = Auth.CreatePasswordHash("admin"),
                     Email = "limhowardbb+admin01@gmail.com",
                     Role = context.GetSuperAdminRole()
                 }
