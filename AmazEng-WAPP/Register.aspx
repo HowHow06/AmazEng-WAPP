@@ -19,7 +19,6 @@
                             </p>
                         </div>
 
-                        <form method="post" class="woocommerce-form woocommerce-form-register register">
 
                             <div class="row">
                                 <div class="col-xl-12">
@@ -73,7 +72,6 @@
                             <p class="woocommerce-FormRow form-row">
                                 <asp:Button class="woocommerce-button button" Text="Register" runat="server" ID="btnRegister" />
                             </p>
-                        </form>
                     </div>
                 </div>
             </div>
