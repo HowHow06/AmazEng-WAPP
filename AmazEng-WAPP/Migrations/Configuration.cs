@@ -10,7 +10,10 @@
     using System.Data.Entity.Migrations;
     using System.IO;
     using System.Linq;
+    using System.Reflection;
     using System.Text.RegularExpressions;
+    using System.Web;
+    using System.Web.Hosting;
 
     internal sealed class Configuration : DbMigrationsConfiguration<AmazEng_WAPP.DataAccess.AmazengContext>
     {
@@ -121,16 +124,16 @@
 
         private void InitialiseIdiomData(AmazengContext context)
         {
-            using (var reader = new StreamReader(@"data\final_idioms_data_v1.tsv"))
+            using (var reader = new StreamReader(MapPath("~/Assets/data/final_idioms_data_v1.tsv")))
             {
                 bool isFirstLine = true;
                 int i = 0;
                 while (!reader.EndOfStream)
                 {
-                    if (i > 20)
-                    {
-                        break;
-                    }
+                    //if (i > 20)
+                    //{
+                    //    break;
+                    //}
                     var line = reader.ReadLine();
                     var values = line.Split('\t');
                     if (isFirstLine)
@@ -178,7 +181,7 @@
         private void InitialiseTagData(AmazengContext context)
         {
 
-            using (var reader = new StreamReader(@"data\tags-v1.csv")) //relative to bin folder 
+            using (var reader = new StreamReader(MapPath("~/Assets/data/tags-v1.csv"))) //relative to bin folder 
             {
                 bool isFirstLine = true;
                 int i = 0;
@@ -203,6 +206,18 @@
             context.SaveChanges();
             Console.WriteLine("Completed creating Tag data");
 
+        }
+
+        private string MapPath(string filePath)
+        {
+            if (HttpContext.Current != null)
+                return HostingEnvironment.MapPath(filePath);
+
+            var absolutePath = new Uri(Assembly.GetExecutingAssembly().CodeBase).LocalPath; //was AbsolutePath but didn't work with spaces according to comments
+            var directoryName = Path.GetDirectoryName(absolutePath);
+            var path = Path.Combine(directoryName, ".." + filePath.TrimStart('~').Replace('/', '\\'));
+
+            return path;
         }
     }
 }
