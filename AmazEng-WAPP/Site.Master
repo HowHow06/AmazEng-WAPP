@@ -58,7 +58,7 @@
                         </div>
 
                         <div class="header-search-bar d-none d-md-block">
-                            <input type="text" class="form-control" placeholder="Search for Course">
+                            <input type="text" class="form-control" placeholder="Search for Idiom">
                             <a href="#" class="search-submit"><i class="far fa-search"></i></a>
                         </div>
 
@@ -67,8 +67,8 @@
                             <ul class="primary-menu">
                                 <li><a href="/">Home</a></li>
                                 <li><a href="about">About</a></li>
-                                <li><a href="about">Explore Idioms</a></li>
-                                <li><a href="about">Contact Us</a></li>
+                                <li><a href="explore">Explore Idioms</a></li>
+                                <li><a href="contact">Contact Us</a></li>
 
                                 <%--   <li>
                                     <a href="#">Pages</a>
