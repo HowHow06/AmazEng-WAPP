@@ -10,10 +10,9 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-xl-7">
-
                     <div class="signup-form">
                         <div class="form-header">
-                            <h2 class="font-weight-bold mb-3">Sign Up</h2>
+                            <h2 class="font-weight-bold mb-3">Register</h2>
                             <p class="woocommerce-register">
                                 Already have an account? <a href="login" class="text-decoration-underline">Log in</a>
                             </p>
