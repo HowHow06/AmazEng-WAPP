@@ -61,6 +61,13 @@ namespace AmazEng_WAPP
                 "~/Idiom.aspx"
             );
             //more routes to go...
+
+
+            routes.MapPageRoute(
+                "AdminDashboardRoute",
+                "Admin/",
+                "~/AdminPages/Dashboard.aspx"
+            );
         }
     }
 }

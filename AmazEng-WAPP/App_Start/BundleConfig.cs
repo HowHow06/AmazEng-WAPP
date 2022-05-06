@@ -43,6 +43,28 @@ namespace AmazEng_WAPP
                     "~/Assets/vendors/magnific-popup/jquery.magnific-popup.min.js"
                      ));
 
+            bundles.Add(new Bundle("~/admin/bundles/core").Include(
+                    "~/AdminPages/Assets/js/Admin.js",
+                    "~/AdminPages/Assets/vendors/@popperjs/core/dist/umd/popper.min.js",
+                   "~/AdminPages/Assets/vendors/bootstrap/dist/js/bootstrap.min.js",
+                   "~/AdminPages/Assets/vendors/volt/volt.js"
+                    ));
+
+
+            bundles.Add(new Bundle("~/admin/bundles/vendors").Include(
+                   "~/AdminPages/Assets/vendors/onscreen/dist/on-screen.umd.min.js",
+                   "~/AdminPages/Assets/vendors/nouislider/distribute/nouislider.min.js",
+                   "~/AdminPages/Assets/vendors/smooth-scroll/dist/smooth-scroll.polyfills.min.js",
+                   "~/AdminPages/Assets/vendors/chartist/dist/chartist.min.js",
+                   "~/AdminPages/Assets/vendors/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js",
+                   "~/AdminPages/Assets/vendors/vanillajs-datepicker/dist/js/datepicker.min.js",
+                   "~/AdminPages/Assets/vendors/sweetalert2/dist/sweetalert2.all.min.js",
+                    "~/AdminPages/Assets/vendors/moment/moment.min.js",
+                   "~/AdminPages/Assets/vendors/notyf/notyf.min.js",
+                   "~/AdminPages/Assets/vendors/simplebar/dist/simplebar.min.js",
+                   "~/AdminPages/Assets/vendors/buttons/buttons.js"
+                    ));
+
         }
     }
 }

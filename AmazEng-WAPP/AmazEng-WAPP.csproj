@@ -128,6 +128,213 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AdminPages\Assets\js\Admin.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\cjs\popper-base.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\cjs\popper-base.js.flow" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\cjs\popper-lite.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\cjs\popper-lite.js.flow" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\cjs\popper.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\cjs\popper.js.flow" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\createPopper.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\contains.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getBoundingClientRect.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getClippingRect.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getCompositeRect.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getComputedStyle.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getDocumentElement.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getDocumentRect.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getHTMLElementScroll.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getLayoutRect.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getNodeName.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getNodeScroll.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getOffsetParent.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getParentNode.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getScrollParent.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getViewportRect.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getWindow.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getWindowScroll.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\getWindowScrollBarX.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\instanceOf.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\isScrollParent.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\isTableElement.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\dom-utils\listScrollParents.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\enums.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\index.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\modifiers\applyStyles.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\modifiers\arrow.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\modifiers\computeStyles.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\modifiers\eventListeners.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\modifiers\flip.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\modifiers\hide.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\modifiers\index.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\modifiers\offset.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\modifiers\popperOffsets.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\modifiers\preventOverflow.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\popper-base.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\popper-lite.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\popper.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\types.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\computeAutoPlacement.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\computeOffsets.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\debounce.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\detectOverflow.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\expandToHashMap.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\format.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\getAltAxis.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\getAltLen.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\getBasePlacement.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\getFreshSideObject.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\getMainAxisFromPlacement.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\getOppositePlacement.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\getOppositeVariationPlacement.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\getVariation.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\math.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\mergeByName.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\mergePaddingObject.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\orderModifiers.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\rectToClientRect.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\uniqueBy.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\validateModifiers.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\esm\utils\within.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\umd\popper-base.min.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\umd\popper-base.min.js.flow" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\umd\popper-lite.min.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\umd\popper-lite.min.js.flow" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\umd\popper.min.js" />
+    <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\umd\popper.min.js.flow" />
+    <Content Include="AdminPages\Assets\vendors\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <Content Include="AdminPages\Assets\vendors\bootstrap\dist\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="AdminPages\Assets\vendors\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <Content Include="AdminPages\Assets\vendors\bootstrap\dist\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="AdminPages\Assets\vendors\bootstrap\dist\css\bootstrap-utilities.min.css" />
+    <Content Include="AdminPages\Assets\vendors\bootstrap\dist\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="AdminPages\Assets\vendors\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="AdminPages\Assets\vendors\bootstrap\dist\css\bootstrap.rtl.min.css" />
+    <Content Include="AdminPages\Assets\vendors\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <Content Include="AdminPages\Assets\vendors\bootstrap\dist\js\bootstrap.esm.min.js" />
+    <Content Include="AdminPages\Assets\vendors\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="AdminPages\Assets\vendors\buttons\buttons.js" />
+    <Content Include="AdminPages\Assets\vendors\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.css" />
+    <Content Include="AdminPages\Assets\vendors\chartist-plugin-tooltips\dist\chartist-plugin-tooltip.min.js" />
+    <Content Include="AdminPages\Assets\vendors\chartist\dist\chartist.min.css" />
+    <Content Include="AdminPages\Assets\vendors\chartist\dist\chartist.min.js" />
+    <Content Include="AdminPages\Assets\vendors\moment\moment.min.js" />
+    <Content Include="AdminPages\Assets\vendors\notyf\notyf.es.js" />
+    <Content Include="AdminPages\Assets\vendors\notyf\notyf.min.css" />
+    <Content Include="AdminPages\Assets\vendors\notyf\notyf.min.js" />
+    <Content Include="AdminPages\Assets\vendors\notyf\notyf.umd.js" />
+    <Content Include="AdminPages\Assets\vendors\nouislider\distribute\nouislider.min.css" />
+    <Content Include="AdminPages\Assets\vendors\nouislider\distribute\nouislider.min.js" />
+    <Content Include="AdminPages\Assets\vendors\onscreen\dist\on-screen.es6.js" />
+    <Content Include="AdminPages\Assets\vendors\onscreen\dist\on-screen.umd.min.js" />
+    <Content Include="AdminPages\Assets\vendors\simplebar\dist\simplebar-core.esm.js" />
+    <Content Include="AdminPages\Assets\vendors\simplebar\dist\simplebar.esm.js" />
+    <Content Include="AdminPages\Assets\vendors\simplebar\dist\simplebar.min.css" />
+    <Content Include="AdminPages\Assets\vendors\simplebar\dist\simplebar.min.js" />
+    <Content Include="AdminPages\Assets\vendors\simplebar\dist\simplebar.umd.js" />
+    <Content Include="AdminPages\Assets\vendors\smooth-scroll\dist\smooth-scroll.min.js" />
+    <Content Include="AdminPages\Assets\vendors\smooth-scroll\dist\smooth-scroll.polyfills.min.js" />
+    <Content Include="AdminPages\Assets\vendors\sweetalert2\dist\sweetalert2.all.min.js" />
+    <Content Include="AdminPages\Assets\vendors\sweetalert2\dist\sweetalert2.min.css" />
+    <Content Include="AdminPages\Assets\vendors\sweetalert2\dist\sweetalert2.min.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\css\datepicker-bs4.min.css" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\css\datepicker-bulma.min.css" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\css\datepicker-foundation.min.css" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\css\datepicker.min.css" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\datepicker-full.min.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\datepicker.min.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\ar-tn.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\ar.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\az.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\bg.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\bm.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\bn.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\br.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\bs.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\ca.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\cs.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\cy.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\da.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\de.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\el.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\en-AU.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\en-CA.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\en-GB.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\en-IE.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\en-NZ.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\en-ZA.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\eo.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\es.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\et.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\eu.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\fa.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\fi.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\fo.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\fr-CH.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\fr.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\gl.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\he.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\hi.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\hr.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\hu.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\hy.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\id.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\is.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\it-CH.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\it.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\ja.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\ka.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\kk.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\km.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\ko.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\lt.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\lv.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\me.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\mk.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\mn.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\mr.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\ms.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\nl-BE.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\nl.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\no.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\oc.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\pl.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\pt-BR.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\pt.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\ro.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\ru.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\si.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\sk.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\sl.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\sq.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\sr-latn.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\sr.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\sv.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\sw.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\ta.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\tg.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\th.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\tk.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\tr.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\uk.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\uz-cyrl.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\uz-latn.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\vi.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\zh-CN.js" />
+    <Content Include="AdminPages\Assets\vendors\vanillajs-datepicker\dist\js\locales\zh-TW.js" />
+    <Content Include="AdminPages\Assets\vendors\volt\volt.css" />
+    <Content Include="AdminPages\Assets\vendors\volt\volt.css.map" />
+    <Content Include="AdminPages\Assets\vendors\volt\volt.js" />
+    <Content Include="AdminPages\Assets\vendors\waypoints\lib\jquery.waypoints.min.js" />
+    <Content Include="AdminPages\Assets\vendors\waypoints\lib\noframework.waypoints.min.js" />
+    <Content Include="AdminPages\Assets\vendors\waypoints\lib\shortcuts\infinite.min.js" />
+    <Content Include="AdminPages\Assets\vendors\waypoints\lib\shortcuts\inview.min.js" />
+    <Content Include="AdminPages\Assets\vendors\waypoints\lib\shortcuts\sticky.min.js" />
+    <Content Include="AdminPages\Assets\vendors\waypoints\lib\waypoints.debug.js" />
+    <Content Include="AdminPages\Assets\vendors\waypoints\lib\zepto.waypoints.min.js" />
+    <Content Include="AdminPages\Assets\vendors\waypoints\licenses.txt" />
+    <Content Include="AdminPages\Assets\vendors\waypoints\testem.json" />
+    <Content Include="AdminPages\Dashboard.aspx" />
     <Content Include="App_Data\AmazengDb.mdf" />
     <Content Include="App_Data\AmazengDb_log.ldf">
       <DependentUpon>AmazengDb.mdf</DependentUpon>
@@ -278,6 +485,7 @@
     <Content Include="Assets\vendors\fontawesome\webfonts\fa-solid-900.woff" />
     <Content Include="Assets\vendors\fontawesome\webfonts\fa-solid-900.woff2" />
     <Content Include="Home.aspx" />
+    <Content Include="AdminPages\Site.Admin.Master" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -393,6 +601,20 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPages\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\Site.Admin.Master.cs">
+      <DependentUpon>Site.Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\Site.Admin.Master.designer.cs">
+      <DependentUpon>Site.Admin.Master</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -520,6 +742,12 @@
     <EmbeddedResource Include="Migrations\202205041721321_initial.resx">
       <DependentUpon>202205041721321_initial.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AdminPages\Assets\css\" />
+    <Folder Include="AdminPages\Assets\vendors\chartist\dist\scss\settings\" />
+    <Folder Include="AdminPages\Assets\vendors\waypoints\src\" />
+    <Folder Include="AdminPages\Assets\vendors\waypoints\test\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
