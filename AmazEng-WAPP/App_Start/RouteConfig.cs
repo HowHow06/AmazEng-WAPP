@@ -41,6 +41,11 @@ namespace AmazEng_WAPP
                  "~/Login.aspx"
              );
             routes.MapPageRoute(
+                "ForgotRoute",
+                "Forgot",
+                "~/Forgot.aspx"
+            );
+            routes.MapPageRoute(
                 "RegisterRoute",
                 "Register",
                 "~/Register.aspx"

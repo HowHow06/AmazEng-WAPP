@@ -133,8 +133,10 @@
       <DependentUpon>AmazengDb.mdf</DependentUpon>
     </Content>
     <Content Include="Assets\css\home.css" />
+    <Content Include="Assets\css\auth.css" />
     <Content Include="Assets\css\responsive.css" />
     <Content Include="Assets\css\Site.css" />
+    <Content Include="Assets\css\woocomerce.css" />
     <Content Include="Assets\images\feature-image.jpg" />
     <Content Include="Assets\images\home-banner.jpg" />
     <Content Include="Assets\images\logo-long-white-v1.png" />
@@ -191,6 +193,8 @@
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Login.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -401,6 +405,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\202205041721321_initial.cs" />
     <Compile Include="Migrations\202205041721321_initial.designer.cs">
       <DependentUpon>202205041721321_initial.cs</DependentUpon>
@@ -421,6 +432,20 @@
     <Compile Include="Models\Quiz.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Empty.Master.cs">
+      <DependentUpon>Site.Empty.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Empty.Master.designer.cs">
+      <DependentUpon>Site.Empty.Master</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -455,6 +480,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.0.min.map" />
+    <Content Include="Site.Empty.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

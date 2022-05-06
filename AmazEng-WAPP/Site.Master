@@ -64,18 +64,18 @@
 
                             <ul class="primary-menu">
                                 <li><a href="/">Home</a></li>
-                                <li><a href="about.html">About</a></li>
-                                <li><a href="about.html">Explore Idioms</a></li>
-                                <li><a href="about.html">Contact Us</a></li>
+                                <li><a href="about">About</a></li>
+                                <li><a href="about">Explore Idioms</a></li>
+                                <li><a href="about">Contact Us</a></li>
 
                                 <%--   <li>
                                     <a href="#">Pages</a>
                                     <ul class="submenu">
-                                        <li><a href="instructor.html">Instructors</a></li>
-                                        <li><a href="cart.html">Cart</a></li>
-                                        <li><a href="checkout.html">Checkout</a></li>
-                                        <li><a href="login.html">Login</a></li>
-                                        <li><a href="Register.html">Register</a></li>
+                                        <li><a href="instructor">Instructors</a></li>
+                                        <li><a href="cart">Cart</a></li>
+                                        <li><a href="checkout">Checkout</a></li>
+                                        <li><a href="login">Login</a></li>
+                                        <li><a href="Register">Register</a></li>
                                     </ul>
                                 </li>--%>
                             </ul>
@@ -83,8 +83,8 @@
                             <a href="#" class="nav-close"><i class="fal fa-times"></i></a>
                         </nav>
                         <div class="header-btn d-none d-xl-block">
-                            <a href="login.html" class="login">Login</a>
-                            <a href="register.html" class="btn btn-main btn-sm-2 rounded">Sign up</a>
+                            <a href="login" class="login">Login</a>
+                            <a href="register" class="btn btn-main btn-sm-2 rounded">Sign up</a>
                         </div>
                     </div>
                 </div>
