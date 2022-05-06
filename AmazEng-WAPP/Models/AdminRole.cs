@@ -14,4 +14,6 @@ namespace AmazEng_WAPP.Models
 
         public virtual ICollection<Admin> Admins { get; set; }
     }
+
+
 }

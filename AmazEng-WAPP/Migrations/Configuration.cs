@@ -2,6 +2,8 @@
 {
     using AmazEng_WAPP.DataAccess;
     using AmazEng_WAPP.Models;
+    using BCrypt.Net;
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
@@ -23,8 +25,86 @@
             //  This method will be called after migrating to the latest version.
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method
             //  to avoid creating duplicate seed data.
+
             InitialiseTagData(context);
             InitialiseIdiomData(context);
+
+            // add member
+            InitialiseDefaultMember(context);
+            InitialiseAdminRole(context);
+            // add admin
+            InitialiseDefaultAdmin(context);
+        }
+
+        private void InitialiseAdminRole(AmazengContext context)
+        {
+            context.AdminRoles.AddOrUpdate(
+                new AdminRole
+                {
+                    Id = 1,
+                    Name = "Admin",
+                    Permission = JsonConvert.SerializeObject(new
+                    {
+                        ViewDashboard = true,
+                        ManageMembers = true,
+                        ManageIdioms = true,
+                        ManageIdiomTags = true,
+                        ManageAdmins = false,
+                        ManageMessages = true,
+                        ManageIdiomFeedback = true,
+                    })
+                },
+                new AdminRole
+                {
+                    Id = 2,
+                    Name = "Super Admin",
+                    Permission = JsonConvert.SerializeObject(new
+                    {
+                        ViewDashboard = true,
+                        ManageMembers = true,
+                        ManageIdioms = true,
+                        ManageIdiomTags = true,
+                        ManageAdmins = true,
+                        ManageMessages = true,
+                        ManageIdiomFeedback = true,
+                    })
+                }
+                );
+            context.SaveChanges();
+            Console.WriteLine("Created admin role");
+        }
+
+        private void InitialiseDefaultMember(AmazengContext context)
+        {
+            context.Members.AddOrUpdate(
+                new Member
+                {
+                    Id = 1,
+                    Name = "John the Member",
+                    Username = "member",
+                    Password = BCrypt.HashPassword("member"),
+                    Email = "limhowardbb+member01@gmail.com",
+                }
+                );
+            context.SaveChanges();
+            Console.WriteLine("Created default member");
+        }
+
+        private void InitialiseDefaultAdmin(AmazengContext context)
+        {
+            context.Admins.AddOrUpdate(
+                new Admin
+                {
+                    Id = 1,
+                    Name = "Jerry the Admin",
+                    Username = "admin",
+                    Password = BCrypt.HashPassword("admin"),
+                    Email = "limhowardbb+admin01@gmail.com",
+                    Role = context.GetSuperAdminRole()
+                }
+                );
+            context.SaveChanges();
+            Console.WriteLine("Created default admin");
         }
 
         private void ClearIdiomsAndTagsTable(AmazengContext context)

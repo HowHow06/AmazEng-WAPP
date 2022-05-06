@@ -63,7 +63,6 @@ namespace AmazEng_WAPP.DataAccess
                 entry.CurrentValues["DeletedAt"] = DateTime.UtcNow;
             }
 
-
             foreach (var entry in ChangeTracker.Entries<IHasTimeStamp>().Where(e => e.State == EntityState.Modified))
             {
                 entry.Entity.ModifiedAt = DateTime.UtcNow;
@@ -81,6 +80,11 @@ namespace AmazEng_WAPP.DataAccess
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
         // public virtual DbSet<MyEntity> MyEntities { get; set; }
+
+        public AdminRole GetSuperAdminRole()
+        {
+            return this.AdminRoles.Where(adminRole => adminRole.Name == "Super Admin").First();
+        }
     }
 
     //public class MyEntity
