@@ -165,6 +165,12 @@
     <Content Include="Assets\vendors\isotope\jquery.isotope.js" />
     <Content Include="Assets\vendors\magnific-popup\jquery.magnific-popup.min.js" />
     <Content Include="Assets\vendors\magnific-popup\magnific-popup.css" />
+    <Content Include="Assets\vendors\overlay-scrollbar\jquery.overlayScrollbars.js" />
+    <Content Include="Assets\vendors\overlay-scrollbar\jquery.overlayScrollbars.min.js" />
+    <Content Include="Assets\vendors\overlay-scrollbar\OverlayScrollbars.css" />
+    <Content Include="Assets\vendors\overlay-scrollbar\OverlayScrollbars.js" />
+    <Content Include="Assets\vendors\overlay-scrollbar\OverlayScrollbars.min.css" />
+    <Content Include="Assets\vendors\overlay-scrollbar\OverlayScrollbars.min.js" />
     <Content Include="Assets\vendors\owl\assets\ajax-loader.gif" />
     <Content Include="Assets\vendors\owl\assets\owl.carousel.css" />
     <Content Include="Assets\vendors\owl\assets\owl.carousel.min.css" />
@@ -191,7 +197,9 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Explore.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="Forgot.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
@@ -401,6 +409,20 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Explore.aspx.cs">
+      <DependentUpon>Explore.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Explore.aspx.designer.cs">
+      <DependentUpon>Explore.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forgot.aspx.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forgot.aspx.designer.cs">
+      <DependentUpon>Forgot.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

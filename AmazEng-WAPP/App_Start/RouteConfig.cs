@@ -28,7 +28,7 @@ namespace AmazEng_WAPP
             routes.MapPageRoute(
                   "ExploreRoute",
                   "Explore",
-                  "~/ExploreIdioms.aspx"
+                  "~/Explore.aspx"
               );
             routes.MapPageRoute(
                   "ContactRoute",
