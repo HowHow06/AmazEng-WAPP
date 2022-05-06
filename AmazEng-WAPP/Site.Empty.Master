@@ -12,15 +12,16 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-     
+
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <webopt:BundleReference runat="server" Path="~/iconfont/css" />
     <webopt:BundleReference runat="server" Path="~/animate/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    
-    <asp:ContentPlaceHolder ID="head" runat="server">  
-    </asp:ContentPlaceHolder>  
+    <link type="text/css" href="/Assets/vendors/overlay-scrollbar/OverlayScrollbars.min.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 <body id="site-top">
     <form runat="server">
@@ -45,7 +46,8 @@
         <%--Site Scripts--%>
         <%: Scripts.Render("~/bundles/bootstrap5") %>
         <%: Scripts.Render("~/bundles/vendors") %>
-        <script src="/Assets/js/Site.js"></script>
+        <script type="text/javascript" src="/Assets/js/Site.js"></script>
+        <script type="text/javascript" src="/Assets/vendors/overlay-scrollbar/OverlayScrollbars.js"></script>
         <div class="body-content pt-80">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
