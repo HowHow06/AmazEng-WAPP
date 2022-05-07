@@ -48,7 +48,7 @@
                     Name = "Admin",
                     Permission = JsonConvert.SerializeObject(new
                     {
-                        ViewDashboard = true,
+                        Dashboard = true,
                         ManageMembers = true,
                         ManageIdioms = true,
                         ManageIdiomTags = true,
@@ -63,7 +63,7 @@
                     Name = "Super Admin",
                     Permission = JsonConvert.SerializeObject(new
                     {
-                        ViewDashboard = true,
+                        Dashboard = true,
                         ManageMembers = true,
                         ManageIdioms = true,
                         ManageIdiomTags = true,

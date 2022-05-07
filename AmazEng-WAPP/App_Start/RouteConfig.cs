@@ -68,6 +68,24 @@ namespace AmazEng_WAPP
                 "Admin/",
                 "~/AdminPages/Dashboard.aspx"
             );
+
+            routes.MapPageRoute(
+                "AdminLoginRoute",
+                "Admin/Login",
+                "~/AdminPages/Login.aspx"
+            );
+
+            routes.MapPageRoute(
+               "AdminForgotRoute",
+               "Admin/Forgot",
+               "~/AdminPages/Forgot.aspx"
+           );
+
+            routes.MapPageRoute(
+              "AdminMembersRoute",
+              "Admin/Members",
+              "~/AdminPages/ManageMembers.aspx"
+          );
         }
     }
 }
