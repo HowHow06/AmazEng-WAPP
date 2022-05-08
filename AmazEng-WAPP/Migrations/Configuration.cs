@@ -30,7 +30,6 @@
             //  to avoid creating duplicate seed data.
             InitialiseTagData(context);
             InitialiseIdiomData(context);
-
             // add member
             InitialiseDefaultMember(context);
             InitialiseAdminRole(context);
