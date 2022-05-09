@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/Site.EmptyAdmin.Master" AutoEventWireup="true" CodeBehind="ManageMembers.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.ManageMembers" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="ManageMembers.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.ManageMembers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using AmazEng_WAPP.Class.Auth;
+using AmazEng_WAPP.DataAccess;
+using AmazEng_WAPP.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +14,19 @@ namespace AmazEng_WAPP.AdminPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            AmazengContext db = new AmazengContext();
+            Admin admin = Auth.GetLoggedInAdmin(Session, Request, db);
+            if (admin == null)
+            {
+                Response.Redirect(GetRouteUrl("AdminLoginRoute", new { }));
+            }
 
+        }
+
+        protected void btnAdminLogout_Click(object sender, EventArgs e)
+        {
+            Auth.AdminLogout(Session, Request);
+            Response.Redirect(GetRouteUrl("AdminLoginRoute", new { }));
         }
     }
 }

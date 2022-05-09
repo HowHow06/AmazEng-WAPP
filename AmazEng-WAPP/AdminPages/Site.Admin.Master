@@ -209,7 +209,7 @@
                     <div
                         class="d-flex justify-content-end w-100"
                         id="navbarSupportedContent">
-                        
+
                         <!-- Navbar links -->
                         <ul class="navbar-nav align-items-center">
                             <li class="nav-item dropdown ms-lg-3">
@@ -232,8 +232,8 @@
                                 </a>
                                 <div
                                     class="dropdown-menu dashboard-dropdown dropdown-menu-end mt-2 py-1">
-                                  <%--  <div role="separator" class="dropdown-divider my-1"></div>--%>
-                                    <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <%--  <div role="separator" class="dropdown-divider my-1"></div>--%>
+                                    <asp:LinkButton  class="dropdown-item d-flex align-items-center" runat="server" ID="btnAdminLogout" OnClick="btnAdminLogout_Click">
                                         <svg
                                             class="dropdown-icon text-danger me-2"
                                             fill="none"
@@ -248,7 +248,7 @@
                                             </path>
                                         </svg>
                                         Logout
-                                    </a>
+                                    </asp:LinkButton>
                                 </div>
                             </li>
                         </ul>

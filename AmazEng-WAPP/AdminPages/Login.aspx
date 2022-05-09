@@ -22,9 +22,9 @@
                         </div>
                         <!-- Form -->
                         <div class="form-group mb-4">
-                            <label for="email">Email</label>
+                            <label for="email">Username or Email</label>
                             <div class="input-group">
-                                <asp:TextBox ID="txtEmail" runat="server" class="form-control" placeholder="example@email.com" TextMode="Email"></asp:TextBox>
+                                <asp:TextBox ID="txtLoginKey" runat="server" class="form-control" placeholder="Username or email" ></asp:TextBox>
                             </div>
                         </div>
                         <!-- End of Form -->
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         <div class="d-grid">
-                            <asp:Button Text="Sign in" runat="server" class="btn btn-gray-800"/>
+                            <asp:Button ID="btnAdminLogin" Text="Sign in" runat="server" class="btn btn-gray-800" OnClick="btnAdminLogin_Click"/>
                         </div>
                     </div>
                 </div>
