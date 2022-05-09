@@ -32,9 +32,22 @@
             InitialiseIdiomData(context);
             // add member
             InitialiseDefaultMember(context);
+
+            ClearAdminAndRoleTable(context);
             InitialiseAdminRole(context);
             // add admin
             InitialiseDefaultAdmin(context);
+        }
+
+        private void ClearAdminAndRoleTable(AmazengContext context)
+        {
+            context.Database.ExecuteSqlCommand(@"
+                DELETE FROM [dbo].Admins;
+                DELETE FROM [dbo].AdminRoles;
+                DBCC CHECKIDENT ('Admins', RESEED, 0);
+                DBCC CHECKIDENT ('AdminRoles', RESEED, 0);
+            ");
+            Console.WriteLine("Cleared Admin Role and Admin data");
         }
 
         private void InitialiseAdminRole(AmazengContext context)
