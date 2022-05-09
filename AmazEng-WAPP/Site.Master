@@ -6,13 +6,11 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - Amazeng</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-
-
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <webopt:BundleReference runat="server" Path="~/iconfont/css" />
     <webopt:BundleReference runat="server" Path="~/animate/css" />
@@ -84,10 +82,33 @@
 
                             <a href="#" class="nav-close"><i class="fal fa-times"></i></a>
                         </nav>
-                        <div class="header-btn d-none d-xl-block">
-                            <a href="login" class="login">Login</a>
-                            <a href="register" class="btn btn-main btn-sm-2 rounded">Register</a>
-                        </div>
+                        <asp:LoginView ID="LoginView1" runat="server">
+                            <LoggedInTemplate>
+                                <div class="header-btn border-left-0 ms-3 d-block"
+                                    id="btnAccount"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    <a href="login.html" class="btn btn-grey-outline btn-sm-2 rounded">
+                                        <i class="fal fa-user me-2"></i>
+                                        Account
+                                    </a>
+                                </div>
+                                <ul class="dropdown-menu" aria-labelledby="btnAccount">
+                                    <li>
+                                        <asp:LinkButton ID="btnLogout"  Text="Logout" runat="server" class="dropdown-item d-flex align-items-center" OnClick="btnLogout_Click"/>
+                                    </li>
+                                </ul>
+                                <%--Hi bro member
+                <asp:LoginName ID="LoginName1" runat="server" />--%>
+                            </LoggedInTemplate>
+                            <AnonymousTemplate>
+                                <div class="header-btn d-none d-xl-block">
+                                    <a href="login" class="login">Login</a>
+                                    <a href="register" class="btn btn-main btn-sm-2 rounded">Register</a>
+                                </div>
+                            </AnonymousTemplate>
+                        </asp:LoginView>
+
                     </div>
                 </div>
             </div>

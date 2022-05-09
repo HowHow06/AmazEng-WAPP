@@ -40,7 +40,7 @@
                             </div>
 
                             <p class="form-row">
-                                <asp:Button ID="btnLogin" class="woocommerce-button button woocommerce-form-login__submit" runat="server" Text="Log in" />
+                                <asp:Button ID="btnLogin" class="woocommerce-button button woocommerce-form-login__submit" runat="server" Text="Log in" OnClick="btnLogin_Click" />
                             </p>
                         </div>
                     </div>

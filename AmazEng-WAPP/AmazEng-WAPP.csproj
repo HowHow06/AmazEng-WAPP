@@ -338,6 +338,8 @@
     <Content Include="App_Data\AmazengDb_log.ldf">
       <DependentUpon>AmazengDb.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\RemoveIdiomAdminDataQuery.sql" />
+    <Content Include="App_Data\RemoveIdiomDataQuery.sql" />
     <Content Include="Assets\css\home.css" />
     <Content Include="Assets\css\auth.css" />
     <Content Include="Assets\css\responsive.css" />
@@ -661,6 +663,7 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Class\Auth\Auth.cs" />
+    <Compile Include="Class\Utils\Validator.cs" />
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -695,6 +698,10 @@
     <Compile Include="Migrations\202205041721321_initial.cs" />
     <Compile Include="Migrations\202205041721321_initial.designer.cs">
       <DependentUpon>202205041721321_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205090645370_addTokenAndExpiresAtToMemberAndAdmin.cs" />
+    <Compile Include="Migrations\202205090645370_addTokenAndExpiresAtToMemberAndAdmin.designer.cs">
+      <DependentUpon>202205090645370_addTokenAndExpiresAtToMemberAndAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -777,6 +784,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202205041721321_initial.resx">
       <DependentUpon>202205041721321_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205090645370_addTokenAndExpiresAtToMemberAndAdmin.resx">
+      <DependentUpon>202205090645370_addTokenAndExpiresAtToMemberAndAdmin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
