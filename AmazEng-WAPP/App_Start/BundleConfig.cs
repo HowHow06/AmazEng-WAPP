@@ -30,8 +30,7 @@ namespace AmazEng_WAPP
                             "~/Scripts/modernizr-*"));
 
             bundles.Add(new Bundle("~/bundles/bootstrap5").Include(
-                           "~/Scripts/bootstrap.js",
-                           "~/Scripts/umd/popper.min.js"
+                           "~/Scripts/bootstrap.bundle.min.js"
                            ));
 
             bundles.Add(new Bundle("~/bundles/vendors").Include(
