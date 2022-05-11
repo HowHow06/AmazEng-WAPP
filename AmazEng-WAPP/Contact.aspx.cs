@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AmazEng_WAPP.DataAccess;
+using AmazEng_WAPP.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +14,19 @@ namespace AmazEng_WAPP
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
+        {
+            AmazengContext db = new AmazengContext();
+            db.Messages.Add(new Message
+            {
+                IssuerName = txtName.Text,
+                IssuerEmail = txtEmail.Text,
+                Subject = txtSubject.Text,
+                Content = txtMessage.Text
+            });
+            db.SaveChanges();
         }
     }
 }

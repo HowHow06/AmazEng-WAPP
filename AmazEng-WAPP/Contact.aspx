@@ -22,14 +22,16 @@
     <section class="features section-padding ">
         <div class="row justify-content-center mb-50">
             <div class="col-xl-3 col-md-6 ">
-                <div class="card">
-                    <div class="card-body">
-                        <h1>Leave Us a Message</h1>
-                        <ul class="list-group">
-                            <li class="list-group-item">Email: TP055278@mail.apu.edu.my</li>
-                            <li class="list-group-item">Phone: 01121101456</li>
-                            <li class="list-group-item">Address: 3A, Jalan Ayam Goreng, KFC</li>
+                <div class="card h-100">
+                    <div class="card-body d-flex flex-column">
+                        <h1>Leave Us A Message</h1>
+                        <div class="flex-grow-1">
+                        <ul class="list-group h-100">
+                            <li class="list-group-item flex-fill">Email: TP055278@mail.apu.edu.my</li>
+                            <li class="list-group-item flex-fill">Phone: 01121101456</li>
+                            <li class="list-group-item flex-fill">Address: 3A, Jalan Ayam Goreng, KFC</li>
                         </ul>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -63,8 +65,8 @@
                                     <asp:TextBox class="form-control" ID="txtMessage" runat="server" placeholder="Message" TextMode="MultiLine"></asp:TextBox>
                                 </p>
                             </div>
-                            <p class="form-row form-row-wide">
-                                <asp:Button class="button" Text="Submit" runat="server" ID="btnSubmit" />
+                            <p class="form-row form-row-wide d-grid">
+                                <asp:Button class="button" Text="Submit" runat="server" ID="btnSubmit" onclick="btnSubmit_Click"/>
                             </p>
                         </div>
                     </div>
