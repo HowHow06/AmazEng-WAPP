@@ -7,7 +7,7 @@ namespace AmazEng_WAPP.Models
     {
         [Key, Required]
         public int Id { get; set; }
-        public int MemberId { get; set; }
+        public int? MemberId { get; set; }
         public string IssuerName { get; set; }
         public string IssuerEmail { get; set; }
         [Required]
