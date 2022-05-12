@@ -70,12 +70,6 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AmazEng-WAPP\AmazEng-WAPP.csproj">
-      <Project>{03A97408-7EF2-4D89-8E59-20A75A76810E}</Project>
-      <Name>AmazEng-WAPP</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

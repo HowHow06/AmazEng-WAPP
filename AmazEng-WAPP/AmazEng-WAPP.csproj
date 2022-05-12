@@ -347,6 +347,7 @@
     <Content Include="Assets\css\woocomerce.css" />
     <Content Include="Assets\images\feature-image.jpg" />
     <Content Include="Assets\images\home-banner.jpg" />
+    <Content Include="Assets\images\message.png" />
     <Content Include="Assets\images\logo-long-white-v1.png" />
     <Content Include="Assets\images\logo-long-white-v2.png" />
     <Content Include="Assets\images\logo-long.png" />
