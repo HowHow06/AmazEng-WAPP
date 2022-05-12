@@ -24,8 +24,9 @@ namespace AmazEng_WAPP
                 IssuerName = txtName.Text,
                 IssuerEmail = txtEmail.Text,
                 Subject = txtSubject.Text,
-                Content = txtMessage.Text
-            });
+                Content = txtMessage.Text,
+                SentAt = DateTime.UtcNow
+        });
             db.SaveChanges();
         }
     }
