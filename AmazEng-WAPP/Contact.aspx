@@ -23,15 +23,17 @@
         <div class="row justify-content-center mb-50">
             <div class="col-xl-3 col-md-6 ">
                 <div class="card h-100">
+                    <img src="Assets\images\message.png" class="card-img-top" alt="...">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">Leave Us A Message</h4>
+                    </div>
                     <div class="card-body d-flex flex-column">
-                        <h1>Leave Us A Message</h1>
-                        <div class="flex-grow-1">
-                            <ul class="list-group h-100">
-                                <li class="list-group-item flex-fill">Email: TP055278@mail.apu.edu.my</li>
-                                <li class="list-group-item flex-fill">Phone: 01121101456</li>
-                                <li class="list-group-item flex-fill">Address: 3A, Jalan Ayam Goreng, KFC</li>
-                            </ul>
-                        </div>
+                        <ul class="list-unstyled mt-3 mb-4">
+                            <li class="fs-4">Email: <a href="mailto:TP055278@mail.apu.edu.my">TP055278@mail.apu.edu.my </a></li>
+                            <li class="fs-4">Phone: +601121101456</li>
+                            <li class="fs-4">Address: 3A, Jalan Ayam Goreng, KFC</li>
+                        </ul>
+
                     </div>
                 </div>
             </div>
