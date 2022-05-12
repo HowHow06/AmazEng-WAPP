@@ -703,6 +703,10 @@
     <Compile Include="Migrations\202205090645370_addTokenAndExpiresAtToMemberAndAdmin.designer.cs">
       <DependentUpon>202205090645370_addTokenAndExpiresAtToMemberAndAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205121122512_modifyMemberIdToNullableInMessageTable.cs" />
+    <Compile Include="Migrations\202205121122512_modifyMemberIdToNullableInMessageTable.designer.cs">
+      <DependentUpon>202205121122512_modifyMemberIdToNullableInMessageTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\AdminRole.cs" />
@@ -787,6 +791,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205090645370_addTokenAndExpiresAtToMemberAndAdmin.resx">
       <DependentUpon>202205090645370_addTokenAndExpiresAtToMemberAndAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205121122512_modifyMemberIdToNullableInMessageTable.resx">
+      <DependentUpon>202205121122512_modifyMemberIdToNullableInMessageTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
