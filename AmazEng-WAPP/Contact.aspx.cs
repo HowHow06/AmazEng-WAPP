@@ -19,13 +19,14 @@ namespace AmazEng_WAPP
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             AmazengContext db = new AmazengContext();
-            db.Messages.Add(new Message
+            db.Messages.Add(
+                new Message
             {
                 IssuerName = txtName.Text,
                 IssuerEmail = txtEmail.Text,
                 Subject = txtSubject.Text,
-                Content = txtMessage.Text,
-                SentAt = DateTime.UtcNow
+                SentAt = DateTime.UtcNow,
+                Content = txtMessage.Text
         });
             db.SaveChanges();
         }
