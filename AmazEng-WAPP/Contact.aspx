@@ -44,26 +44,30 @@
                         <div class="row">
                             <div class="col-xl-12">
                                 <p class="form-row form-row-wide">
-                                    <label>Name&nbsp;<span class="required">*</span></label>
+                                    <label>Name&nbsp;<span class="required">*&nbsp;&nbsp;</span></label>
+                                    <asp:RequiredFieldValidator ID="rfName" runat="server" ErrorMessage="Please Enter Field" ControlToValidate="txtName" ForeColor="Red"></asp:RequiredFieldValidator>
                                     <asp:TextBox class="form-control" ID="txtName" runat="server" placeholder="Name"></asp:TextBox>
                                 </p>
                             </div>
                             <div class="col-xl-12">
                                 <p class="form-row form-row-wide">
-                                    <label>Email&nbsp;<span class="required">*</span></label>
-                                    <asp:TextBox class="form-control" ID="txtEmail" runat="server" placeholder="Email"></asp:TextBox>
+                                    <label>Email&nbsp;<span class="required">*&nbsp;&nbsp;</span></label>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please Enter Field" ControlToValidate="txtEmail" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    <asp:TextBox class="form-control" ID="txtEmail" runat="server" placeholder="Email" TextMode="Email"></asp:TextBox>
                                 </p>
                             </div>
 
                             <div class="col-xl-12">
                                 <p class="form-row form-row-wide">
-                                    <label>Subject&nbsp;<span class="required">*</span></label>
+                                    <label>Subject&nbsp;<span class="required">*&nbsp;&nbsp;</span></label>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please Enter Field" ControlToValidate="txtSubject" ForeColor="Red"></asp:RequiredFieldValidator>
                                     <asp:TextBox class="form-control" ID="txtSubject" runat="server" placeholder="Subject"></asp:TextBox>
                                 </p>
                             </div>
                             <div class="col-xl-12">
                                 <p class="form-row form-row-wide">
-                                    <label>Message&nbsp;<span class="required">*</span></label>
+                                    <label>Message&nbsp;<span class="required">*&nbsp;&nbsp;</span></label>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Please Enter Field" ControlToValidate="txtMessage" ForeColor="Red"></asp:RequiredFieldValidator>
                                     <asp:TextBox class="form-control" ID="txtMessage" runat="server" placeholder="Message" TextMode="MultiLine"></asp:TextBox>
                                 </p>
                             </div>

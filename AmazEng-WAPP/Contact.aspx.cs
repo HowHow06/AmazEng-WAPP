@@ -1,4 +1,5 @@
-﻿using AmazEng_WAPP.DataAccess;
+﻿using AmazEng_WAPP.Class.Utils;
+using AmazEng_WAPP.DataAccess;
 using AmazEng_WAPP.Models;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,8 @@ namespace AmazEng_WAPP
                 Content = txtMessage.Text
         });
             db.SaveChanges();
+
+            Util.ShowAlert(this.Page, "Thank you for your message");
         }
     }
 }
