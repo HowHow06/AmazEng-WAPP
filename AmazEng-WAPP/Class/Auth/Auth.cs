@@ -137,6 +137,28 @@ namespace AmazEng_WAPP.Class.Auth
             return member;
         }
 
+        internal static bool IsMemberRegistered(string username, string email, AmazengContext db)
+        {
+            IQueryable<Member> memberQuery;
+           
+            memberQuery = db.Members.Where(m => m.Username == username);
+           
+            if (memberQuery.Any() == false) //member not found
+            {
+                memberQuery = db.Members.Where(m => m.Email == email);
+                if (memberQuery.Any() == false) //member not found
+                {
+                    return false;
+
+                }
+
+            }
+
+            return true;
+        }
+
+
+
         internal static void ClearExistingAdminRememberToken(Admin admin, AmazengContext db)
         {
             admin.RememberToken = null;

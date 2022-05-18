@@ -90,6 +90,14 @@
 
         private void InitialiseDefaultMember(AmazengContext context)
         {
+
+            context.Database.ExecuteSqlCommand(@"
+                DELETE FROM [dbo].Members;
+                DBCC CHECKIDENT ('Members', RESEED, 0);
+            ");
+
+            Console.WriteLine("Cleared Members Table Data");
+
             context.Members.AddOrUpdate(
                 new Member
                 {

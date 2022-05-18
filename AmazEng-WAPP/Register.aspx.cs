@@ -4,6 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using AmazEng_WAPP.Class.Auth;
+using AmazEng_WAPP.Class.Utils;
+using AmazEng_WAPP.DataAccess;
+using AmazEng_WAPP.Models;
+using System.Data.Entity;
+using System.Web.Security;
+using System.Threading;
 
 namespace AmazEng_WAPP
 {
@@ -13,5 +20,83 @@ namespace AmazEng_WAPP
         {
 
         }
+
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            AmazengContext db = new AmazengContext();
+            string name = txtName.Text;
+            string username = txtUsername.Text;
+            string email = txtEmail.Text;
+            string password = txtPassword.Text;
+            string repassword = txtRePassword.Text;
+            bool isTermChecked = ckbTerms.Checked;
+            bool member;
+
+
+            //Check if password and reenter password is same value
+
+            if(password != repassword)
+            {
+                Util.ShowAlert(this.Page, "Password Does not Match!");
+                return;
+            }
+
+
+            //Check if email is valid
+
+            if (!Validator.IsValidEmail(email))
+            {
+                Util.ShowAlert(this.Page, "Please Enter Valid Email Address!");
+                txtEmail.Text = " ";
+                return;
+            }
+
+            //Check if all data is filled out in the form
+
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || (isTermChecked == false))
+            {
+                Util.ShowAlert(this.Page, "Please Fill Up All Fields!");
+                return;
+            }
+
+
+
+            // Check if the user record exists, if yes registration is not performed
+            
+            member = Auth.IsMemberRegistered(username, email, db);
+
+
+            if (member is false)
+            {
+
+                db.Members.Add(
+                new Member
+                {
+                    Name = name,
+                    Username = username,
+                    Password = Auth.CreatePasswordHash(password),
+                    Email = email,
+                }
+                );
+                db.SaveChanges();
+
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), 
+"alert",
+"alert('Member Registration Success!');window.location ='Login.aspx';", 
+true);
+               
+            }
+
+            else
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(),
+"alert",
+"alert('Member Record Exists!');window.location ='Login.aspx';",
+true);
+            }
+
+        }
+            
     }
 }

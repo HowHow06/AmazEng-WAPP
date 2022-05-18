@@ -67,7 +67,7 @@
                         </div>
 
                         <p class="woocommerce-FormRow form-row">
-                            <asp:Button class="woocommerce-button button" Text="Register" runat="server" ID="btnRegister" />
+                            <asp:Button class="woocommerce-button button" Text="Register" runat="server" ID="btnRegister" OnClick="btnRegister_Click" />
                         </p>
                     </div>
                 </div>
