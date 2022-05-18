@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="ManageMembers.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.ManageMembers" %>
+﻿<%@ Page Title="Members" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="ManageMembers.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.ManageMembers" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -13,7 +13,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 New
             </a>
-            <asp:Button class="btn btn-sm btn-outline-gray-600 ms-2" Text="Delete" runat="server" ID="btnDelete" disabled="disabled" />
+       <%--     <asp:Button class="btn btn-sm btn-outline-gray-600 ms-2" Text="Delete" runat="server" ID="btnDelete" disabled="disabled" />--%>
         </div>
     </div>
     <div class="table-settings mb-4">
@@ -49,22 +49,41 @@
     </div>
 
     <div class="card card-body border-0 shadow table-wrapper table-responsive">
-        <asp:GridView ID="GridMembers" runat="server" ItemType="AmazEng_WAPP.Models.Member" DataKeyNames="Id" 
-        SelectMethod="GridMembers_GetData"
-        AutoGenerateColumns="false" BorderStyle="None" Width="100%">
-             <Columns>
-            <asp:DynamicField DataField="Id" />
-            <asp:DynamicField DataField="Username" />
-            <asp:DynamicField DataField="Name" />
-            <asp:DynamicField DataField="Email" />         
-            <asp:TemplateField HeaderText="Verified">
-              <ItemTemplate>
-                <asp:Label Text='<%# Item.EmailVerifiedAt is object ? "Verified" : "Not Verified" %>' 
-                    runat="server" />
-              </ItemTemplate>
-            </asp:TemplateField>        
-        </Columns>
-
+        <asp:GridView ID="GridMembers" runat="server" ItemType="AmazEng_WAPP.Models.Member" DataKeyNames="Id"
+            SelectMethod="GridMembers_GetData"
+            OnRowDeleted="GridMembers_RowDeleted"
+            onrowcommand="GridMembers_RowCommand"
+            AutoGenerateColumns="false" BorderStyle="None" Width="100%">
+            <Columns>
+                <asp:DynamicField DataField="Id" />
+                <asp:DynamicField DataField="Username" />
+                <asp:DynamicField DataField="Name" />
+                <asp:DynamicField DataField="Email" />
+                <asp:TemplateField HeaderText="Verified">
+                    <ItemTemplate>
+                        <asp:Label Text='<%# Item.EmailVerifiedAt is object ? "Verified" : "Not Verified" %>'
+                            runat="server" />
+                    </ItemTemplate>
+                </asp:TemplateField>
+                <asp:TemplateField HeaderText="Verified">
+                    <ItemTemplate>
+                        <asp:HyperLink runat="server" NavigateUrl='<%#: GetRouteUrl("AdminViewMemberRoute", new {Id = Item.Id }) %>'>
+                            <i class="fas fa-eye pe-2"></i></asp:HyperLink>
+                        <asp:HyperLink runat="server" NavigateUrl='<%#: GetRouteUrl("AdminViewMemberRoute", new {Id = Item.Id , Mode = "Edit"}) %>'><i class="fas fa-pen-square pe-2"></i></asp:HyperLink>
+                        <%--the link below will pass the item's Id as parameter to GridMembers_RowCommand with the Command name "delete"--%>
+                        <asp:LinkButton ID="LinkButton1" runat="server"
+                            CommandArgument='<%# Eval("Id") %>'
+                            CommandName="del"
+                            OnClientClick='return confirm("Are you sure to delete this item?");'
+                            ><i class="fas fa-trash"></i></asp:LinkButton>
+                    </ItemTemplate>
+                </asp:TemplateField>
+            </Columns>
+            <EmptyDataTemplate>
+                <div class="row alert alert-warning alert-dismissable fade in" style="margin-bottom: 0px">
+                    There are no items in your shopping cart
+                </div>
+            </EmptyDataTemplate>
         </asp:GridView>
     </div>
 </asp:Content>

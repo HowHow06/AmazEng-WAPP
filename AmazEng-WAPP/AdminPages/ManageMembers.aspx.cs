@@ -20,8 +20,33 @@ namespace AmazEng_WAPP.AdminPages
         public IQueryable<Member> GridMembers_GetData()
         {
             AmazengContext db = new AmazengContext();
-            var query = db.Members;
+            var query = db.Members.Where(m => m.DeletedAt == null);
             return query;
+        }
+
+        protected void GridMembers_RowDeleted(object sender, GridViewDeletedEventArgs e)
+        {
+            //handling gridview delete excetion
+            e.ExceptionHandled = true;
+        }
+
+        protected void GridMembers_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            if (e.CommandName == "del")
+            {
+                AmazengContext db = new AmazengContext();
+                int memberId = Convert.ToInt32(e.CommandArgument.ToString());
+                System.Diagnostics.Debug.WriteLine($"Removing member {memberId}");
+                Member toDeleteMember = db.Members.Find(memberId);
+                db.Members.Remove(toDeleteMember);
+                db.SaveChanges();
+
+                ////refresh grid
+                //GridMembers.DataBind();
+
+                // reload page
+                Response.Redirect(Request.RawUrl);
+            }
         }
     }
 }

@@ -88,6 +88,14 @@ namespace AmazEng_WAPP
           );
 
             routes.MapPageRoute(
+              "AdminViewMemberRoute",
+              "Admin/Member/{Id}/{Mode}",
+              "~/AdminPages/MemberPages/ViewMember.aspx",
+              false,
+              new RouteValueDictionary { { "Mode", string.Empty } }
+          );
+
+            routes.MapPageRoute(
               "AdminIdiomsRoute",
               "Admin/Idioms",
               "~/AdminPages/ManageMembers.aspx"

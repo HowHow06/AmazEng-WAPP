@@ -7,20 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace AmazEng_WAPP.AdminPages
+namespace AmazEng_WAPP.AdminPages.MemberPages
 {
 
 
-    public partial class ManageMembers
+    public partial class ViewMember
     {
 
         /// <summary>
-        /// GridMembers control.
+        /// FormMemberDetail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridMembers;
+        protected global::System.Web.UI.WebControls.FormView FormMemberDetail;
     }
 }

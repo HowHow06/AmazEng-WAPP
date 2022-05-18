@@ -25,9 +25,14 @@ namespace AmazEng_WAPP.Class.Utils
             ScriptManager.RegisterStartupScript(page, page.GetType(), "alertFunction", $"alert('{message}');", true);
         }
 
+        public static void ShowAlertAndRedirect(Page page, string message, string url)
+        {
+            ScriptManager.RegisterStartupScript(page, page.GetType(), "redirectFunction", $"alert('{message}'); window.location.replace('{url}')", true);
+        }
+
         public static void LogConsole(Page page, string message)
         {
-            ScriptManager.RegisterStartupScript(page, page.GetType(), "alertFunction", $"console.log('{message}');", true);
+            ScriptManager.RegisterStartupScript(page, page.GetType(), "logFunction", $"console.log('{message}');", true);
         }
 
         public static string ComputeSha256Hash(string rawData)

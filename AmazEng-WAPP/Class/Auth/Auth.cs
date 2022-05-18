@@ -64,6 +64,7 @@ namespace AmazEng_WAPP.Class.Auth
 
             if (request.Cookies["rememberToken"] == null)
             {
+                System.Diagnostics.Debug.WriteLine("No Cookie");
                 return null;
             }
 
@@ -114,11 +115,11 @@ namespace AmazEng_WAPP.Class.Auth
 
             if (Validator.IsValidEmail(loginKey))
             {
-                memberQuery = db.Members.Where(m => m.Email == loginKey);
+                memberQuery = db.Members.Where(m => m.Email == loginKey && m.DeletedAt == null);
             }
             else
             {
-                memberQuery = db.Members.Where(m => m.Username == loginKey);
+                memberQuery = db.Members.Where(m => m.Username == loginKey && m.DeletedAt == null);
             }
 
             if (memberQuery.Any() == false) //member not found
@@ -167,7 +168,7 @@ namespace AmazEng_WAPP.Class.Auth
             HttpCookie rememberTokenCookie = new HttpCookie("rememberToken");
             rememberTokenCookie.Value = rememberToken;
             rememberTokenCookie.Expires = DateTime.UtcNow.AddMonths(1);
-            rememberTokenCookie.Path = "/admin";
+            rememberTokenCookie.Path = "/";
             return rememberTokenCookie;
         }
 
