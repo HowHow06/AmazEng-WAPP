@@ -44,6 +44,20 @@
         <%: Scripts.Render("~/admin/bundles/core") %>
         <%: Scripts.Render("~/admin/bundles/vendors") %>
         <script type="text/javascript" src="/Assets/vendors/overlay-scrollbar/OverlayScrollbars.js"></script>
+        <script>
+            //$(function () {
+            //    if (typeof ValidatorUpdateDisplay != 'undefined') {
+            //        var originalValidatorUpdateDisplay = ValidatorUpdateDisplay;
+
+            //        ValidatorUpdateDisplay = function (val) {
+            //            if (!val.isvalid) {
+            //                $("#" + val.controltovalidate).toggleClass('error', !val.isvalid);
+            //            }
+            //            originalValidatorUpdateDisplay(val);
+            //        }
+            //    }
+            //});
+        </script>
         <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
             <a class="navbar-brand me-lg-5" href="../../index.html">
                 <img

@@ -10,6 +10,7 @@
             document.getElementById('imgProfilePicture').src = imgTempUrl;
             return false;
         };
+
     </script>
     <asp:FormView ID="FormMemberDetail" runat="server" ItemType="AmazEng_WAPP.Models.Member" SelectMethod="FormMemberDetail_GetItem" RenderOuterTable="false">
         <ItemTemplate>
@@ -89,7 +90,7 @@
                 <div class="btn-toolbar mb-2 mb-md-0 d-flex">
                     <a href='<%#: GetRouteUrl("AdminViewMemberRoute", new {Id = Item.Id }) %>' class="btn btn-sm  btn-outline-gray-600  d-inline-flex align-items-center">Cancel
                     </a>
-                    <asp:Button Text="Done" runat="server" ID="btnSubmit" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center"
+                    <asp:Button Text="Done" CausesValidation="true" runat="server" ID="btnSubmit" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center"
                         OnClick="btnSubmit_Click" />
                 </div>
             </div>
@@ -136,6 +137,12 @@
                                 Text='<%# Bind("Name") %>'
                                 runat="server" />
                         </div>
+                        <div class="col-auto">
+                            <asp:RegularExpressionValidator class="invalid-feedback" Display="Dynamic" ID="RegularExpressionValidator1" runat="server" ErrorMessage="*Invalid field input." ControlToValidate="txtEditName"
+                                ValidationExpression="^[A-Za-z ,.'-]+$"></asp:RegularExpressionValidator>
+
+                            <asp:RequiredFieldValidator class="invalid-feedback" Display="Dynamic" ID="RequiredFieldValidator2" runat="server" ErrorMessage="*This field must not be empty" ControlToValidate="txtEditName"></asp:RequiredFieldValidator>
+                        </div>
                     </div>
 
                     <%--field--%>
@@ -147,6 +154,17 @@
                             <asp:TextBox ID="txtEditUsername" class="form-control"
                                 Text='<%# Bind("Username") %>'
                                 runat="server" />
+                        </div>
+                        <div class="col-auto">
+                            <asp:RequiredFieldValidator class="invalid-feedback" Display="Dynamic" ID="RequiredFieldValidator1" runat="server" ErrorMessage="*This field must not be empty" ControlToValidate="txtEditUsername"></asp:RequiredFieldValidator>
+                            <asp:CustomValidator
+                                class="invalid-feedback"
+                                Display="Dynamic"
+                                ErrorMessage="*This username is used by other member."
+                                ID="validatorUsername"
+                                ControlToValidate="txtEditUsername"
+                                OnServerValidate="validatorUsername_ServerValidate"
+                                runat="server"></asp:CustomValidator>
                         </div>
                     </div>
 
@@ -161,14 +179,172 @@
                                 Text='<%# Bind("Email") %>'
                                 runat="server" />
                         </div>
+                        <div class="col-auto">
+                            <asp:RegularExpressionValidator class="invalid-feedback" Display="Dynamic" ID="RegularExpressionValidator2" runat="server" ErrorMessage="*Invalid field input." ControlToValidate="txtEditEmail"
+                                ValidationExpression="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"></asp:RegularExpressionValidator>
+
+                            <asp:RequiredFieldValidator class="invalid-feedback" Display="Dynamic" ID="RequiredFieldValidator3" runat="server" ErrorMessage="*This field must not be empty" ControlToValidate="txtEditEmail"></asp:RequiredFieldValidator>
+
+                            <asp:CustomValidator
+                                class="invalid-feedback"
+                                Display="Dynamic"
+                                ErrorMessage="*This email is used by other member."
+                                ID="validatorEditEmail"
+                                ControlToValidate="txtEditEmail"
+                                OnServerValidate="validatorEditEmail_ServerValidate"
+                                runat="server"></asp:CustomValidator>
+                        </div>
                     </div>
 
                 </div>
             </div>
 
         </EditItemTemplate>
+
+        <%--new view--%>
         <InsertItemTemplate>
-            hi
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+                <div class="d-block mb-4 mb-md-0">
+                    <h2 class="h3 m-0">New Member</h2>
+                </div>
+                <div class="btn-toolbar mb-2 mb-md-0 d-flex">
+                    <a href='<%#: GetRouteUrl("AdminMembersRoute", new { }) %>' class="btn btn-sm  btn-outline-gray-600  d-inline-flex align-items-center">Cancel
+                    </a>
+                    <asp:Button Text="Done" runat="server" ID="btnCreate" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center"
+                        OnClick="btnCreate_Click" />
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <%--field--%>
+                    <div class="row g-3 align-items-center mb-1">
+                        <div class="col-2">
+                            <label class="col-form-label">Profile Picture</label>
+                        </div>
+                        <div class="col-auto">
+                            <div class="d-inline-flex flex-column align-items-center ">
+                                <img class="rounded avatar-xl" id="imgProfilePicture" src="https://via.placeholder.com/400x400" alt="profile-picture">
+                                <%--<asp:Image ID="imgProfilePicture" ImageUrl='<%#: Item.ProfilePicture ?? "https://via.placeholder.com/400x400" %>' AlternateText="profile-picture" class="rounded avatar-xl" runat="server" />--%>
+                                <asp:LinkButton runat="server" ID="btnRefreshImage"
+                                    class="text-primary d-inline-flex align-items-center my-1"
+                                    OnClientClick="return refreshImage();">
+                                    <small>Refresh <i class="fa-solid fa-arrows-rotate"></i></small>  
+                                </asp:LinkButton>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <asp:FileUpload ID="uploadProfilePicture" runat="server" />
+                        </div>
+                    </div>
+
+                    <%--field--%>
+                    <div class="row g-3 align-items-center  mb-1">
+                        <div class="col-2">
+                            <label for="txtNewName" class="col-form-label">Name</label>
+                        </div>
+                        <div class="col-4">
+                            <asp:TextBox ID="txtNewName" class="form-control"
+                                placeholder="Name"
+                                runat="server" />
+                        </div>
+                        <div class="col-auto">
+                            <asp:RegularExpressionValidator class="invalid-feedback" Display="Dynamic" ID="RegularExpressionValidator1" runat="server" ErrorMessage="*Invalid field input." ControlToValidate="txtNewName"
+                                ValidationExpression="^[A-Za-z ,.'-]+$"></asp:RegularExpressionValidator>
+
+                            <asp:RequiredFieldValidator class="invalid-feedback" Display="Dynamic" ID="RequiredFieldValidator4" runat="server" ErrorMessage="*This field must not be empty" ControlToValidate="txtNewName"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
+
+                    <%--field--%>
+                    <div class="row g-3 align-items-center  mb-1">
+                        <div class="col-2">
+                            <label for="txtNewUsername" class="col-form-label">Username</label>
+                        </div>
+                        <div class="col-4">
+                            <asp:TextBox ID="txtNewUsername" class="form-control"
+                                placeholder="Username"
+                                runat="server" />
+                        </div>
+                        <div class="col-auto">
+                            <asp:RequiredFieldValidator class="invalid-feedback" Display="Dynamic" ID="RequiredFieldValidator1" runat="server" ErrorMessage="*This field must not be empty" ControlToValidate="txtNewUsername"></asp:RequiredFieldValidator>
+                              <asp:CustomValidator
+                                class="invalid-feedback"
+                                Display="Dynamic"
+                                ErrorMessage="*This username is used by other member."
+                                ID="validatorNewUsername"
+                                ControlToValidate="txtNewUsername"
+                                OnServerValidate="validatorNewUsername_ServerValidate"
+                                runat="server"></asp:CustomValidator>
+                        </div>
+                    </div>
+
+
+                    <%--field--%>
+                    <div class="row g-3 align-items-center  mb-1">
+                        <div class="col-2">
+                            <label for="txtNewEmail" class="col-form-label">Email</label>
+                        </div>
+                        <div class="col-4">
+                            <asp:TextBox ID="txtNewEmail" class="form-control"
+                                placeholder="your-email@gmail.com"
+                                runat="server" />
+                        </div>
+                        <div class="col-auto">
+                            <asp:RegularExpressionValidator class="invalid-feedback" Display="Dynamic" ID="RegularExpressionValidator2" runat="server" ErrorMessage="*Invalid field input." ControlToValidate="txtNewEmail"
+                                ValidationExpression="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"></asp:RegularExpressionValidator>
+
+                            <asp:RequiredFieldValidator class="invalid-feedback" Display="Dynamic" ID="RequiredFieldValidator5" runat="server" ErrorMessage="*This field must not be empty" ControlToValidate="txtNewEmail"></asp:RequiredFieldValidator>
+                             <asp:CustomValidator
+                                class="invalid-feedback"
+                                Display="Dynamic"
+                                ErrorMessage="*This email is used by other member."
+                                ID="validatorNewEmail"
+                                ControlToValidate="txtNewEmail"
+                                OnServerValidate="validatorNewEmail_ServerValidate"
+                                runat="server"></asp:CustomValidator>
+                        </div>
+                    </div>
+
+                    <%--field--%>
+                    <div class="row g-3 align-items-center  mb-1">
+                        <div class="col-2">
+                            <label for="txtNewPassword" class="col-form-label">Password</label>
+                        </div>
+                        <div class="col-4">
+                            <asp:TextBox ID="txtNewPassword" class="form-control"
+                                runat="server" TextMode="Password" />
+                        </div>
+
+                        <div class="col-auto">
+                            <asp:RequiredFieldValidator class="invalid-feedback" Display="Dynamic" ID="RequiredFieldValidator6" runat="server" ErrorMessage="*This field must not be empty" ControlToValidate="txtNewPassword"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
+
+                    <%--field--%>
+                    <div class="row g-3 align-items-center  mb-1">
+                        <div class="col-2">
+                            <label for="txtNewRePassword" class="col-form-label">Re-enter Password</label>
+                        </div>
+                        <div class="col-4">
+                            <asp:TextBox ID="txtNewRePassword" class="form-control"
+                                TextMode="Password"
+                                runat="server" />
+                        </div>
+                        <div class="col-auto">
+                            <asp:CompareValidator
+                                class="invalid-feedback"
+                                Display="Dynamic"
+                                ErrorMessage="*Please make sure both passwords are the same"
+                                ControlToValidate="txtNewPassword"
+                                ControlToCompare="txtNewRePassword"
+                                Operator="Equal"
+                                runat="server" />
+                            <asp:RequiredFieldValidator class="invalid-feedback" Display="Dynamic" ID="RequiredFieldValidator7" runat="server" ErrorMessage="*This field must not be empty" ControlToValidate="txtNewRePassword"></asp:RequiredFieldValidator>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </InsertItemTemplate>
     </asp:FormView>
 

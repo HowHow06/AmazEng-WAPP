@@ -13,7 +13,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 New
             </asp:HyperLink>
-       <%--     <asp:Button class="btn btn-sm btn-outline-gray-600 ms-2" Text="Delete" runat="server" ID="btnDelete" disabled="disabled" />--%>
+            <%--     <asp:Button class="btn btn-sm btn-outline-gray-600 ms-2" Text="Delete" runat="server" ID="btnDelete" disabled="disabled" />--%>
         </div>
     </div>
     <div class="table-settings mb-4">
@@ -25,7 +25,7 @@
                             <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
                         </svg>
                     </span>
-                    <input type="text" class="form-control" placeholder="Search members">
+                    <asp:TextBox ID="txtSearch" runat="server" class="form-control" placeholder="Search name, username, email" OnTextChanged="txtSearch_TextChanged" />
                 </div>
             </div>
             <div class="col-4 col-md-2 col-xl-1 ps-md-0 text-end">
@@ -47,43 +47,46 @@
             </div>
         </div>
     </div>
-
-    <div class="card card-body border-0 shadow table-wrapper table-responsive">
-        <asp:GridView ID="GridMembers" runat="server" ItemType="AmazEng_WAPP.Models.Member" DataKeyNames="Id"
-            SelectMethod="GridMembers_GetData"
-            OnRowDeleted="GridMembers_RowDeleted"
-            onrowcommand="GridMembers_RowCommand"
-            AutoGenerateColumns="false" BorderStyle="None" Width="100%">
-            <Columns>
-                <asp:DynamicField DataField="Id" />
-                <asp:DynamicField DataField="Username" />
-                <asp:DynamicField DataField="Name" />
-                <asp:DynamicField DataField="Email" />
-                <asp:TemplateField HeaderText="Verified">
-                    <ItemTemplate>
-                        <asp:Label Text='<%# Item.EmailVerifiedAt is object ? "Verified" : "Not Verified" %>'
-                            runat="server" />
-                    </ItemTemplate>
-                </asp:TemplateField>
-                <asp:TemplateField HeaderText="Verified">
-                    <ItemTemplate>
-                        <asp:HyperLink runat="server" NavigateUrl='<%#: GetRouteUrl("AdminViewMemberRoute", new {Id = Item.Id }) %>'>
+    <asp:UpdatePanel ID="updatePanelGrid" runat="server">
+        <ContentTemplate>
+            <div class="card card-body border-0 shadow table-wrapper table-responsive">
+                <asp:GridView ID="GridMembers" runat="server" ItemType="AmazEng_WAPP.Models.Member" DataKeyNames="Id"
+                    SelectMethod="GridMembers_GetData"
+                    OnRowDeleted="GridMembers_RowDeleted"
+                    OnRowCommand="GridMembers_RowCommand"
+                    AutoGenerateColumns="false" BorderStyle="None" Width="100%">
+                    <Columns>
+                        <asp:DynamicField DataField="Id" />
+                        <asp:DynamicField DataField="Username" />
+                        <asp:DynamicField DataField="Name" />
+                        <asp:DynamicField DataField="Email" />
+                       <%-- <asp:TemplateField HeaderText="Verified">
+                            <ItemTemplate>
+                                <asp:Label Text='<%# Item.EmailVerifiedAt is object ? "Verified" : "Not Verified" %>'
+                                    runat="server" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Verified">--%>
+                            <ItemTemplate>
+                                <asp:HyperLink runat="server" NavigateUrl='<%#: GetRouteUrl("AdminViewMemberRoute", new {Id = Item.Id }) %>'>
                             <i class="fas fa-eye pe-2"></i></asp:HyperLink>
-                        <asp:HyperLink runat="server" NavigateUrl='<%#: GetRouteUrl("AdminViewMemberRoute", new {Id = Item.Id , Mode = "Edit"}) %>'><i class="fas fa-pen-square pe-2"></i></asp:HyperLink>
-                        <%--the link below will pass the item's Id as parameter to GridMembers_RowCommand with the Command name "delete"--%>
-                        <asp:LinkButton ID="LinkButton1" runat="server"
-                            CommandArgument='<%# Eval("Id") %>'
-                            CommandName="del"
-                            OnClientClick='return confirm("Are you sure to delete this item?");'
-                            ><i class="fas fa-trash"></i></asp:LinkButton>
-                    </ItemTemplate>
-                </asp:TemplateField>
-            </Columns>
-            <EmptyDataTemplate>
-                <div class="row alert alert-warning alert-dismissable fade in" style="margin-bottom: 0px">
-                    There are no items in your shopping cart
-                </div>
-            </EmptyDataTemplate>
-        </asp:GridView>
-    </div>
+                                <asp:HyperLink runat="server" NavigateUrl='<%#: GetRouteUrl("AdminViewMemberRoute", new {Id = Item.Id , Mode = "Edit"}) %>'><i class="fas fa-pen-square pe-2"></i></asp:HyperLink>
+                                <%--the link below will pass the item's Id as parameter to GridMembers_RowCommand with the Command name "delete"--%>
+                                <asp:LinkButton ID="LinkButton1" runat="server"
+                                    CommandArgument='<%# Eval("Id") %>'
+                                    CommandName="del"
+                                    OnClientClick='return confirm("Are you sure to delete this item?");'><i class="fas fa-trash"></i></asp:LinkButton>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                    <EmptyDataTemplate>
+                        There is no member
+                    </EmptyDataTemplate>
+                </asp:GridView>
+            </div>
+        </ContentTemplate>
+        <Triggers>
+            <asp:AsyncPostBackTrigger ControlID="txtSearch" EventName="TextChanged" />
+        </Triggers>
+    </asp:UpdatePanel>
 </asp:Content>

@@ -52,5 +52,10 @@ namespace AmazEng_WAPP.Class.Utils
                 return builder.ToString();
             }
         }
+
+        public static void LogOutput(string msg)
+        {
+            System.Diagnostics.Debug.WriteLine(msg);
+        }
     }
 }

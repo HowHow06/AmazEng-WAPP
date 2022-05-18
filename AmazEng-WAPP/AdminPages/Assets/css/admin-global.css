@@ -1,0 +1,7 @@
+﻿body {
+}
+
+.error {
+    border: 1px red solid;
+    box-shadow: red 1px 0 5px;
+}

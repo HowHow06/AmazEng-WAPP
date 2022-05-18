@@ -141,14 +141,14 @@ namespace AmazEng_WAPP.Class.Auth
         {
             IQueryable<Member> memberQuery;
 
-            memberQuery = db.Members.Where(m => m.Username == username);
+            memberQuery = db.Members.Where(m => m.Username == username && m.DeletedAt == null);
 
             if (memberQuery.Any()) //member found
             {
                 return true;
             }
 
-            memberQuery = db.Members.Where(m => m.Email == email);
+            memberQuery = db.Members.Where(m => m.Email == email && m.DeletedAt == null);
             if (memberQuery.Any()) //member found
             {
                 return true;
@@ -222,6 +222,45 @@ namespace AmazEng_WAPP.Class.Auth
 
             return admin;
         }
+
+        internal static bool IsUsernameRegistered(AmazengContext db, string username, int memberIdToExclude)
+        {
+            var query = db.Members.Where(m =>
+                m.Username == username &&
+                m.DeletedAt == null &&
+                m.Id != memberIdToExclude
+            );
+            return query.Any();
+        }
+
+        internal static bool IsUsernameRegistered(AmazengContext db, string username)
+        {
+            var query = db.Members.Where(m =>
+                m.Username == username &&
+                m.DeletedAt == null
+            );
+            return query.Any();
+        }
+
+        internal static bool isEmailRegistered(AmazengContext db, string email, int memberIdToExclude)
+        {
+            var query = db.Members.Where(m =>
+                  m.Email == email &&
+                  m.DeletedAt == null &&
+                  m.Id != memberIdToExclude
+              );
+            return query.Any();
+        }
+
+        internal static bool isEmailRegistered(AmazengContext db, string email)
+        {
+            var query = db.Members.Where(m =>
+                m.Email == email &&
+                m.DeletedAt == null
+            );
+            return query.Any();
+        }
+
 
         public static void SetCustomAuthCookie(string username, string role, bool rememberMe)
         {

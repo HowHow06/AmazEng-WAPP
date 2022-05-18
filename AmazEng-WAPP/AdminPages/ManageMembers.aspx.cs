@@ -14,13 +14,32 @@ namespace AmazEng_WAPP.AdminPages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            txtSearch.Attributes.Add("onkeyup",
+                @"setTimeout('__doPostBack(\'"
+                    + txtSearch.ClientID.Replace("_", "$") +
+                @"\',\'\')', 0);"
+                );
         }
 
         public IQueryable<Member> GridMembers_GetData()
         {
+            string searchKey = txtSearch.Text.ToLower();
             AmazengContext db = new AmazengContext();
-            var query = db.Members.Where(m => m.DeletedAt == null);
+            IQueryable<Member> query;
+
+            if (string.IsNullOrEmpty(searchKey))
+            {
+                query = db.Members.Where(m => m.DeletedAt == null);
+            }
+            else
+            {
+                query = db.Members.Where(m => m.DeletedAt == null && (
+                 m.Name.ToLower().Contains(searchKey) ||
+                 m.Username.ToLower().Contains(searchKey) ||
+                 m.Email.ToLower().Contains(searchKey)
+             ));
+            }
+
             return query;
         }
 
@@ -47,6 +66,11 @@ namespace AmazEng_WAPP.AdminPages
                 // reload page
                 Response.Redirect(Request.RawUrl);
             }
+        }
+
+        protected void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            GridMembers.DataBind();
         }
     }
 }

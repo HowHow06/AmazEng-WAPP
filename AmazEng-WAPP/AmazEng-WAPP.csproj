@@ -125,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="AdminPages\Assets\css\admin-global.css" />
     <Content Include="AdminPages\Forgot.aspx" />
     <Content Include="AdminPages\Login.aspx" />
     <Content Include="AdminPages\Assets\js\Admin.js" />
@@ -992,7 +993,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AdminPages\Assets\css\" />
     <Folder Include="AdminPages\Assets\vendors\chartist\dist\scss\settings\" />
     <Folder Include="AdminPages\Assets\vendors\waypoints\src\" />
     <Folder Include="AdminPages\Assets\vendors\waypoints\test\" />
