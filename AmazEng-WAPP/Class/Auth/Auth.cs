@@ -140,21 +140,21 @@ namespace AmazEng_WAPP.Class.Auth
         internal static bool IsMemberRegistered(string username, string email, AmazengContext db)
         {
             IQueryable<Member> memberQuery;
-           
+
             memberQuery = db.Members.Where(m => m.Username == username);
-           
-            if (memberQuery.Any() == false) //member not found
+
+            if (memberQuery.Any()) //member found
             {
-                memberQuery = db.Members.Where(m => m.Email == email);
-                if (memberQuery.Any() == false) //member not found
-                {
-                    return false;
-
-                }
-
+                return true;
             }
 
-            return true;
+            memberQuery = db.Members.Where(m => m.Email == email);
+            if (memberQuery.Any()) //member found
+            {
+                return true;
+            }
+
+            return false;
         }
 
 
