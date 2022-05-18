@@ -16,23 +16,26 @@
         <!-- / .container -->
     </section>
     <!-- Banner Section End -->
-   <!-- Learn Idiom With Us Section Start -->
+
+       <!-- Welcome to AmazEng Start -->
     <section class="features section-padding ">
         <div class="container">
             <div class="row align-items-center justify-content-end mb-50">
                 <div class="col-xl-6 pe-xl-5 col-lg-6">
-                    <img src="assets/images/feature-image.jpg" alt="" class="img-fluid">
+                    <span class="subheading">What do we do?</span>
+                        <h2 class="mb-20 font-lg">Welcome to AmazEng </h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis recusandae reiciendis cumque, sequi vitae illum dolorem</p>
+                    
                 </div>
 
                 <div class="col-xl-6 col-lg-6 ">
                     <div class="section-heading mt-5 mt-lg-0 mb-4">
-                        <span class="subheading">Know the ropes, learn the ropes</span>
-                        <h2 class="mb-20 font-lg">Learn Idioms With Us </h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis recusandae reiciendis cumque, sequi vitae illum dolorem</p>
+                        <img src="assets/images/feature-image.jpg" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Learn Idiom With Us Section END -->
+    <!-- Welcome to AmazEng Section END -->
+
 </asp:Content>
