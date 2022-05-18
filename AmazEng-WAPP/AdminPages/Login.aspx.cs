@@ -24,7 +24,7 @@ namespace AmazEng_WAPP.AdminPages
                 Session[Auth.GetAdminSessionName()] = admin.Username;
                 Response.Redirect(GetRouteUrl("AdminDashboardRoute", new { }), true);
             }
-            Util.ShowAlert(this.Page, "No admin founded");
+            //Util.ShowAlert(this.Page, "No admin founded");
         }
 
         protected void btnAdminLogin_Click(object sender, EventArgs e)

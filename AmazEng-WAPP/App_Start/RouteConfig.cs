@@ -86,6 +86,36 @@ namespace AmazEng_WAPP
               "Admin/Members",
               "~/AdminPages/ManageMembers.aspx"
           );
+
+            routes.MapPageRoute(
+              "AdminIdiomsRoute",
+              "Admin/Idioms",
+              "~/AdminPages/ManageMembers.aspx"
+          );
+
+            routes.MapPageRoute(
+              "AdminIdiomTagsRoute",
+              "Admin/IdiomTags",
+              "~/AdminPages/ManageMembers.aspx"
+          );
+
+            routes.MapPageRoute(
+              "AdminAdminsRoute",
+              "Admin/Admins",
+              "~/AdminPages/ManageMembers.aspx"
+          );
+
+            routes.MapPageRoute(
+              "AdminMessagesRoute",
+              "Admin/Messages",
+              "~/AdminPages/ManageMembers.aspx"
+          );
+
+            routes.MapPageRoute(
+              "AdminReportsRoute",
+              "Admin/Reports",
+              "~/AdminPages/ManageMembers.aspx"
+          );
         }
     }
 }
