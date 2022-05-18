@@ -25,6 +25,9 @@
                                 </label>
                                 <asp:TextBox class="woocommerce-Input woocommerce-Input--text input-text form-control" ID="txtEmail" runat="server" autocomplete="email" ToolTip="Registered Email" placeholder="Email"></asp:TextBox>
                             </p>
+                            <div class="invalid-feedback" runat="server" id="errInvalidEmail">
+                                Email does not exist.
+                            </div>
                             <p class="form-row">
                                 <asp:Button ID="btnSubmit" class="woocommerce-button button woocommerce-form-login__submit" OnClick="btnSubmit_Click" runat="server" Text="Submit" />
                             </p>

@@ -1,12 +1,15 @@
 ﻿using AmazEng_WAPP.Class.Auth;
+using AmazEng_WAPP.Class.Services;
 using AmazEng_WAPP.Class.Utils;
 using AmazEng_WAPP.DataAccess;
 using AmazEng_WAPP.Models;
+using MimeKit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.ModelBinding;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -243,6 +246,36 @@ namespace AmazEng_WAPP.AdminPages.MemberPages
             controlToValidate.Attributes.Add("class", "form-control");
             validator.Attributes.Add("class", "invalid-feedback");
             args.IsValid = true;
+        }
+
+        protected void btnResetPassword_Click(object sender, EventArgs e)
+        {
+            int memberId = Convert.ToInt32((string)RouteData.Values["Id"]);
+            AmazengContext db = new AmazengContext();
+            Member member = db.Members.Find(memberId);
+
+            if (member == null)
+            {
+                return;
+            }
+
+            string newPassword = Membership.GeneratePassword(10, 3);
+            member.Password = Auth.CreatePasswordHash(newPassword);
+            db.SaveChanges();
+
+            // send reset notice
+            EmailService.CreateAndSendHTMLEmail($"<div style='font-family: Arial, Helvetica, sans-serif;'>" +
+                $"<p>Dear Member, </p><br/> " +
+                $"<p>Your password has been reset. <br/>" +
+                $"Your new password is:<u>{newPassword}</u></p>" +
+                $"<br/><br/>" +
+                $"Regards,<br/>" +
+                $"AmazEng Team" +
+                $"</div>"
+                ,
+                member.Email
+                );
+            Util.ShowAlertAndRedirect(this, "The password is successfully reset.", Request.RawUrl);
         }
     }
 }
