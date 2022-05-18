@@ -8,11 +8,11 @@
             <h2 class="h3 m-0">Members</h2>
         </div>
         <div class="btn-toolbar mb-2 mb-md-0 d-flex">
-            <a href="#" class="btn btn-sm btn-gray-800 d-inline-flex align-items-center">
+            <asp:HyperLink runat="server" NavigateUrl='<%$RouteUrl:RouteName=AdminNewMemberRoute%>' class="btn btn-sm btn-gray-800 d-inline-flex align-items-center">
                 <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 New
-            </a>
+            </asp:HyperLink>
        <%--     <asp:Button class="btn btn-sm btn-outline-gray-600 ms-2" Text="Delete" runat="server" ID="btnDelete" disabled="disabled" />--%>
         </div>
     </div>

@@ -50,7 +50,7 @@
                 <div class="container">
                     <div class="d-flex align-items-center justify-content-between">
                         <div class="site-logo">
-                            <asp:HyperLink NavigateUrl="<%$RouteUrl:RouteName=DefaultRoute%>" runat="server">
+                            <asp:HyperLink NavigateUrl='<%$RouteUrl:RouteName=DefaultRoute%>' runat="server">
                                 <img src="Assets/images/logo-long.png" alt="logo" class="img-fluid" />
                             </asp:HyperLink>
                         </div>

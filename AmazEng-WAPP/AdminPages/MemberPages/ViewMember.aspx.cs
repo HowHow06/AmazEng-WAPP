@@ -26,6 +26,13 @@ namespace AmazEng_WAPP.AdminPages.MemberPages
             {
                 //is edit mode
                 FormMemberDetail.ChangeMode(FormViewMode.Edit);
+                return;
+            }
+
+            if (string.Equals(mode, "new", StringComparison.OrdinalIgnoreCase))
+            {
+                //is edit mode
+                FormMemberDetail.ChangeMode(FormViewMode.Insert);
             }
         }
 

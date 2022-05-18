@@ -340,6 +340,7 @@
     <Content Include="App_Data\AmazengDb_log.ldf">
       <DependentUpon>AmazengDb.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\InsertDummyMembersQuery.sql" />
     <Content Include="App_Data\RemoveIdiomAdminDataQuery.sql" />
     <Content Include="App_Data\RemoveIdiomDataQuery.sql" />
     <Content Include="Assets\css\home.css" />

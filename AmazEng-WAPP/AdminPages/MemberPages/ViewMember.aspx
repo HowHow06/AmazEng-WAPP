@@ -167,6 +167,9 @@
             </div>
 
         </EditItemTemplate>
+        <InsertItemTemplate>
+            hi
+        </InsertItemTemplate>
     </asp:FormView>
 
 </asp:Content>
