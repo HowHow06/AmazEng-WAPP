@@ -136,11 +136,10 @@ namespace AmazEng_WAPP.Class.Auth
             return member;
         }
 
-        internal static Member CheckRegisteredMember(string username, string email, AmazengContext db)
+        internal static bool IsMemberRegistered(string username, string email, AmazengContext db)
         {
             IQueryable<Member> memberQuery;
-            Member member;
-
+           
             memberQuery = db.Members.Where(m => m.Username == username);
            
             if (memberQuery.Any() == false) //member not found
@@ -148,15 +147,13 @@ namespace AmazEng_WAPP.Class.Auth
                 memberQuery = db.Members.Where(m => m.Email == email);
                 if (memberQuery.Any() == false) //member not found
                 {
-                    return null;
+                    return false;
 
                 }
 
             }
 
-            member = memberQuery.First();
-
-            return member;
+            return true;
         }
 
 

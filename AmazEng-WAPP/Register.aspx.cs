@@ -24,15 +24,13 @@ namespace AmazEng_WAPP
         protected void btnRegister_Click(object sender, EventArgs e)
         {
             AmazengContext db = new AmazengContext();
-            IQueryable<Member> memberQuery;
             string name = txtName.Text;
             string username = txtUsername.Text;
             string email = txtEmail.Text;
             string password = txtPassword.Text;
             string repassword = txtRePassword.Text;
-            bool rememberMe = ckbTerms.Checked;
-            string role = "member";
-            Member member;
+            bool isTermChecked = ckbTerms.Checked;
+            bool member;
 
 
             //Check if password and reenter password is same value
@@ -46,14 +44,16 @@ namespace AmazEng_WAPP
 
             //Check if email is valid
 
-            if (!email.Contains("@"))
+            if (!Validator.IsValidEmail(email))
             {
                 Util.ShowAlert(this.Page, "Please Enter Valid Email Address!");
                 txtEmail.Text = " ";
+                return;
             }
+
             //Check if all data is filled out in the form
 
-            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || (rememberMe==false))
+            if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(username) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || (isTermChecked == false))
             {
                 Util.ShowAlert(this.Page, "Please Fill Up All Fields!");
                 return;
@@ -63,25 +63,15 @@ namespace AmazEng_WAPP
 
             // Check if the user record exists, if yes registration is not performed
             
-            member = Auth.CheckRegisteredMember(username, email, db);
+            member = Auth.IsMemberRegistered(username, email, db);
 
-            //Get number of lines from database
 
-            
-
-            if (member is null)
+            if (member is false)
             {
-
-                int row_count =
-            db.Database.ExecuteSqlCommand(@"
-               SELECT COUNT(1) FROM dbo.Members;
-            ");
-                int MemberId = row_count + 1;
 
                 db.Members.Add(
                 new Member
                 {
-                    Id = MemberId,
                     Name = name,
                     Username = username,
                     Password = Auth.CreatePasswordHash(password),
@@ -89,10 +79,7 @@ namespace AmazEng_WAPP
                 }
                 );
                 db.SaveChanges();
-                MemberId = 0;
 
-
-               
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), 
 "alert",
