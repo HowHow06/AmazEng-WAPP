@@ -35,10 +35,13 @@ namespace AmazEng_WAPP
             email.Subject = "Password Recovery";
             email.Body = new TextPart(TextFormat.Html)
             {
-                Text = $"" +
-                $"<div style='font-family: Arial, Helvetica, sans-serif;'>" +
-                $"<h1>Password Recovery</h1><p>Dear member, your password has been reset successfully.</p>" +
-                $"<p>Your new password is:<u>{newPassword}</p></u>" +
+                Text = $"<div style='font-family: Arial, Helvetica, sans-serif;'>" +
+                $"<p>Dear Member, </p><br/> " +
+                $"<p>Your password has been reset successfully. <br/>" +
+                $"Your new password is:<u>{newPassword}</u></p>" +
+                $"<br/><br/>" +
+                $"Regards,<br/>" +
+                $"AmazEng Team" +
                 $"</div>"
             };
 
