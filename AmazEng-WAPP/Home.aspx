@@ -72,10 +72,10 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="counter-box bg-1 mb-4 mb-lg-0">
                             <i class="flaticon-man"></i>
-                            <div class="count">
-                                <span class="counter h2">200</span>
+                            <div class="count h2">
+                                <span class="counter">24/7</span>
                             </div>
-                            <p>Members</p>
+                            <p>Support</p>
                         </div>
                     </div>
 

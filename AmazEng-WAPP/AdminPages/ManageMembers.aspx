@@ -35,13 +35,17 @@
                             <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path></svg>
                         <span class="visually-hidden">Toggle Dropdown</span>
                     </button>
-                    <div class="dropdown-menu dropdown-menu-xs dropdown-menu-end pb-0">
+                    <div class="dropdown-menu dropdown-menu-xs dropdown-menu-end pb-0" runat="server" id="pageSizePicker">
                         <span class="small ps-3 fw-bold text-dark">Show</span>
-                        <a class="dropdown-item d-flex align-items-center fw-bold" href="#">10
-                            <svg class="icon icon-xxs ms-auto" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg></a>
-                        <a class="dropdown-item fw-bold" href="#">20</a>
-                        <a class="dropdown-item fw-bold rounded-bottom" href="#">30</a>
+                        <asp:LinkButton class="dropdown-item d-flex align-items-center fw-bold" CommandArgument='10' OnClick="anchorShow_Click" runat="server" ID="anchorShow10">
+                            <span>10</span>
+                        </asp:LinkButton>
+                        <asp:LinkButton class="dropdown-item d-flex align-items-center fw-bold" CommandArgument='20' OnClick="anchorShow_Click" runat="server" ID="anchorShow20"> 
+                            <span>20</span>
+                        </asp:LinkButton>
+                        <asp:LinkButton class="dropdown-item d-flex align-items-center fw-bold rounded-bottom" CommandArgument='30' OnClick="anchorShow_Click" runat="server" ID="anchorShow30">
+                            <span>30</span>
+                        </asp:LinkButton>
                     </div>
                 </div>
             </div>
@@ -50,23 +54,28 @@
     <asp:UpdatePanel ID="updatePanelGrid" runat="server">
         <ContentTemplate>
             <div class="card card-body border-0 shadow table-wrapper table-responsive">
-                <asp:GridView ID="GridMembers" runat="server" ItemType="AmazEng_WAPP.Models.Member" DataKeyNames="Id"
+                <asp:GridView ID="GridMembers"
+                    runat="server"
+                    ItemType="AmazEng_WAPP.Models.Member"
+                    DataKeyNames="Id"
                     SelectMethod="GridMembers_GetData"
                     OnRowDeleted="GridMembers_RowDeleted"
                     OnRowCommand="GridMembers_RowCommand"
+                    AllowSorting="true"
+                    AllowPaging="true" PageSize="10"
                     AutoGenerateColumns="false" BorderStyle="None" Width="100%">
                     <Columns>
                         <asp:DynamicField DataField="Id" />
                         <asp:DynamicField DataField="Username" />
                         <asp:DynamicField DataField="Name" />
                         <asp:DynamicField DataField="Email" />
-                       <%-- <asp:TemplateField HeaderText="Verified">
+                        <%--        <asp:TemplateField HeaderText="Verified">
                             <ItemTemplate>
                                 <asp:Label Text='<%# Item.EmailVerifiedAt is object ? "Verified" : "Not Verified" %>'
                                     runat="server" />
                             </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Verified">--%>
+                        </asp:TemplateField>--%>
+                        <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <asp:HyperLink runat="server" NavigateUrl='<%#: GetRouteUrl("AdminViewMemberRoute", new {Id = Item.Id }) %>'>
                             <i class="fas fa-eye pe-2"></i></asp:HyperLink>
@@ -82,6 +91,7 @@
                     <EmptyDataTemplate>
                         There is no member
                     </EmptyDataTemplate>
+                    <PagerStyle CssClass="pager-control" />
                 </asp:GridView>
             </div>
         </ContentTemplate>

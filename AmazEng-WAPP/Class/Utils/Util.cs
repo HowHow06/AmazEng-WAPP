@@ -6,6 +6,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 
 namespace AmazEng_WAPP.Class.Utils
 {
@@ -28,6 +29,17 @@ namespace AmazEng_WAPP.Class.Utils
         public static void ShowAlertAndRedirect(Page page, string message, string url)
         {
             ScriptManager.RegisterStartupScript(page, page.GetType(), "redirectFunction", $"alert('{message}'); window.location.replace('{url}')", true);
+        }
+
+        internal static HtmlGenericControl CreateCheckSvgControl()
+        {
+            HtmlGenericControl svg = new HtmlGenericControl("svg");
+            svg.Attributes.Add("class", "icon icon-xxs ms-auto");
+            svg.Attributes.Add("fill", "currentColor");
+            svg.Attributes.Add("viewBox", "0 0 20 20");
+            svg.Attributes.Add("xmlns", "http://www.w3.org/2000/svg");
+            svg.InnerHtml = "<path fill-rule='evenodd' d='M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z' clip-rule='evenodd'></path>";
+            return svg;
         }
 
         public static void LogConsole(Page page, string message)

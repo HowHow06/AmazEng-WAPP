@@ -1,4 +1,5 @@
-﻿using AmazEng_WAPP.DataAccess;
+﻿using AmazEng_WAPP.Class.Utils;
+using AmazEng_WAPP.DataAccess;
 using AmazEng_WAPP.Models;
 using System;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace AmazEng_WAPP.AdminPages
@@ -19,6 +21,29 @@ namespace AmazEng_WAPP.AdminPages
                     + txtSearch.ClientID.Replace("_", "$") +
                 @"\',\'\')', 0);"
                 );
+            if (!IsPostBack)
+            {
+                CheckSelectPageSize();
+            }
+        }
+
+        protected void CheckSelectPageSize()
+        {
+            int pageSize = GridMembers.PageSize;
+            string pageSizeAnchorId = $"anchorShow{pageSize}";
+
+            var control = pageSizePicker.FindControl(pageSizeAnchorId);
+            CheckPageSizeButtonControl(control, pageSize);
+        }
+
+        protected void CheckPageSizeButtonControl(Control control, int pageSize)
+        {
+            HtmlGenericControl svg = Util.CreateCheckSvgControl();
+            HtmlGenericControl pageSizeSpan = new HtmlGenericControl("span");
+            pageSizeSpan.InnerText = pageSize.ToString();
+
+            control.Controls.Add(pageSizeSpan);
+            control.Controls.Add(svg);
         }
 
         public IQueryable<Member> GridMembers_GetData()
@@ -71,6 +96,14 @@ namespace AmazEng_WAPP.AdminPages
         protected void txtSearch_TextChanged(object sender, EventArgs e)
         {
             GridMembers.DataBind();
+        }
+
+        protected void anchorShow_Click(object sender, EventArgs e)
+        {
+            var btn = sender as LinkButton;
+            string pageSize = btn.CommandArgument;
+            GridMembers.PageSize = Convert.ToInt32(pageSize);
+            CheckPageSizeButtonControl(btn, Convert.ToInt32(pageSize));
         }
     }
 }

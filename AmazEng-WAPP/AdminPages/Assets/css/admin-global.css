@@ -5,3 +5,11 @@
     border: 1px red solid;
     box-shadow: red 1px 0 5px;
 }
+
+.pager-control table {
+    margin: 5px auto;
+}
+
+.pager-control a {
+    text-decoration: underline;
+}
