@@ -38,4 +38,74 @@
     </section>
     <!-- Welcome to AmazEng Section END -->
 
+        <!--  Our goal Section -->
+
+    <section class="course-wrapper section-padding-btm">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8">
+                    <div class="section-heading mb-70 text-center">
+                        <h2 class="font-lg">Our goal</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="counter-box bg-1 mb-4 mb-lg-0">
+                            <i class="flaticon-man"></i>
+                            <div class="count">
+                            <span>Availability</span>
+                            </div>
+                            <p>Provide the best english learning platform for everyone, everywhere</p>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="counter-box bg-3">
+                            <i class="flaticon-satisfaction"></i>
+                            <div class="count">
+                                <span>Quality</span>
+                            </div>
+                            <p>Advanced learning experience with the personalised contents</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6">
+                        <div class="counter-box bg-2 mb-4 mb-lg-0">
+                            <i class="flaticon-infographic"></i>
+                            <div class="count">
+                                <span>Adoptability</span>
+                            </div>
+                            <p>Keep enhancing the contents based on the feedback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--  Why Us Section End -->
+
+     <!-- Our Quote Start -->
+    <section class="choose-area pb-60 pt-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="choose-content text-center pt-5">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left fa-2x"></i>
+                        </div>
+                        <p class="quote-text py-5">We belive that learning new things will bring you the opportunity to make a difference.</p>
+                        <p class="choose-option">- The AmazEng Team</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Our Quote End -->
+
 </asp:Content>
