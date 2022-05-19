@@ -24,19 +24,47 @@
 
         protected override void Seed(AmazEng_WAPP.DataAccess.AmazengContext context)
         {
-            ClearIdiomsAndTagsTable(context);
-            //  This method will be called after migrating to the latest version.
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            //  to avoid creating duplicate seed data.
-            InitialiseTagData(context);
-            InitialiseIdiomData(context);
+            //ClearIdiomsAndTagsTable(context);
+
+            InitializeLibraryTypes(context);
+
+            ////  This method will be called after migrating to the latest version.
+            ////  You can use the DbSet<T>.AddOrUpdate() helper extension method
+            ////  to avoid creating duplicate seed data.
+            //InitialiseTagData(context);
+            //InitialiseIdiomData(context);
             // add member
             InitialiseDefaultMember(context);
 
-            ClearAdminAndRoleTable(context);
-            InitialiseAdminRole(context);
-            // add admin
-            InitialiseDefaultAdmin(context);
+            //ClearAdminAndRoleTable(context);
+            //InitialiseAdminRole(context);
+            //// add admin
+            //InitialiseDefaultAdmin(context);
+        }
+
+        private void InitializeLibraryTypes(AmazengContext context)
+        {
+            context.Database.ExecuteSqlCommand(@"
+                DELETE FROM [dbo].LibraryTypes;
+                DBCC CHECKIDENT ('LibraryTypes', RESEED, 0);
+            ");
+            Console.WriteLine("Cleared Library Types");
+            context.LibraryTypes.AddOrUpdate(
+                 new LibraryType
+                 {
+                     Name = "Favourite"
+                 },
+                 new LibraryType
+                 {
+                     Name = "History"
+                 },
+                 new LibraryType
+                 {
+                     Name = "LearnLater"
+                 }
+                 );
+            context.SaveChanges();
+            Console.WriteLine("Created library types");
         }
 
         private void ClearAdminAndRoleTable(AmazengContext context)

@@ -409,6 +409,7 @@
     <Content Include="Assets\vendors\owl\assets\owl.theme.green.min.css" />
     <Content Include="Assets\vendors\owl\assets\owl.video.play.png" />
     <Content Include="Assets\vendors\owl\owl.carousel.min.js" />
+    <Content Include="Class\Controls\IdiomCard.ascx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -714,6 +715,13 @@
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Class\Auth\Auth.cs" />
+    <Compile Include="Class\Controls\IdiomCard.ascx.cs">
+      <DependentUpon>IdiomCard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Class\Controls\IdiomCard.ascx.designer.cs">
+      <DependentUpon>IdiomCard.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Class\Services\EmailService.cs" />
     <Compile Include="Class\Utils\Validator.cs" />
     <Compile Include="Contact.aspx.cs">

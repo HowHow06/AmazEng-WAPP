@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AmazEng_WAPP.Class.Controls;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,14 +22,15 @@ namespace AmazEng_WAPP.Class.Utils
         }
 
 
-        public static void ShowAlert(Page page, string message)
+        public static void ShowAlert(Control contorl, string message)
         {
-            ScriptManager.RegisterStartupScript(page, page.GetType(), "alertFunction", $"alert('{message}');", true);
+            ScriptManager.RegisterStartupScript(contorl, contorl.GetType(), "alertFunction", $"alert('{message}');", true);
         }
 
-        public static void ShowAlertAndRedirect(Page page, string message, string url)
+        public static void ShowAlertAndRedirect(Control control, string message, string url)
         {
-            ScriptManager.RegisterStartupScript(page, page.GetType(), "redirectFunction", $"alert('{message}'); window.location.replace('{url}')", true);
+            LogConsole(control, "asdasdasd");
+            ScriptManager.RegisterStartupScript(control, control.GetType(), "redirectFunction", $"alert('{message}'); window.location.replace('{url}')", true);
         }
 
         internal static HtmlGenericControl CreateCheckSvgControl()
@@ -42,9 +44,16 @@ namespace AmazEng_WAPP.Class.Utils
             return svg;
         }
 
-        public static void LogConsole(Page page, string message)
+        internal static void ShowConfirmAndRedirect(Control control, string message, string url)
         {
-            ScriptManager.RegisterStartupScript(page, page.GetType(), "logFunction", $"console.log('{message}');", true);
+            ScriptManager.RegisterStartupScript(control, control.GetType(),
+                "confirmAndRedirectFunction",
+                $"if(confirm('{message}')) window.location.replace('{url}')", true);
+        }
+
+        public static void LogConsole(Control control, string message)
+        {
+            ScriptManager.RegisterStartupScript(control, control.GetType(), "logFunction", $"console.log('{message}');", true);
         }
 
         public static string ComputeSha256Hash(string rawData)

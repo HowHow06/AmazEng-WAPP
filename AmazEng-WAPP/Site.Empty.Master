@@ -1,6 +1,5 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Empty.master.cs" Inherits="AmazEng_WAPP.Site_Empty" %>
 
-
 <!DOCTYPE html>
 
 <html lang="en">

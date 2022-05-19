@@ -143,12 +143,12 @@ namespace AmazEng_WAPP
             args.IsValid = true;
         }
 
-        protected void validatorTerms_ServerValidate(object source, ServerValidateEventArgs args)
-        {
-            bool isTermsChecked = ckbTerms.Checked;
-            validatorTerms.Visible = !isTermsChecked;
-            args.IsValid = isTermsChecked;
-        }
+        //protected void validatorTerms_ServerValidate(object source, ServerValidateEventArgs args)
+        //{
+        //    bool isTermsChecked = ckbTerms.Checked;
+        //    validator.Visible = !isTermsChecked;
+        //    args.IsValid = isTermsChecked;
+        //}
     }
 
 }

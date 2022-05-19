@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Web;
 
 namespace AmazEng_WAPP.Models
 {
@@ -29,6 +31,23 @@ namespace AmazEng_WAPP.Models
         public ICollection<Library> GetLibraries()
         {
             return LibraryIdioms.Select(e => e.Library).ToList();
+        }
+
+        public ICollection<string> GetMeanings()
+        {
+            dynamic meanings = JsonConvert.DeserializeObject(this.Meaning);
+            List<string> meaningList = new List<string>();
+
+            foreach (var meaning in meanings)
+            {
+                if (meaning.ToString().Length == 0)
+                {
+                    continue;
+                }
+                meaningList.Add(HttpUtility.UrlDecode(meaning.ToString()));
+            }
+
+            return meaningList;
         }
     }
 }

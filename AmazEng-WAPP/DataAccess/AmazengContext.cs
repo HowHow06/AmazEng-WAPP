@@ -1,5 +1,6 @@
 using AmazEng_WAPP.Models;
 using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
@@ -54,6 +55,11 @@ namespace AmazEng_WAPP.DataAccess
             //modelBuilder.Entity<ICustomSoftDelete>().MapToStoredProcedures();
         }
 
+        internal Member GetMemberByUsername(string username)
+        {
+            return this.Members.Where(m => m.Username == username && m.DeletedAt == null).First();
+        }
+
         public override int SaveChanges()
         {
             foreach (var entry in ChangeTracker.Entries<ICustomSoftDelete>().Where(e => e.State == EntityState.Deleted))
@@ -71,6 +77,26 @@ namespace AmazEng_WAPP.DataAccess
             foreach (var entry in ChangeTracker.Entries<IHasTimeStamp>().Where(e => e.State == EntityState.Added))
             {
                 entry.Entity.CreatedAt = DateTime.UtcNow;
+            }
+
+            foreach (var entry in ChangeTracker.Entries<Member>().Where(e => e.State == EntityState.Added))
+            {
+                var member = entry.Entity;
+                member.Libraries = new List<Library>();
+
+                member.Libraries.Add(new Library
+                {
+                    LibraryTypeId = LibraryType.GetFavouriteLibraryType().Id,
+                });
+                member.Libraries.Add(new Library
+                {
+                    LibraryTypeId = LibraryType.GetHistoryLibraryType().Id,
+                });
+                member.Libraries.Add(new Library
+                {
+                    LibraryTypeId = LibraryType.GetLearnLaterLibraryType().Id,
+                });
+
             }
 
             return base.SaveChanges();

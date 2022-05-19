@@ -90,7 +90,6 @@
                                             <asp:CheckBox class="woocommerce-form__input woocommerce-form__input-checkbox auth-checkbox" ID="ckbTerms" runat="server" Text="Accept the Terms and Privacy Policy" />
                                         </label>
                                     </p>
-
                                     <p class="woocommerce-LostPassword lost_password">
                                         <a href="forgot">Forgot password?</a>
                                     </p>
