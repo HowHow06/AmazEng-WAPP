@@ -12,6 +12,7 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace AmazEng_WAPP
 {
     public partial class Register : System.Web.UI.Page
@@ -31,6 +32,19 @@ namespace AmazEng_WAPP
             string repassword = txtRePassword.Text;
             bool isTermChecked = ckbTerms.Checked;
             bool isMemberRegistered;
+
+
+            //Check if name contains numbers and special characters
+
+
+            if (!Validator.IsValidName(name))
+            {
+                Util.ShowAlert(this.Page, "Name Cannot Contain Numbers/Special Characters!");
+                return;
+            }
+
+
+
 
             //Check if password and reenter password is same value
 

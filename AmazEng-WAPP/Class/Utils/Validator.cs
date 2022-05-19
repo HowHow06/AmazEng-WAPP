@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Text.RegularExpressions;
 
 namespace AmazEng_WAPP.Class.Utils
 {
@@ -13,6 +14,19 @@ namespace AmazEng_WAPP.Class.Utils
             {
                 var addr = new System.Net.Mail.MailAddress(email);
                 return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+        public static bool IsValidName(string name)
+        {
+            try
+            {
+                return Regex.IsMatch(name, @"^[a-zA-Z]+$");
             }
             catch
             {
