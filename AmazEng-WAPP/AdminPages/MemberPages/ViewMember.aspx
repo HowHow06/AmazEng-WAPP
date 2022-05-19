@@ -10,7 +10,6 @@
             document.getElementById('imgProfilePicture').src = imgTempUrl;
             return false;
         };
-
     </script>
     <asp:FormView ID="FormMemberDetail" runat="server" ItemType="AmazEng_WAPP.Models.Member" SelectMethod="FormMemberDetail_GetItem" RenderOuterTable="false">
         <ItemTemplate>
