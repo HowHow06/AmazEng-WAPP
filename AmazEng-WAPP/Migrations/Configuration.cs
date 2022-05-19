@@ -151,7 +151,15 @@
                     Password = Auth.CreatePasswordHash("admin"),
                     Email = "limhowardbb+admin01@gmail.com",
                     Role = context.GetSuperAdminRole()
-                }
+                },
+                 new Admin
+                 {
+                     Name = "Berry Newbie Admin",
+                     Username = "admin23",
+                     Password = Auth.CreatePasswordHash("admin"),
+                     Email = "limhowardbb+admin02@gmail.com",
+                     Role = context.GetNormalAdminRole()
+                 }
                 );
             context.SaveChanges();
             Console.WriteLine("Created default admin");

@@ -127,7 +127,7 @@
                                     <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path><path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path></svg>
                             </span>
                             <span class="sidebar-text">Dashboard</span>
-                        </asp:HyperLink >
+                        </asp:HyperLink>
                     </li>
                     <li class="nav-item ">
                         <asp:HyperLink NavigateUrl="<%$RouteUrl:RouteName=AdminMembersRoute%>" runat="server" class="nav-link">
@@ -136,7 +136,7 @@
                                     <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"></path></svg>
                             </span>
                             <span class="sidebar-text">Members</span>
-                        </asp:HyperLink >
+                        </asp:HyperLink>
                     </li>
                     <li class="nav-item ">
                         <asp:HyperLink NavigateUrl="<%$RouteUrl:RouteName=AdminIdiomsRoute%>" runat="server" class="nav-link">
@@ -156,6 +156,8 @@
                             <span class="sidebar-text">Idiom Tags</span>
                         </asp:HyperLink>
                     </li>
+                    <%if (this.Admin.Role.HasManageAdminsPermission())
+                        { %>
                     <li class="nav-item ">
                         <asp:HyperLink NavigateUrl="<%$RouteUrl:RouteName=AdminAdminsRoute%>" runat="server" class="nav-link">
                             <span class="sidebar-icon">
@@ -165,8 +167,10 @@
                             <span class="sidebar-text">Admins</span>
                         </asp:HyperLink>
                     </li>
+                    <% } %>
+
                     <li class="nav-item">
-                        <asp:HyperLink NavigateUrl="<%$RouteUrl:RouteName=AdminMessagesRoute%>" runat="server" target="_blank" class="nav-link d-flex justify-content-between">
+                        <asp:HyperLink NavigateUrl="<%$RouteUrl:RouteName=AdminMessagesRoute%>" runat="server" Target="_blank" class="nav-link d-flex justify-content-between">
                             <span>
                                 <span class="sidebar-icon">
                                     <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -180,7 +184,7 @@
                         </asp:HyperLink>
                     </li>
                     <li class="nav-item">
-                        <asp:HyperLink NavigateUrl="<%$RouteUrl:RouteName=AdminReportsRoute%>" runat="server" target="_blank" class="nav-link d-flex justify-content-between">
+                        <asp:HyperLink NavigateUrl="<%$RouteUrl:RouteName=AdminReportsRoute%>" runat="server" Target="_blank" class="nav-link d-flex justify-content-between">
                             <span>
                                 <span class="sidebar-icon">
                                     <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -240,14 +244,14 @@
                                             src="https://via.placeholder.com/600x600" />
                                         <div
                                             class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
-                                            <span class="mb-0 font-small fw-bold text-gray-900">Admin Name Here</span>
+                                            <span class="mb-0 font-small fw-bold text-gray-900"><%= this.Admin.Name%></span>
                                         </div>
                                     </div>
                                 </a>
                                 <div
                                     class="dropdown-menu dashboard-dropdown dropdown-menu-end mt-2 py-1">
                                     <%--  <div role="separator" class="dropdown-divider my-1"></div>--%>
-                                    <asp:LinkButton  class="dropdown-item d-flex align-items-center" runat="server" ID="btnAdminLogout" OnClick="btnAdminLogout_Click">
+                                    <asp:LinkButton class="dropdown-item d-flex align-items-center" runat="server" ID="btnAdminLogout" OnClick="btnAdminLogout_Click">
                                         <svg
                                             class="dropdown-icon text-danger me-2"
                                             fill="none"

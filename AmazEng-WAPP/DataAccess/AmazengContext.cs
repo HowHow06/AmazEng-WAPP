@@ -117,6 +117,11 @@ namespace AmazEng_WAPP.DataAccess
         {
             return this.AdminRoles.Where(adminRole => adminRole.Name == "Super Admin").First();
         }
+
+        public AdminRole GetNormalAdminRole()
+        {
+            return this.AdminRoles.Where(adminRole => adminRole.Name == "Admin").First();
+        }
     }
 
     //public class MyEntity

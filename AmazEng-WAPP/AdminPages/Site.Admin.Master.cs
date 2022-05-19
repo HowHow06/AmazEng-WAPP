@@ -12,6 +12,8 @@ namespace AmazEng_WAPP.AdminPages
 {
     public partial class Site_Admin : System.Web.UI.MasterPage
     {
+        public Admin Admin { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             AmazengContext db = new AmazengContext();
@@ -20,7 +22,7 @@ namespace AmazEng_WAPP.AdminPages
             {
                 Response.Redirect(GetRouteUrl("AdminLoginRoute", new { }));
             }
-
+            Admin = admin;
         }
 
         protected void btnAdminLogout_Click(object sender, EventArgs e)

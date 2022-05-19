@@ -15,13 +15,13 @@
 
                         <asp:UpdatePanel ID="udpIdiomOfTheDay" runat="server" ChildrenAsTriggers="false" UpdateMode="Conditional">
                             <ContentTemplate>
-                                <div style="min-height:245px">
+                                <div style="min-height: 245px">
 
                                     <span class="subheading">Idiom of the day</span>
                                     <h1 class="cd-headline clip is-full-width">
-                                        <asp:UpdateProgress runat="server">
-                                            <ProgressTemplate>loading...</ProgressTemplate>
-                                        </asp:UpdateProgress>
+                                        <div runat="server" id="divLoading" style="display: none">
+                                            loading...
+                                        </div>
                                         <div runat="server" id="divIdiomOfTheDay">
                                             <asp:Literal runat="server" ID="lblIdiomOfTheDay"></asp:Literal>
                                             <div class="d-inline">
@@ -89,15 +89,17 @@
         prm.add_beginRequest(
             function (sender, args) {
                 $get("<%=divIdiomOfTheDay.ClientID %>").style.display = "none";
-                    $get("<%=divIdiomOfTheDayMeaning.ClientID %>").style.display = "none";
-                }
-            );
+                $get("<%=divIdiomOfTheDayMeaning.ClientID %>").style.display = "none";
+                $get("<%=divLoading.ClientID %>").style.display = "inline";
+            }
+        );
         prm.add_endRequest(
             function (sender, args) {
                 $get("<%=divIdiomOfTheDay.ClientID %>").style.display = "";
-                    $get("<%=divIdiomOfTheDayMeaning.ClientID %>").style.display = "";
-                }
-            );
+                $get("<%=divIdiomOfTheDayMeaning.ClientID %>").style.display = "";
+                $get("<%=divLoading.ClientID %>").style.display = "none";
+            }
+        );
 
     </script>
 </asp:Content>
