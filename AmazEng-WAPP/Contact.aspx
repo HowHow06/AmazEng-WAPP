@@ -8,6 +8,7 @@
                 <div class="col-12">
                     <div class="banner-content text-center">
                         <h1 class="cd-headline clip is-full-width">Contact Us</h1>
+                         <p>Feel free to contact us with te method below.</p>
                     </div>
                 </div>
             </div>
