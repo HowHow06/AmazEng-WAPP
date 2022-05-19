@@ -21,6 +21,22 @@ namespace AmazEng_WAPP.Class.Utils
             return sFilePath;
         }
 
+        public static string CapitalizeFirstLetter(string text)
+        {
+
+            if (text.Length == 0)
+            {
+                return text;
+            }
+
+            if (text.Length == 1)
+            {
+                return char.ToUpper(text[0]).ToString();
+            }
+
+            return char.ToUpper(text[0]) + text.Substring(1);
+
+        }
 
         public static void ShowAlert(Control contorl, string message)
         {

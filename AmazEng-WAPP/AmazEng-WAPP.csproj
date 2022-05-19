@@ -365,6 +365,8 @@
     <Content Include="Assets\css\responsive.css" />
     <Content Include="Assets\css\Site.css" />
     <Content Include="Assets\css\woocomerce.css" />
+    <Content Include="Assets\images\autorenew.svg" />
+    <Content Include="Assets\images\contact-us.jpg" />
     <Content Include="Assets\images\feature-image.jpg" />
     <Content Include="Assets\images\home-banner.jpg" />
     <Content Include="Assets\images\message.png" />
@@ -372,6 +374,7 @@
     <Content Include="Assets\images\logo-long-white-v2.png" />
     <Content Include="Assets\images\logo-long.png" />
     <Content Include="Assets\images\logo-trimmed.png" />
+    <Content Include="Assets\images\rolling.gif" />
     <Content Include="Assets\js\Site.js" />
     <Content Include="Assets\vendors\animate-css\animate.css" />
     <Content Include="Assets\vendors\animate-css\wow.min.js" />
@@ -410,6 +413,7 @@
     <Content Include="Assets\vendors\owl\assets\owl.video.play.png" />
     <Content Include="Assets\vendors\owl\owl.carousel.min.js" />
     <Content Include="Class\Controls\IdiomCard.ascx" />
+    <Content Include="Class\Controls\Leaderboard.ascx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -721,6 +725,13 @@
     </Compile>
     <Compile Include="Class\Controls\IdiomCard.ascx.designer.cs">
       <DependentUpon>IdiomCard.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Controls\Leaderboard.ascx.cs">
+      <DependentUpon>Leaderboard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Class\Controls\Leaderboard.ascx.designer.cs">
+      <DependentUpon>Leaderboard.ascx</DependentUpon>
     </Compile>
     <Compile Include="Class\Services\EmailService.cs" />
     <Compile Include="Class\Utils\Validator.cs" />

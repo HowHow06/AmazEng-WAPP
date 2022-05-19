@@ -18,6 +18,7 @@ namespace AmazEng_WAPP.DataAccess
         public AmazengContext()
             : base("name=amazeng")
         {
+            //Database.Log = Console.WriteLine;
         }
 
         public DbSet<Admin> Admins { get; set; }
@@ -96,7 +97,12 @@ namespace AmazEng_WAPP.DataAccess
                 {
                     LibraryTypeId = LibraryType.GetLearnLaterLibraryType().Id,
                 });
+            }
 
+            foreach (var entry in ChangeTracker.Entries<LibraryIdiom>().Where(e => e.State == EntityState.Added))
+            {
+                var libraryIdiom = entry.Entity;
+                libraryIdiom.AddedAt = DateTime.UtcNow;
             }
 
             return base.SaveChanges();

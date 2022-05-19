@@ -24,22 +24,22 @@
 
         protected override void Seed(AmazEng_WAPP.DataAccess.AmazengContext context)
         {
-            //ClearIdiomsAndTagsTable(context);
+            ClearIdiomsAndTagsTable(context);
 
             InitializeLibraryTypes(context);
 
-            ////  This method will be called after migrating to the latest version.
-            ////  You can use the DbSet<T>.AddOrUpdate() helper extension method
-            ////  to avoid creating duplicate seed data.
-            //InitialiseTagData(context);
-            //InitialiseIdiomData(context);
+            //  This method will be called after migrating to the latest version.
+            //  You can use the DbSet<T>.AddOrUpdate() helper extension method
+            //  to avoid creating duplicate seed data.
+            InitialiseTagData(context);
+            InitialiseIdiomData(context);
             // add member
             InitialiseDefaultMember(context);
 
-            //ClearAdminAndRoleTable(context);
-            //InitialiseAdminRole(context);
-            //// add admin
-            //InitialiseDefaultAdmin(context);
+            ClearAdminAndRoleTable(context);
+            InitialiseAdminRole(context);
+            // add admin
+            InitialiseDefaultAdmin(context);
         }
 
         private void InitializeLibraryTypes(AmazengContext context)
@@ -171,7 +171,8 @@
 
         private void InitialiseIdiomData(AmazengContext context)
         {
-            using (var reader = new StreamReader(MapPath("~/Assets/data/final_idioms_data_v1.tsv")))
+            List<String> errorIdiom = new List<string>();
+            using (var reader = new StreamReader(MapPath("~/Assets/data/final_idioms_data_v3.tsv")))
             {
                 bool isFirstLine = true;
                 int i = 0;
@@ -203,6 +204,7 @@
                     tagNames.Add(firstCharacter);
 
                     List<Tag> tags = context.Tags.Where(t => tagNames.Contains(t.Name)).ToList();
+
                     Idiom idiom = new Idiom
                     {
                         Id = i,

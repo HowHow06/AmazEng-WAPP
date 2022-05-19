@@ -24,19 +24,54 @@ namespace AmazEng_WAPP.Class.Controls
         protected void Page_Load(object sender, EventArgs e)
         {
             AmazengContext db = new AmazengContext();
-            if (Request.IsAuthenticated)
-            {
-                Member = db.GetMemberByUsername(HttpContext.Current.User.Identity.Name);
-                IsFavourite = Member.GetFavouriteLibrary().GetIdioms().Contains(Idiom);
-                IsLearnLater = Member.GetLearnLaterLibrary().GetIdioms().Contains(Idiom);
-            }
-
             Idiom = db.Idioms.Find(IdiomId);
 
+            // add to meaning preview
             HtmlGenericControl meaningControl = new HtmlGenericControl("span");
             meaningControl.InnerText = Idiom.GetMeanings().First();
             phMeaning.Controls.Add(meaningControl);
-            Util.LogOutput(IsFavourite.ToString());
+
+            Util.LogOutput("testing");
+
+        }
+
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            AmazengContext db = new AmazengContext();
+            RefreshFavrouriteAndLearnLaterIcon(db);
+        }
+
+        protected void RefreshFavrouriteAndLearnLaterIcon(AmazengContext db)
+        {
+            if (Request.IsAuthenticated)
+            {
+                Member member = db.GetMemberByUsername(HttpContext.Current.User.Identity.Name);
+                IsFavourite = member.GetFavouriteLibrary().IsIdiomInLibrary(Idiom.Id);
+                IsLearnLater = member.GetLearnLaterLibrary().IsIdiomInLibrary(Idiom.Id);
+            }
+
+            if (IsFavourite)
+            {
+                iIsFavourite.Visible = true;
+                iIsNotFavourite.Visible = false;
+            }
+            else
+            {
+                iIsFavourite.Visible = false;
+                iIsNotFavourite.Visible = true;
+            }
+
+            if (IsLearnLater)
+            {
+                iIsLearnLater.Visible = true;
+                iIsNotLearnLater.Visible = false;
+            }
+            else
+            {
+                iIsLearnLater.Visible = false;
+                iIsNotLearnLater.Visible = true;
+            }
+
         }
 
         protected void btnFavourite_Click(object sender, EventArgs e)
@@ -49,21 +84,20 @@ namespace AmazEng_WAPP.Class.Controls
 
             AmazengContext db = new AmazengContext();
             Member member = db.GetMemberByUsername(HttpContext.Current.User.Identity.Name);
-            Library favouriteLibrary = Member.GetFavouriteLibrary();
-            //if (favouriteLibrary.LibraryIdioms is null)
-            //{
-            //    favouriteLibrary.LibraryIdioms = new List<LibraryIdiom>();
-            //}
+            Library favouriteLibrary = member.GetFavouriteLibrary();
+            IsFavourite = favouriteLibrary.IsIdiomInLibrary(Idiom.Id);
 
-            //favouriteLibrary.LibraryIdioms.Add(
-            //    new LibraryIdiom
-            //    {
-            //        IdiomId = Idiom.Id,
-            //        LibraryId = favouriteLibrary.Id
-            //    }
-            //    );
-            //Util.LogOutput("saving...");
-            //db.SaveChanges();
+            if (IsFavourite)
+            {
+                Util.LogOutput("removingasdas ");
+                favouriteLibrary.RemoveIdiom(Idiom, db);
+            }
+            else
+            {
+                Util.LogOutput("creatingasdasd ");
+                favouriteLibrary.AddIdiom(Idiom, db);
+
+            }
         }
 
         protected void btnLearnLater_Click(object sender, EventArgs e)
@@ -73,6 +107,20 @@ namespace AmazEng_WAPP.Class.Controls
                 Response.Redirect(GetRouteUrl("LoginRoute", new { }));
                 return;
             }
+
+            AmazengContext db = new AmazengContext();
+            Member member = db.GetMemberByUsername(HttpContext.Current.User.Identity.Name);
+            Library learnLaterLibrary = member.GetLearnLaterLibrary();
+            IsLearnLater = learnLaterLibrary.IsIdiomInLibrary(Idiom.Id);
+
+            if (IsLearnLater)
+            {
+                Util.LogOutput("removing ");
+                learnLaterLibrary.RemoveIdiom(Idiom, db);
+                return;
+            }
+            Util.LogOutput("creating");
+            learnLaterLibrary.AddIdiom(Idiom, db);
         }
     }
 }

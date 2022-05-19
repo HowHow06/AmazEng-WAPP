@@ -24,6 +24,11 @@ namespace AmazEng_WAPP.Models
         public int BrowsedIdiomCount { get; set; }//default 0
         public DateTime? DeletedAt { get; set; }
 
+        internal int GetTodayBrowsedToday()
+        {
+            return this.GetHistoryLibrary().LibraryIdioms.Where(li => li.AddedAt > DateTime.Today).Count();
+        }
+
         public virtual ICollection<Message> Messages { get; set; }
         public virtual ICollection<Library> Libraries { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
@@ -72,5 +77,6 @@ namespace AmazEng_WAPP.Models
         {
             return this.Libraries.Where(l => l.LibraryTypeId == LibraryType.GetLearnLaterLibraryType().Id).First();
         }
+
     }
 }

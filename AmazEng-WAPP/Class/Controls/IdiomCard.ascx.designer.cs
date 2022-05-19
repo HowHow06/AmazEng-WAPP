@@ -15,13 +15,13 @@ namespace AmazEng_WAPP.Class.Controls
     {
 
         /// <summary>
-        /// updatepnl control.
+        /// udpIdiomCard control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updatepnl;
+        protected global::System.Web.UI.UpdatePanel udpIdiomCard;
 
         /// <summary>
         /// btnFavourite control.
@@ -33,6 +33,24 @@ namespace AmazEng_WAPP.Class.Controls
         protected global::System.Web.UI.WebControls.LinkButton btnFavourite;
 
         /// <summary>
+        /// iIsFavourite control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl iIsFavourite;
+
+        /// <summary>
+        /// iIsNotFavourite control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl iIsNotFavourite;
+
+        /// <summary>
         /// btnLearnLater control.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,24 @@ namespace AmazEng_WAPP.Class.Controls
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton btnLearnLater;
+
+        /// <summary>
+        /// iIsLearnLater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl iIsLearnLater;
+
+        /// <summary>
+        /// iIsNotLearnLater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl iIsNotLearnLater;
 
         /// <summary>
         /// phMeaning control.
