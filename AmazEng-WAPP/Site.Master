@@ -164,7 +164,7 @@
                         <div class="col-xl-3 col-sm-3">
                             <div class="footer-widget mb-0 mt-20">
                                 <h5 class="widget-title">Get Started</h5>
-                                <a href="#" class="btn btn-white-outline rounded">Explore Now</a>
+                                <a href="/explore" class="btn btn-white-outline rounded">Explore Now</a>
                             </div>
                         </div>
 
@@ -172,10 +172,10 @@
                             <div class="footer-widget mb-0 mt-20">
                                 <h5 class="widget-title">Links</h5>
                                 <ul class="list-unstyled footer-links">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Explore Idioms</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/explore">Explore Idioms</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -184,8 +184,8 @@
                             <div class="footer-widget mb-0 mt-20">
                                 <h5 class="widget-title">Contact Us</h5>
                                 <ul class="list-unstyled footer-links">
-                                    <li><a href="#">TP055278@mail.apu.edu.my</a></li>
-                                    <li><a href="#">+60111111111</a></li>
+                                    <li><a href="/contact">TP055278@mail.apu.edu.my</a></li>
+                                    <li><a href="/contact">+60111111111</a></li>
                                 </ul>
                             </div>
                         </div>
