@@ -21,7 +21,7 @@
                         </span>
                         </h1>
 
-                        <p>AmazEng is Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur risus erat, viverra nec ante eu, elementum luctus arcu. Fusce at.</p>
+                        <p>AmazEng is idiom website which provides up to thousands of idioms to everyone for free.</p>
 
                         <div class="cta">
                             <a href="#" class="btn btn-white rounded ms-2">Get started </a>
@@ -47,7 +47,7 @@
                     <div class="section-heading mt-5 mt-lg-0 mb-4">
                         <span class="subheading">Know the ropes, learn the ropes</span>
                         <h2 class="mb-20 font-lg">Learn Idioms With Us </h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis recusandae reiciendis cumque, sequi vitae illum dolorem</p>
+                        <p>A large community which having up to 100 active users per day to learn and understand idioms.</p>
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@
                         <div class="quote-icon">
                             <i class="fas fa-quote-left fa-2x"></i>
                         </div>
-                        <p class="quote-text py-5">We belive that Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus blandit.</p>
+                        <p class="quote-text py-5">We believe that idioms are fun to understand the meaning of each of it.</p>
                         <p class="choose-option">- The AmazEng Team</p>
                     </div>
                 </div>
