@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace AmazEng_WAPP
@@ -33,7 +34,11 @@ namespace AmazEng_WAPP
         private void GenerateAndDisplayRandomIdiom()
         {
             Idiom idiom = GetRandomIdiom();
-            lblIdiomOfTheDay.Text = Util.CapitalizeFirstLetter(idiom.Name);
+            HtmlGenericControl a = new HtmlGenericControl("a");
+            a.InnerText = Util.CapitalizeFirstLetter(idiom.Name);
+            a.Attributes.Add("href", $"/idiom/{idiom.Id}");
+            a.Attributes.Add("class", $"on-hover-current-color on-hover-underline");
+            phIdiomOfTheDay.Controls.Add(a);
             lblIdiomMeaning.Text = idiom.GetMeanings().First();
         }
 

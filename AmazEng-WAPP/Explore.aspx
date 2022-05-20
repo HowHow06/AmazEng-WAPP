@@ -23,7 +23,7 @@
                                             loading...
                                         </div>
                                         <div runat="server" id="divIdiomOfTheDay">
-                                            <asp:Literal runat="server" ID="lblIdiomOfTheDay"></asp:Literal>
+                                            <asp:PlaceHolder runat="server" ID="phIdiomOfTheDay"></asp:PlaceHolder>
                                             <div class="d-inline">
                                                 <asp:LinkButton ID="btnRegenerateIdiom" OnClick="btnRegenerateIdiom_Click" ToolTip="Change an idiom" runat="server">
                                                 <asp:Image Width="120px" ImageUrl="~/Assets/images/autorenew-white.svg" runat="server" />
@@ -49,7 +49,7 @@
                                 <p runat="server" id="lblViewCountStatement" class="mt-3" visible="false">
                                     You viewed
                             <asp:Literal ID="lblViewCount" runat="server"></asp:Literal>
-                                    idiom(s) today.
+                                    unique idiom(s) today.
                                 </p>
                             </ContentTemplate>
                             <Triggers>
