@@ -20,7 +20,7 @@
                 <div class="btn-toolbar mb-2 mb-md-0 d-flex">
                     <a href='<%#: GetRouteUrl("AdminMembersRoute", new { }) %>' class="btn btn-sm  btn-outline-gray-600  d-inline-flex align-items-center">Back
                     </a>
-                    <asp:Button ID="btnResetPassword" Text="Reset Password" runat="server" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center" OnClick="btnResetPassword_Click" OnClientClick='return confirm("Reset password for this member?");'/>
+                    <asp:Button ID="btnResetPassword" Text="Reset Password" runat="server" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center" OnClick="btnResetPassword_Click" OnClientClick='return confirm("Reset password for this Admin Account?");'/>
                     <a href='<%#: GetRouteUrl("AdminViewMemberRoute", new {Id = Item.Id , Mode = "Edit"}) %>' class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center">Edit
                     </a>
                     <asp:Button class="btn btn-sm btn-gray-800 ms-2" Text="Delete" runat="server" ID="btnDelete" OnClick="btnDelete_Click"
