@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="IdiomDetail.aspx.cs" Inherits="AmazEng_WAPP.IdiomDetail" %>
+﻿<%@ Page Title="Idiom" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="IdiomDetail.aspx.cs" Inherits="AmazEng_WAPP.IdiomDetail" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
