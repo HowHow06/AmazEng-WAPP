@@ -352,6 +352,7 @@
     <Content Include="AdminPages\Assets\vendors\waypoints\licenses.txt" />
     <Content Include="AdminPages\Assets\vendors\waypoints\testem.json" />
     <Content Include="AdminPages\Dashboard.aspx" />
+    <Content Include="AdminPages\ManageAdmins.aspx" />
     <Content Include="AdminPages\ManageMembers.aspx" />
     <Content Include="AdminPages\MemberPages\ViewMember.aspx" />
     <Content Include="AdminPages\ViewAdmin.aspx" />
@@ -695,6 +696,13 @@
     </Compile>
     <Compile Include="AdminPages\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\ManageAdmins.aspx.cs">
+      <DependentUpon>ManageAdmins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ManageAdmins.aspx.designer.cs">
+      <DependentUpon>ManageAdmins.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPages\ManageMembers.aspx.cs">
       <DependentUpon>ManageMembers.aspx</DependentUpon>
