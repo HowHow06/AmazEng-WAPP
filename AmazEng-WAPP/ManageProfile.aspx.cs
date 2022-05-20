@@ -22,17 +22,17 @@ namespace AmazEng_WAPP
             {
                 formRefresh();
             }
-           
+
         }
 
         private void formRefresh()
         {
-                AmazengContext db = new AmazengContext();
-                Member Member = db.GetMemberByUsername(HttpContext.Current.User.Identity.Name);
-                txtUsername.Text = Member.Username.ToString();
-                txtName.Text = Member.Name.ToString();
-                txtEmail.Text = Member.Email.ToString();
-                imgProfilePicture.ImageUrl = Member.ProfilePicture ?? "https://via.placeholder.com/400x400";
+            AmazengContext db = new AmazengContext();
+            Member Member = db.GetMemberByUsername(HttpContext.Current.User.Identity.Name);
+            txtUsername.Text = Member.Username.ToString();
+            txtName.Text = Member.Name.ToString();
+            txtEmail.Text = Member.Email.ToString();
+            imgProfilePicture.ImageUrl = Member.ProfilePicture ?? "https://via.placeholder.com/400x400";
         }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
@@ -55,7 +55,7 @@ namespace AmazEng_WAPP
                 txtImageUpload.PostedFile.SaveAs(Server.MapPath("~" + profileImagePath));
             }
             UpdateMember.ProfilePicture = profileImagePath ?? UpdateMember.ProfilePicture;
-            Util.ShowAlert(this.Page, "Edit successfully" );
+            Util.ShowAlert(this.Page, "Edit successfully");
             db.SaveChanges();
             formRefresh();
         }

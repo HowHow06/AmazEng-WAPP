@@ -3,6 +3,8 @@
     <div class="col-md-12">
             <h1>Edit Profile</h1>
             <div class="col-xl-12 col-md-6">
+                <div class="row mb-2">
+                    <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
@@ -35,7 +37,7 @@
                                             <asp:Image width="100" Height="30%" style="border-radius: 50%" ID="imgProfilePicture" ImageUrl="https://via.placeholder.com/400x400" runat="server" />
                                 <asp:FileUpload ID= "txtImageUpload" runat = "server" />
                                         </p>
-                                    </div>
+                                    </div>                                   
 
                                     </div>
                                     <p class="form-row form-row-wide d-grid">
@@ -45,10 +47,22 @@
                                         </div>
                                     </p>
                                 </div>
+                            </div>
                         </div>
                     </div>
-                 
+                    <div class="col-md-6">
+
+                        <div class="card">
+                            <div class="card-body">
+                            <img style="border-radius:50%" width="250" height="250" src="/Assets/images/NA.jpg" alt="Avatar">
+                            <input class="form-control" type="file" id="txtImageUpload">
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
     <script>
         const image_input = document.querySelector("#MainContent_MainInnerContent_txtImageUpload");
         image_input.addEventListener("change", function () {
