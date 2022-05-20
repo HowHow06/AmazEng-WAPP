@@ -2,7 +2,6 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container">
     <div class="row mb-2">
         <div class="col-md-3">
 
@@ -70,6 +69,7 @@
 
                         <div class="card">
                             <div class="card-body">
+                            <img style="border-radius:50%" width="250" height="250" src="/Assets/images/NA.jpg" alt="Avatar">
                                     <img style="border-radius: 50%" width="250" height="250" src="/Assets/images/NA.jpg" alt="Avatar">
                             <input class="form-control" type="file" id="txtImageUpload">
                                 </div>
@@ -79,7 +79,4 @@
             </div>
         </div>
     </div>
-
-    </div>
-
 </asp:Content>
