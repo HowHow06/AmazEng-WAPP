@@ -46,7 +46,7 @@ namespace AmazEng_WAPP.Models
                 {
                     continue;
                 }
-                meaningList.Add(HttpUtility.UrlDecode(meaning.ToString()));
+                meaningList.Add(meaning.ToString());
             }
 
             return meaningList;
@@ -64,16 +64,11 @@ namespace AmazEng_WAPP.Models
                 {
                     continue;
                 }
-                stringBuilder.Append($"<p>{i}. {HttpUtility.UrlDecode(meaning.ToString())}</p>");
+                stringBuilder.Append($"<p>{i}. {meaning.ToString()}</p>");
                 i++;
             }
 
             return stringBuilder.ToString();
-        }
-
-        public string GetDecodedMeaning()
-        {
-            return HttpUtility.UrlDecode(this.Meaning);
         }
 
         public string FormatExample()
@@ -88,7 +83,7 @@ namespace AmazEng_WAPP.Models
                 {
                     continue;
                 }
-                stringBuilder.Append($"<p>{i}. {HttpUtility.UrlDecode(example.ToString())}</p>");
+                stringBuilder.Append($"<p>{i}. {example.ToString()}</p>");
                 i++;
             }
 
