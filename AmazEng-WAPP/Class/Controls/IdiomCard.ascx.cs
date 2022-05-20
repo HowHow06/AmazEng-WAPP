@@ -23,6 +23,11 @@ namespace AmazEng_WAPP.Class.Controls
         public Member Member { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
+
+        }
+
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
             AmazengContext db = new AmazengContext();
             Idiom = db.Idioms.Find(IdiomId);
 
@@ -31,13 +36,7 @@ namespace AmazEng_WAPP.Class.Controls
             meaningControl.InnerText = Idiom.GetMeanings().First();
             phMeaning.Controls.Add(meaningControl);
 
-            Util.LogOutput("testing");
-
-        }
-
-        protected void Page_PreRender(object sender, EventArgs e)
-        {
-            AmazengContext db = new AmazengContext();
+            //AmazengContext db = new AmazengContext();
             RefreshFavrouriteAndLearnLaterIcon(db);
         }
 

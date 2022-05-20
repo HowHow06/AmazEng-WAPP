@@ -5033,10 +5033,23 @@ body {
     margin: 5px auto;
 }
 
+.pager-control tbody {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+    .pager-control table tr {
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
 .pager-control a {
     text-decoration: underline;
 }
 
 .vr {
-    padding:0;
+    padding: 0;
 }
