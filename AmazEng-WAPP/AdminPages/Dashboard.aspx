@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.Dashboard" %>
+﻿<%@ Page Title="Dashboard" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.Dashboard" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -8,8 +8,8 @@
         <div class="col-md-4">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col-auto d-none d-lg-block">
-                    <img height="250" src="/AdminPages/images/statistic.png" />
-
+                    <i class="fa-solid fa-square-poll-vertical fa-9x"></i>
+                    <%--<img height="250" src="/AdminPages/images/statistic.png" />--%>
                 </div>
                 <div class="col p-4 d-flex flex-column position-static">
                     <h1>100</h1>
@@ -22,8 +22,8 @@
         <div class="col-md-4">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col-auto d-none d-lg-block">
-                    <img height="250" src="/AdminPages/images/statistic.png" />
-
+                    <i class="fa-solid fa-people-group fa-9x"></i>
+                    <%--<img height="250" src="/AdminPages/images/statistic.png" />--%>
                 </div>
                 <div class="col p-4 d-flex flex-column position-static">
                     <h1>100</h1>
@@ -36,8 +36,8 @@
         <div class="col-md-4">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col-auto d-none d-lg-block">
-                    <img height="250" src="/AdminPages/images/statistic.png" />
-
+                    <i class="fa-solid fa-square-user"></i>
+                    <%--<img height="250" src="/AdminPages/images/statistic.png" />--%>
                 </div>
                 <div class="col p-4 d-flex flex-column position-static">
                     <h1>100</h1>
@@ -143,15 +143,15 @@
         </div>
     </div>
     <!--  mid Section -->
-     <!--  bottom Section -->
+    <!--  bottom Section -->
     <div class="row mb-2">
         <div class="card">
             <div class="card-body">
-            <h3 class="card-title">Popular Search Keywords</h3>
-                <img class="" src="/AdminPages/images/example.jpg" />
+                <h3 class="card-title">Popular Search Keywords</h3>
+                <img class="" src="/AdminPages/Assets/images/word-cloud-demo.png" />
             </div>
         </div>
     </div>
-     <!--  bottom Section -->
+    <!--  bottom Section -->
 
 </asp:Content>

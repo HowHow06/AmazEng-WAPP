@@ -20,6 +20,7 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(AmazEng_WAPP.DataAccess.AmazengContext context)
