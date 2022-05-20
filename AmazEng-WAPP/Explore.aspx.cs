@@ -27,6 +27,7 @@ namespace AmazEng_WAPP
                 lblViewCountStatement.Visible = true;
             }
             BindDataToRepeater();
+            txtSearchKey.Attributes.Add("onkeypress", "return clickButton(event,'" + btnSearch.ClientID + "')");
         }
 
         private void GenerateAndDisplayRandomIdiom()
@@ -55,6 +56,12 @@ namespace AmazEng_WAPP
         protected void btnRegenerateIdiom_Click(object sender, EventArgs e)
         {
             GenerateAndDisplayRandomIdiom();
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchKey = txtSearchKey.Text;
+            Response.Redirect($"/result?q={searchKey}");
         }
     }
 }

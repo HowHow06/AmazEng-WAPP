@@ -40,8 +40,11 @@
                                 </div>
                                 <div class="topbar-search mx-auto mt-4" style="max-width: 550px">
                                     <%--<a href="#" class="btn btn-white rounded ms-2">Get started </a>--%>
-                                    <input type="text" placeholder="Search Idioms" class="form-control">
-                                    <label><i class="fa fa-search"></i></label>
+
+                                    <asp:TextBox runat="server" class="form-control" ID="txtSearchKey" placeholder="Search Idioms" />
+                                    <asp:LinkButton ID="btnSearch" OnClick="btnSearch_Click" class="search-submit" runat="server">
+                                        <label><i class="far fa-search"></i></label>
+                                    </asp:LinkButton>
                                 </div>
                                 <p runat="server" id="lblViewCountStatement" class="mt-3" visible="false">
                                     You viewed

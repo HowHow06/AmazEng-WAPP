@@ -8,9 +8,9 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-        <span class="h6">
+        <div class="h6 mt-3">
             <asp:Literal runat="server" ID="lblResultCount" />
-        </span>
+        </div>
         <asp:GridView ID="GridIdioms"
             runat="server"
             ItemType="AmazEng_WAPP.Models.Idiom"

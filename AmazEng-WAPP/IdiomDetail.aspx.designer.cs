@@ -11,52 +11,70 @@ namespace AmazEng_WAPP
 {
 
 
-    public partial class SiteMaster
+    public partial class IdiomDetail
     {
 
         /// <summary>
-        /// head control.
+        /// FormIdiom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
+        protected global::System.Web.UI.WebControls.FormView FormIdiom;
 
         /// <summary>
-        /// txtSearchKey control.
+        /// divPronunciation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSearchKey;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divPronunciation;
 
         /// <summary>
-        /// btnSearch control.
+        /// phPronunciation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnSearch;
+        protected global::System.Web.UI.WebControls.PlaceHolder phPronunciation;
 
         /// <summary>
-        /// LoginView1 control.
+        /// phMeaning control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LoginView LoginView1;
+        protected global::System.Web.UI.WebControls.PlaceHolder phMeaning;
 
         /// <summary>
-        /// MainContent control.
+        /// phExample control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.PlaceHolder phExample;
+
+        /// <summary>
+        /// phOrigin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phOrigin;
+
+        /// <summary>
+        /// phTags control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.PlaceHolder phTags;
     }
 }

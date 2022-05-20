@@ -458,6 +458,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Forgot.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="IdiomDetail.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Result.aspx" />
@@ -921,6 +922,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="IdiomDetail.aspx.cs">
+      <DependentUpon>IdiomDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IdiomDetail.aspx.designer.cs">
+      <DependentUpon>IdiomDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -939,6 +947,10 @@
     <Compile Include="Migrations\202205121122512_modifyMemberIdToNullableInMessageTable.cs" />
     <Compile Include="Migrations\202205121122512_modifyMemberIdToNullableInMessageTable.designer.cs">
       <DependentUpon>202205121122512_modifyMemberIdToNullableInMessageTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205201722433_changeMemberIdToNullableFeedbackTable.cs" />
+    <Compile Include="Migrations\202205201722433_changeMemberIdToNullableFeedbackTable.designer.cs">
+      <DependentUpon>202205201722433_changeMemberIdToNullableFeedbackTable.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
@@ -1034,6 +1046,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205121122512_modifyMemberIdToNullableInMessageTable.resx">
       <DependentUpon>202205121122512_modifyMemberIdToNullableInMessageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205201722433_changeMemberIdToNullableFeedbackTable.resx">
+      <DependentUpon>202205201722433_changeMemberIdToNullableFeedbackTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

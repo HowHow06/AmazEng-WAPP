@@ -24,7 +24,7 @@
                         <p>AmazEng is idiom website which provides up to thousands of idioms to everyone for free.</p>
 
                         <div class="cta">
-                            <a href="/register" class="btn btn-white rounded ms-2">Get started </a>
+                            <a href="/explore" class="btn btn-white rounded ms-2">Get started </a>
                         </div>
                     </div>
                 </div>

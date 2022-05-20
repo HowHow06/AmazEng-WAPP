@@ -5039,12 +5039,12 @@ body {
     justify-content: center;
 }
 
-    .pager-control table tr {
-        width: 300px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-    }
+.pager-control table tr {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
 
 .pager-control a {
     text-decoration: underline;
@@ -5052,4 +5052,13 @@ body {
 
 .vr {
     padding: 0;
+}
+
+
+.btn-back {
+    padding: 0.5rem 1.5rem;
+}
+
+.on-hover-pointer:hover {
+    cursor: pointer;
 }

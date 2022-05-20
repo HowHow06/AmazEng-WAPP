@@ -57,8 +57,8 @@ namespace AmazEng_WAPP
             );
             routes.MapPageRoute(
                 "IdiomRoute",
-                "Idiom",
-                "~/Idiom.aspx"
+                "Idiom/{Id}",
+                "~/IdiomDetail.aspx"
             );
             //more routes to go...
 

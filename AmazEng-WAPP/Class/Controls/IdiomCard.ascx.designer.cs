@@ -15,6 +15,24 @@ namespace AmazEng_WAPP.Class.Controls
     {
 
         /// <summary>
+        /// divHeadline control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divHeadline;
+
+        /// <summary>
+        /// hdnIdiomId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hdnIdiomId;
+
+        /// <summary>
         /// udpIdiomCard control.
         /// </summary>
         /// <remarks>

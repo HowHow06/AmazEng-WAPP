@@ -17,30 +17,8 @@ namespace AmazEng_WAPP
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //BindDataToGrid();
         }
 
-        private void BindDataToGrid()
-        {
-            string searchKey = Request.QueryString["q"] is null ? string.Empty : Request.QueryString["q"].ToString();
-            AmazengContext db = new AmazengContext();
-            List<Idiom> idioms;
-            int currentPageIndex = GridIdioms.PageIndex == 0 ? 1 : GridIdioms.PageIndex;
-            int currentPageSize = GridIdioms.PageSize;
-
-            if (string.IsNullOrEmpty(searchKey))
-            {
-                idioms = db.Idioms.ToList();
-                //idioms = db.Idioms.OrderBy(i => i.Id).Skip((currentPageIndex - 1) * currentPageSize).Take(currentPageSize).ToList();
-            }
-            else
-            {
-                idioms = db.Idioms.Where(i => i.Name.ToLower().Contains(searchKey.ToLower())).ToList();
-                //idioms = db.Idioms.Where(i => i.Name.ToLower().Contains(searchKey.ToLower())).OrderBy(i => i.Id).Skip((currentPageIndex - 1) * currentPageSize).Take(currentPageSize).ToList();
-            }
-            GridIdioms.DataSource = idioms;
-            GridIdioms.DataBind();
-        }
 
         // The return type can be changed to IEnumerable, however to support
         // paging and sorting, the following parameters must be added:
@@ -48,15 +26,16 @@ namespace AmazEng_WAPP
         //     int startRowIndex
         //     out int totalRowCount
         //     string sortByExpression
-        public IQueryable<AmazEng_WAPP.Models.Idiom> GridIdioms_GetData([RouteData] string SearchKey)
+        public IQueryable<AmazEng_WAPP.Models.Idiom> GridIdioms_GetData()
         {
             string searchKey = Request.QueryString["q"] is null ? string.Empty : Request.QueryString["q"].ToString();
             string tagsKey = Request.QueryString["tags"] is null ? string.Empty : Request.QueryString["tags"].ToString();
             AmazengContext db = new AmazengContext();
             IQueryable<Idiom> query = db.Idioms;
+            searchKey = searchKey.ToLower();
             if (!string.IsNullOrEmpty(searchKey))
             {
-                query = query.Where(i => i.Name.ToLower().Contains(searchKey.ToLower()));
+                query = query.Where(i => i.Name.ToLower().Contains(searchKey) || i.Meaning.ToLower().Contains(searchKey));
             }
 
             if (!string.IsNullOrEmpty(tagsKey))
@@ -73,7 +52,8 @@ namespace AmazEng_WAPP
         {
             int currentCount = GridIdioms.PageSize > totalCount ? totalCount : GridIdioms.PageSize;
             int currentPageIndex = GridIdioms.PageIndex + 1;
-            lblResultCount.Text = $"Showing {(currentPageIndex - 1) * GridIdioms.PageSize + 1}-{currentCount * currentPageIndex} of {totalCount} results.";
+            int fristItemIndex = totalCount != 0 ? (currentPageIndex - 1) * GridIdioms.PageSize + 1 : 0;
+            lblResultCount.Text = $"Showing {fristItemIndex}-{currentCount * currentPageIndex} of {totalCount} results.";
         }
     }
 }

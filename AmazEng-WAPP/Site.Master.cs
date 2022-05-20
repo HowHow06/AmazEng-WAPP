@@ -32,25 +32,8 @@ namespace AmazEng_WAPP
                 //refresh
                 Response.Redirect(Request.RawUrl);
             }
+            txtSearchKey.Attributes.Add("onkeypress", "return clickButton(event,'" + btnSearch.ClientID + "')");
 
-
-            //string currentUsersName = HttpContext.Current.User.Identity.Name;
-            //FormsIdentity ident = HttpContext.Current.User.Identity as FormsIdentity;
-            //if (ident is object)
-            //{
-            //    string currentUserData = ident.Ticket.UserData;
-
-            //    //Util.LogConsole(this.Page, currentUsersName);
-
-            //    Util.LogConsole(this.Page, currentUserData);
-
-            //    //string[] roles = Roles.GetRolesForUser();
-            //    //foreach (var role in roles)
-            //    //{
-            //    //    Util.LogConsole(this.Page, $"Role is: {role}");
-            //    //}
-
-            //}
         }
 
         protected void btnLogout_Click(object sender, EventArgs e)
@@ -59,6 +42,12 @@ namespace AmazEng_WAPP
             FormsAuthentication.SignOut();
             //refresh
             Response.Redirect(Request.RawUrl);
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchKey = txtSearchKey.Text;
+            Response.Redirect($"/result?q={searchKey}");
         }
     }
 }
