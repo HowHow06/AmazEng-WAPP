@@ -353,8 +353,10 @@
     <Content Include="AdminPages\Assets\vendors\waypoints\licenses.txt" />
     <Content Include="AdminPages\Assets\vendors\waypoints\testem.json" />
     <Content Include="AdminPages\Dashboard.aspx" />
+    <Content Include="AdminPages\ManageAdmins.aspx" />
     <Content Include="AdminPages\ManageMembers.aspx" />
     <Content Include="AdminPages\MemberPages\ViewMember.aspx" />
+    <Content Include="AdminPages\ViewAdmin.aspx" />
     <Content Include="App_Data\AmazengDb.mdf" />
     <Content Include="App_Data\AmazengDb_log.ldf">
       <DependentUpon>AmazengDb.mdf</DependentUpon>
@@ -680,6 +682,13 @@
     <Compile Include="AdminPages\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminPages\ManageAdmins.aspx.cs">
+      <DependentUpon>ManageAdmins.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ManageAdmins.aspx.designer.cs">
+      <DependentUpon>ManageAdmins.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\ManageMembers.aspx.cs">
       <DependentUpon>ManageMembers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -714,6 +723,13 @@
     </Compile>
     <Compile Include="AdminPages\Site.EmptyAdmin.Master.designer.cs">
       <DependentUpon>Site.EmptyAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\ViewAdmin.aspx.cs">
+      <DependentUpon>ViewAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ViewAdmin.aspx.designer.cs">
+      <DependentUpon>ViewAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
