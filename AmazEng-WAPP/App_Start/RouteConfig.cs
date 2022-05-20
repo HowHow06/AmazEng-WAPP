@@ -125,7 +125,24 @@ namespace AmazEng_WAPP
             routes.MapPageRoute(
               "AdminAdminsRoute",
               "Admin/Admins",
-              "~/AdminPages/ManageMembers.aspx"
+              "~/AdminPages/ManageAdmins.aspx"
+          );
+
+            // Do copy contents from ViewMembers page
+            routes.MapPageRoute(
+              "AdminViewAdminRoute",
+              "Admin/AdminList/{Id}/{Mode}",
+              "~/AdminPages/ViewAdmin.aspx",
+              false,
+              new RouteValueDictionary { { "Mode", string.Empty } }
+          );
+
+            routes.MapPageRoute(
+              "AdminNewAdminRoute",
+              "Admin/CreateAdmin/{Mode}",
+              "~/AdminPages/ViewAdmin.aspx",
+              false,
+              new RouteValueDictionary { { "Mode", "New" } }
           );
 
             routes.MapPageRoute(

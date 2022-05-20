@@ -1,27 +1,27 @@
-﻿<%@ Page Title="Member" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="ViewMember.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.MemberPages.ViewMember" %>
+﻿<%@ Page Title="Admin" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="ViewAdmin.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.ViewAdmin" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <script>
         function refreshImage() {
-            const uploadElement = $("#ContentPlaceHolder1_FormMemberDetail_uploadProfilePicture");
+            const uploadElement = $("#ContentPlaceHolder1_FormAdminDetail_uploadProfilePicture");
             const imgTempUrl = window.URL.createObjectURL(uploadElement[0].files[0]);
             document.getElementById('imgProfilePicture').src = imgTempUrl;
             return false;
         };
     </script>
-    <asp:FormView ID="FormMemberDetail" runat="server" ItemType="AmazEng_WAPP.Models.Member" SelectMethod="FormMemberDetail_GetItem" RenderOuterTable="false">
+    <asp:FormView ID="FormAdminDetail" runat="server" ItemType="AmazEng_WAPP.Models.Admin" SelectMethod="FormAdminDetail_GetItem" RenderOuterTable="false">
         <ItemTemplate>
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
                 <div class="d-block mb-4 mb-md-0">
-                    <h2 class="h3 m-0">View Member: <%#:Item.Name %></h2>
+                    <h2 class="h3 m-0">View Admin: <%#:Item.Name %></h2>
                 </div>
                 <div class="btn-toolbar mb-2 mb-md-0 d-flex">
-                    <a href='<%#: GetRouteUrl("AdminMembersRoute", new { }) %>' class="btn btn-sm  btn-outline-gray-600  d-inline-flex align-items-center">Back
+                    <a href='<%#: GetRouteUrl("AdminAdminsRoute", new { }) %>' class="btn btn-sm  btn-outline-gray-600  d-inline-flex align-items-center">Back
                     </a>
-                    <asp:Button ID="btnResetPassword" Text="Reset Password" runat="server" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center" OnClick="btnResetPassword_Click" OnClientClick='return confirm("Reset password for this Admin Account?");'/>
-                    <a href='<%#: GetRouteUrl("AdminViewMemberRoute", new {Id = Item.Id , Mode = "Edit"}) %>' class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center">Edit
+                    <asp:Button ID="btnResetPassword" Text="Reset Password" runat="server" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center" OnClick="btnResetPassword_Click" OnClientClick='return confirm("Reset password for this member?");'/>
+                    <a href='<%#: GetRouteUrl("AdminViewAdminRoute", new {Id = Item.Id , Mode = "Edit"}) %>' class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center">Edit
                     </a>
                     <asp:Button class="btn btn-sm btn-gray-800 ms-2" Text="Delete" runat="server" ID="btnDelete" OnClick="btnDelete_Click"
                         OnClientClick='return confirm("Are you sure to delete this item?");' />
@@ -85,10 +85,10 @@
         <EditItemTemplate>
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
                 <div class="d-block mb-4 mb-md-0">
-                    <h2 class="h3 m-0">Edit Member: <%#:Item.Name %></h2>
+                    <h2 class="h3 m-0">Edit Admin: <%#:Item.Name %></h2>
                 </div>
                 <div class="btn-toolbar mb-2 mb-md-0 d-flex">
-                    <a href='<%#: GetRouteUrl("AdminViewMemberRoute", new {Id = Item.Id }) %>' class="btn btn-sm  btn-outline-gray-600  d-inline-flex align-items-center">Cancel
+                    <a href='<%#: GetRouteUrl("AdminViewAdminRoute", new {Id = Item.Id }) %>' class="btn btn-sm  btn-outline-gray-600  d-inline-flex align-items-center">Cancel
                     </a>
                     <asp:Button Text="Done" CausesValidation="true" runat="server" ID="btnSubmit" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center"
                         OnClick="btnSubmit_Click" />
@@ -160,7 +160,7 @@
                             <asp:CustomValidator
                                 class="invalid-feedback"
                                 Display="Dynamic"
-                                ErrorMessage="*This username is used by other member."
+                                ErrorMessage="*This username is used by other admin."
                                 ID="validatorUsername"
                                 ControlToValidate="txtEditUsername"
                                 OnServerValidate="validatorUsername_ServerValidate"
@@ -188,7 +188,7 @@
                             <asp:CustomValidator
                                 class="invalid-feedback"
                                 Display="Dynamic"
-                                ErrorMessage="*This email is used by other member."
+                                ErrorMessage="*This email is used by other admin."
                                 ID="validatorEditEmail"
                                 ControlToValidate="txtEditEmail"
                                 OnServerValidate="validatorEditEmail_ServerValidate"
@@ -205,10 +205,10 @@
         <InsertItemTemplate>
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
                 <div class="d-block mb-4 mb-md-0">
-                    <h2 class="h3 m-0">New Member</h2>
+                    <h2 class="h3 m-0">New Admin</h2>
                 </div>
                 <div class="btn-toolbar mb-2 mb-md-0 d-flex">
-                    <a href='<%#: GetRouteUrl("AdminMembersRoute", new { }) %>' class="btn btn-sm  btn-outline-gray-600  d-inline-flex align-items-center">Cancel
+                    <a href='<%#: GetRouteUrl("AdminAdminsRoute", new { }) %>' class="btn btn-sm  btn-outline-gray-600  d-inline-flex align-items-center">Cancel
                     </a>
                     <asp:Button Text="Done" runat="server" ID="btnCreate" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center"
                         OnClick="btnCreate_Click" />
@@ -270,7 +270,7 @@
                               <asp:CustomValidator
                                 class="invalid-feedback"
                                 Display="Dynamic"
-                                ErrorMessage="*This username is used by other member."
+                                ErrorMessage="*This username is used by other admin."
                                 ID="validatorNewUsername"
                                 ControlToValidate="txtNewUsername"
                                 OnServerValidate="validatorNewUsername_ServerValidate"
@@ -297,7 +297,7 @@
                              <asp:CustomValidator
                                 class="invalid-feedback"
                                 Display="Dynamic"
-                                ErrorMessage="*This email is used by other member."
+                                ErrorMessage="*This email is used by other admin."
                                 ID="validatorNewEmail"
                                 ControlToValidate="txtNewEmail"
                                 OnServerValidate="validatorNewEmail_ServerValidate"
@@ -330,6 +330,19 @@
                                 TextMode="Password"
                                 runat="server" />
                         </div>
+
+                        <div class="row g-3 align-items-center  mb-1">
+                        <div class="col-2">
+                            <label for="txtAdminRole" class="col-form-label">Admin Role</label>
+                        </div>
+                        <div class="col-4">
+                            <asp:DropDownList ID="DropDownAdminRole" runat="server" >  
+                                <asp:ListItem Value="">Please Select Role</asp:ListItem>  
+                                <asp:ListItem>Admin</asp:ListItem>  
+                                <asp:ListItem>Super Admin</asp:ListItem>  
+                            </asp:DropDownList>  
+                        </div>
+
                         <div class="col-auto">
                             <asp:CompareValidator
                                 class="invalid-feedback"
