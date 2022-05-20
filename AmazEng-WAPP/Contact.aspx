@@ -31,7 +31,7 @@
                     <div class="card-body d-flex flex-column">
                         <ul class="list-unstyled mt-3 mb-4">
                             <li class="fs-5">Email: <a href="mailto:TP055278@mail.apu.edu.my">TP055278@mail.apu.edu.my </a></li>
-                            <li class="fs-5">Phone: +601121101456</li>
+                            <li class="fs-5">Phone: <a href="tel:+60111111111">+60111111111</a></li>
                             <li class="fs-5">Address: 3A, Jalan Ayam Goreng, KFC</li>
                         </ul>
 

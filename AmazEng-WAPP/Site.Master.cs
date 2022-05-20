@@ -44,6 +44,11 @@ namespace AmazEng_WAPP
             Response.Redirect(Request.RawUrl);
         }
 
+        protected void btnManageProfile_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/ManageProfile");
+        }
+
         protected void btnSearch_Click(object sender, EventArgs e)
         {
             string searchKey = txtSearchKey.Text;

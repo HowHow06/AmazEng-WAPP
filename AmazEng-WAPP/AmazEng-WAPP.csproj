@@ -143,6 +143,8 @@
     <Content Include="About.aspx" />
     <Content Include="AdminPages\Assets\css\admin-global.css" />
     <Content Include="AdminPages\Forgot.aspx" />
+    <Content Include="AdminPages\images\example.jpg" />
+    <Content Include="AdminPages\images\statistic.png" />
     <Content Include="AdminPages\Login.aspx" />
     <Content Include="AdminPages\Assets\js\Admin.js" />
     <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\cjs\popper-base.js" />
@@ -374,6 +376,7 @@
     <Content Include="Assets\images\logo-long-white-v2.png" />
     <Content Include="Assets\images\logo-long.png" />
     <Content Include="Assets\images\logo-trimmed.png" />
+    <Content Include="Assets\images\NA.jpg" />
     <Content Include="Assets\images\rolling.gif" />
     <Content Include="Assets\js\Site.js" />
     <Content Include="Assets\vendors\animate-css\animate.css" />
@@ -460,6 +463,7 @@
     <Content Include="Global.asax" />
     <Content Include="IdiomDetail.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="ManageProfile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Result.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -935,6 +939,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageProfile.aspx.cs">
+      <DependentUpon>ManageProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageProfile.aspx.designer.cs">
+      <DependentUpon>ManageProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Migrations\202205041721321_initial.cs" />
     <Compile Include="Migrations\202205041721321_initial.designer.cs">
