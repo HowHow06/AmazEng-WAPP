@@ -180,7 +180,7 @@
         private void InitialiseIdiomData(AmazengContext context)
         {
             List<String> errorIdiom = new List<string>();
-            using (var reader = new StreamReader(MapPath("~/Assets/data/final_idioms_data_v3.tsv")))
+            using (var reader = new StreamReader(MapPath("~/Assets/data/final_idioms_data_v4.tsv")))
             {
                 bool isFirstLine = true;
                 int i = 0;

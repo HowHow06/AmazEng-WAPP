@@ -12,12 +12,14 @@
         </div>
         <a href="#" id="btn-back" class="btn btn-main-outline btn-back rounded ms-2">Back</a>
         <div class="my-4">
-            <asp:FormView ID="FormIdiom" runat="server" ItemType="AmazEng_WAPP.Models.Idiom" SelectMethod="FormIdiom_GetItem" RenderOuterTable="false">
-                <ItemTemplate>
-                    <div class="mx-1 d-flex justify-content-between">
-                        <div>
-                            <h4 class="h4"><%#: Item.Name %></h4>
-                        </div>
+
+            <div class="mx-1 d-flex justify-content-between">
+                <div>
+                    <h4 class="h4">
+                        <asp:Literal runat="server" ID="lblIdiomName" /></h4>
+                </div>
+                <asp:FormView ID="FormIdiom" runat="server" ItemType="AmazEng_WAPP.Models.Idiom" SelectMethod="FormIdiom_GetItem" RenderOuterTable="false">
+                    <ItemTemplate>
                         <asp:UpdatePanel ID="udpIdiomCard" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>
                                 <div class="d-flex align-items-center h6">
@@ -42,14 +44,13 @@
                                         id="btnReport"
                                         data-bs-toggle="dropdown"
                                         aria-expanded="true"
-                                        data-toggle="tooltip" title="Report this idiom"
-                                        >
+                                        data-toggle="tooltip" title="Report this idiom">
                                         <i class="fas fa-flag  mx-2 "></i>
                                         Report this idiom
                                     </a>
                                     <div class="dropdown-menu px-4 py-3 keep-open" id="reportIdiomModal" aria-labelledby="btnReport" style="width: 30%">
                                         <div>
-                                                <%--adding validation will make the whole postback not functional--%>
+                                            <%--adding validation will make the whole postback not functional--%>
                                             <div class="mb-3">
                                                 <label for="txtReportName" class="form-label">Name</label>
                                                 <asp:TextBox runat="server" class="form-control" ID="txtReportName" />
@@ -77,9 +78,10 @@
                                 <asp:AsyncPostBackTrigger ControlID="btnLearnLater" EventName="Click" />
                             </Triggers>
                         </asp:UpdatePanel>
-                    </div>
-                </ItemTemplate>
-            </asp:FormView>
+                    </ItemTemplate>
+                </asp:FormView>
+            </div>
+
             <div class="mt-4">
                 <div runat="server" id="divPronunciation">
                     <asp:PlaceHolder runat="server" ID="phPronunciation" />

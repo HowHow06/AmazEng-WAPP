@@ -28,7 +28,16 @@ namespace AmazEng_WAPP
             //AmazengContext db = new AmazengContext();
             this.Title = Idiom.Name;
             Util.LogOutput("load");
+
+
+            if (!IsPostBack)
+            {
+                TryAddIdiomToMemberHistory(db);
+            }
+
         }
+
+
 
         protected void Page_PreRender(object sender, EventArgs e)
         {
@@ -36,11 +45,47 @@ namespace AmazEng_WAPP
             RefreshFavrouriteAndLearnLaterIcon(db);
             RenderFavouriteCount();
             RenderPronunciation();
+            RenderIdiomName();
             RenderMeaning();
             RenderExample();
             RenderOrigin();
             RenderTags();
             Util.LogOutput("render");
+        }
+
+        private void RenderIdiomName()
+        {
+            lblIdiomName.Text = Util.CapitalizeFirstLetter(Idiom.Name);
+        }
+
+        private void TryAddIdiomToMemberHistory(AmazengContext db)
+        {
+            if (!Request.IsAuthenticated)
+            {
+                return;
+            }
+            Member member = db.GetMemberByUsername(User.Identity.Name);
+            if (member == null)
+            {
+                return;
+            }
+
+            var query = member.GetHistoryLibrary().LibraryIdioms.Where(li => li.IdiomId == Idiom.Id);
+            if (query.Any())
+            {
+                LibraryIdiom existingLibraryIdiom = query.First();
+                existingLibraryIdiom.AddedAt = DateTime.UtcNow;
+                db.SaveChanges();
+                Util.LogOutput("Updated to history");
+            }
+            else
+            {
+                member.GetHistoryLibrary().AddIdiom(Idiom, db);
+                Util.LogOutput("Added to history");
+            }
+            member.BrowsedIdiomCount++;
+            db.SaveChanges();
+
         }
 
         private void RenderFavouriteCount()

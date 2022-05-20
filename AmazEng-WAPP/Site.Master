@@ -67,7 +67,7 @@
                             </asp:HyperLink>
                         </div>
 
-                        <div class="header-search-bar d-none d-md-block">
+                        <div class="header-search-bar d-none d-md-block" style="width:25%; min-width:200px">
                             <asp:TextBox runat="server" class="form-control" ID="txtSearchKey" placeholder="Search for Idiom" />
                             <asp:LinkButton ID="btnSearch" OnClick="btnSearch_Click" class="search-submit" runat="server"> <i class="far fa-search"></i></asp:LinkButton>
                         </div>

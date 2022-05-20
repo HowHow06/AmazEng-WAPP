@@ -27,7 +27,7 @@ namespace AmazEng_WAPP.Models
 
         internal int GetTodayBrowsedToday()
         {
-            return this.GetHistoryLibrary().LibraryIdioms.Where(li => li.AddedAt > DateTime.Today).Count();
+            return this.GetHistoryLibrary().LibraryIdioms.Where(li => li.AddedAt.ToLocalTime() > DateTime.Today).Count();
         }
 
         public virtual ICollection<Message> Messages { get; set; }

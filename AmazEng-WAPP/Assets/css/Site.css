@@ -5062,3 +5062,11 @@ body {
 .on-hover-pointer:hover {
     cursor: pointer;
 }
+
+.on-hover-current-color:hover {
+    color: currentColor;
+}
+
+.on-hover-underline:hover {
+    text-decoration: underline;
+}

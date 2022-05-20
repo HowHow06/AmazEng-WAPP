@@ -7,7 +7,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container">
+    <div class="container mb-100">
         <div class="h6 mt-3">
             <asp:Literal runat="server" ID="lblResultCount" />
         </div>
