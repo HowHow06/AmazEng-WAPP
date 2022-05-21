@@ -367,6 +367,8 @@
     <Content Include="Assets\css\responsive.css" />
     <Content Include="Assets\css\Site.css" />
     <Content Include="Assets\css\woocomerce.css" />
+    <Content Include="Assets\fonts\gilroy\example.html" />
+    <Content Include="Assets\fonts\gilroy\style.css" />
     <Content Include="Assets\images\autorenew.svg" />
     <Content Include="Assets\images\contact-us.jpg" />
     <Content Include="Assets\images\feature-image.jpg" />
@@ -546,6 +548,11 @@
     <Content Include="AdminPages\Site.EmptyAdmin.Master" />
     <Content Include="AdminPages\Site.Auth.Master" />
     <Content Include="NestedMemberManage.master" />
+    <Content Include="Assets\fonts\gilroy\Gilroy-Bold.woff" />
+    <Content Include="Assets\fonts\gilroy\Gilroy-Heavy.woff" />
+    <Content Include="Assets\fonts\gilroy\Gilroy-Light.woff" />
+    <Content Include="Assets\fonts\gilroy\Gilroy-Medium.woff" />
+    <Content Include="Assets\fonts\gilroy\Gilroy-Regular.woff" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />

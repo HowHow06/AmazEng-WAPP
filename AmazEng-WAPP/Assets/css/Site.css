@@ -20,7 +20,6 @@ Version      : 1.0
 9. Contact
 10. Footer / #footer
 -------------------------------------------------------------------*/
-@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap");
 
 
@@ -90,7 +89,7 @@ h4,
 h5,
 h6 {
     font-family: var(--theme-heading-font);
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.2;
     margin-bottom: .5rem;
     color: var(--theme-heading-color);
@@ -1557,7 +1556,7 @@ Banner style 2
 
     .banner-style-2 .banner-content .cd-words-wrapper b {
         text-decoration: underline;
-        font-weight: 700;
+        font-weight: 600;
     }
 
     .banner-style-2 .btn-white {
