@@ -170,8 +170,8 @@ namespace AmazEng_WAPP.AdminPages.IdiomPages
             int id;
             if (idRouteData is null)
             {
-                Response.Redirect(GetRouteUrl("AdminViewIdiomRoute", new { id = 1 }));
-                //Response.Redirect(GetRouteUrl("AdminIdiomsRoute", new { }));
+                //Response.Redirect(GetRouteUrl("AdminViewIdiomRoute", new { id = 1 }));
+                Response.Redirect(GetRouteUrl("AdminIdiomsRoute", new { }));
                 return;
             }
 
