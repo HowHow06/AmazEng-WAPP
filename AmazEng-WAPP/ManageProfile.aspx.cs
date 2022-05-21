@@ -12,6 +12,8 @@ namespace AmazEng_WAPP
 {
     public partial class ManageProfile : System.Web.UI.Page
     {
+        private Member Member;
+        private Member UpdateMember;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Request.IsAuthenticated)
@@ -23,6 +25,9 @@ namespace AmazEng_WAPP
                 formRefresh();
             }
 
+            Util.ShowAlert(this.Page, "Edit successfully" + UpdateMember.Name + Name + txtName.Text.ToString());
+            db.SaveChanges();
+            return;
         }
 
         private void formRefresh()
