@@ -99,7 +99,7 @@ namespace AmazEng_WAPP.Class.Controls
         {
             if (!Request.IsAuthenticated)
             {
-                Response.Redirect("/login?alert");
+                Response.Redirect("/login?alert=true");
                 return;
             }
 
@@ -115,7 +115,7 @@ namespace AmazEng_WAPP.Class.Controls
         {
             if (!Request.IsAuthenticated)
             {
-                Response.Redirect("/login?alert");
+                Response.Redirect("/login?alert=true");
                 return;
             }
 

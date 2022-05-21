@@ -18,27 +18,26 @@
                     <h4 class="h4">
                         <asp:Literal runat="server" ID="lblIdiomName" /></h4>
                 </div>
-                <asp:FormView ID="FormIdiom" runat="server" ItemType="AmazEng_WAPP.Models.Idiom" SelectMethod="FormIdiom_GetItem" RenderOuterTable="false">
-                    <ItemTemplate>
-                        <asp:UpdatePanel ID="udpIdiomCard" runat="server" UpdateMode="Conditional">
-                            <ContentTemplate>
-                                <div class="d-flex align-items-center h6">
-                                    <asp:LinkButton ID="btnFavourite" runat="server" OnClick="btnFavourite_Click" CommandArgument="<%# this.Idiom.Id%>" ToolTip="Add to Favourite">
-                                        <asp:Literal runat="server" ID="lblFavouriteCount" />
-                                        <i class="fas fa-heart mx-2" runat="server" id="iIsFavourite"></i>
-                                        <i class="far fa-heart mx-2" runat="server" id="iIsNotFavourite"></i>
+
+                <asp:UpdatePanel ID="udpIdiomCard" runat="server" UpdateMode="Conditional">
+                    <ContentTemplate>
+                        <div class="d-flex align-items-center h6">
+                            <asp:LinkButton ID="btnFavourite" runat="server" OnClick="btnFavourite_Click"  >
+                                <asp:Literal runat="server" ID="lblFavouriteCount" />
+                                <i class="fas fa-heart mx-2" runat="server" id="iIsFavourite" data-toggle="tooltip" title="Remove from favourite"></i>
+                                <i class="far fa-heart mx-2" runat="server" id="iIsNotFavourite" data-toggle="tooltip" title="Add to favourite"></i>
+                            </asp:LinkButton>
+                            <!-----------------------------separator-------------------------------->
+                            |
+                                    <asp:LinkButton ID="btnLearnLater" runat="server" OnClick="btnLearnLater_Click">
+                                        <i class="fas fa-check-double mx-2 " runat="server" id="iIsLearnLater" data-toggle="tooltip" title="Remove from learn later"></i>
+                                        <i class="fas fa-list mx-2" runat="server" id="iIsNotLearnLater" data-toggle="tooltip" title="Add to learn later"></i>
                                     </asp:LinkButton>
-                                    <!-----------------------------separator-------------------------------->
-                                    |
-                                    <asp:LinkButton ID="btnLearnLater" runat="server" OnClick="btnLearnLater_Click" CommandArgument="<%# this.Idiom.Id%>" ToolTip="Add to Learn Later">
-                                        <i class="fas fa-check-double mx-2 " runat="server" id="iIsLearnLater"></i>
-                                        <i class="fas fa-list mx-2" runat="server" id="iIsNotLearnLater"></i>
-                                    </asp:LinkButton>
-                                    |
+                            |
                                     <a class="on-hover-pointer popup-with-zoom-anim" id="btnShare" onclick="copyToClipboard(window.location.href);" data-toggle="tooltip" title="Share this idiom">
                                         <i class="fas fa-share mx-2 "></i>
                                     </a>
-                                    |
+                            |
                                     <a
                                         class="on-hover-pointer"
                                         id="btnReport"
@@ -48,38 +47,36 @@
                                         <i class="fas fa-flag  mx-2 "></i>
                                         Report this idiom
                                     </a>
-                                    <div class="dropdown-menu px-4 py-3 keep-open" id="reportIdiomModal" aria-labelledby="btnReport" style="width: 30%">
-                                        <div>
-                                            <%--adding validation will make the whole postback not functional--%>
-                                            <div class="mb-3">
-                                                <label for="txtReportName" class="form-label">Name</label>
-                                                <asp:TextBox runat="server" class="form-control" ID="txtReportName" />
-                                                <%-- <asp:RequiredFieldValidator Display="Dynamic" CssClass="form-text" ErrorMessage="*This field is required" ControlToValidate="txtReportName" runat="server" />--%>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="txtReportEmail" class="form-label">Email address</label>
-                                                <asp:TextBox runat="server" class="form-control" ID="txtReportEmail" TextMode="Email" />
-                                                <%--  <asp:RequiredFieldValidator Display="Dynamic" CssClass="form-text" ErrorMessage="*This field is required" ControlToValidate="txtReportEmail" runat="server" />--%>
-                                            </div>
-                                            <div class="mb-3">
-                                                <label for="txtReportDescription" class="form-label">Description</label>
-                                                <asp:TextBox runat="server" TextMode="MultiLine" class="form-control" ID="txtReportDescription" Rows="3" />
-                                                <%-- <asp:RequiredFieldValidator Display="Dynamic" CssClass="form-text" ErrorMessage="*This field is required" ControlToValidate="txtReportDescription" runat="server" />--%>
-                                            </div>
-                                            <asp:LinkButton runat="server" ID="btnSubmitReport" OnClick="btnSubmitReport_Click">
+                            <div class="dropdown-menu px-4 py-3 keep-open" id="reportIdiomModal" aria-labelledby="btnReport" style="width: 30%">
+                                <div>
+                                    <%--adding validation will make the whole postback not functional--%>
+                                    <div class="mb-3">
+                                        <label for="txtReportName" class="form-label">Name</label>
+                                        <asp:TextBox runat="server" class="form-control" ID="txtReportName" />
+                                        <%-- <asp:RequiredFieldValidator Display="Dynamic" CssClass="form-text" ErrorMessage="*This field is required" ControlToValidate="txtReportName" runat="server" />--%>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="txtReportEmail" class="form-label">Email address</label>
+                                        <asp:TextBox runat="server" class="form-control" ID="txtReportEmail" TextMode="Email" />
+                                        <%--  <asp:RequiredFieldValidator Display="Dynamic" CssClass="form-text" ErrorMessage="*This field is required" ControlToValidate="txtReportEmail" runat="server" />--%>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="txtReportDescription" class="form-label">Description</label>
+                                        <asp:TextBox runat="server" TextMode="MultiLine" class="form-control" ID="txtReportDescription" Rows="3" />
+                                        <%-- <asp:RequiredFieldValidator Display="Dynamic" CssClass="form-text" ErrorMessage="*This field is required" ControlToValidate="txtReportDescription" runat="server" />--%>
+                                    </div>
+                                    <asp:LinkButton runat="server" ID="btnSubmitReport" OnClick="btnSubmitReport_Click">
                                                 <span id="btnClientReportSubmit" type="submit" class="btn btn-main rounded w-100 btn-sm">Submit</span></asp:LinkButton>
 
-                                        </div>
-                                    </div>
                                 </div>
-                            </ContentTemplate>
-                            <Triggers>
-                                <asp:AsyncPostBackTrigger ControlID="btnFavourite" EventName="Click" />
-                                <asp:AsyncPostBackTrigger ControlID="btnLearnLater" EventName="Click" />
-                            </Triggers>
-                        </asp:UpdatePanel>
-                    </ItemTemplate>
-                </asp:FormView>
+                            </div>
+                        </div>
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:AsyncPostBackTrigger ControlID="btnFavourite" EventName="Click" />
+                        <asp:AsyncPostBackTrigger ControlID="btnLearnLater" EventName="Click" />
+                    </Triggers>
+                </asp:UpdatePanel>
             </div>
 
             <div class="mt-4">

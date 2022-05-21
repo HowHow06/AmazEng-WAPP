@@ -60,6 +60,13 @@ namespace AmazEng_WAPP.Class.Utils
             return svg;
         }
 
+        internal static void RedirectToLastPage(Control control)
+        {
+            ScriptManager.RegisterStartupScript(control, control.GetType(),
+               "redirectToPreviousPage",
+               $"history.back(-2)", true);
+        }
+
         internal static void ShowConfirmAndRedirect(Control control, string message, string url)
         {
             ScriptManager.RegisterStartupScript(control, control.GetType(),

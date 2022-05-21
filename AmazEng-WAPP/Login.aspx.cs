@@ -24,6 +24,7 @@ namespace AmazEng_WAPP
 
             if (Request.QueryString["alert"] is object)
             {
+                Util.LogOutput("hi");
                 Util.ShowAlert(this, "This action requires login.");
             }
         }
@@ -52,6 +53,7 @@ namespace AmazEng_WAPP
 
             Auth.SetCustomAuthCookie(member.Username, role, rememberMe);
 
+            //Util.RedirectToLastPage(this);
             Response.Redirect("/", true);
         }
     }

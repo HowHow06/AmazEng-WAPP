@@ -50,7 +50,14 @@ namespace AmazEng_WAPP
             RenderExample();
             RenderOrigin();
             RenderTags();
+            RenderButtonCommandArgument();
             Util.LogOutput("render");
+        }
+
+        private void RenderButtonCommandArgument()
+        {
+            btnFavourite.CommandArgument = Idiom.Id.ToString();
+            btnLearnLater.CommandArgument = Idiom.Id.ToString();
         }
 
         private void RenderIdiomName()
@@ -90,7 +97,7 @@ namespace AmazEng_WAPP
 
         private void RenderFavouriteCount()
         {
-            (FormIdiom.FindControl("lblFavouriteCount") as Literal).Text = Idiom.GetFavouriteCount().ToString();
+            lblFavouriteCount.Text = Idiom.GetFavouriteCount().ToString();
             return;
         }
 
@@ -161,57 +168,57 @@ namespace AmazEng_WAPP
             }
             if (isFavourite)
             {
-                FormIdiom.FindControl("iIsFavourite").Visible = true;
-                FormIdiom.FindControl("iIsNotFavourite").Visible = false;
+                iIsFavourite.Visible = true;
+                iIsNotFavourite.Visible = false;
             }
             else
             {
 
-                FormIdiom.FindControl("iIsFavourite").Visible = false;
-                FormIdiom.FindControl("iIsNotFavourite").Visible = true;
+                iIsFavourite.Visible = false;
+                iIsNotFavourite.Visible = true;
             }
 
             if (isLearnLater)
             {
-                FormIdiom.FindControl("iIsLearnLater").Visible = true;
-                FormIdiom.FindControl("iIsNotLearnLater").Visible = false;
+                iIsLearnLater.Visible = true;
+                iIsNotLearnLater.Visible = false;
             }
             else
             {
 
-                FormIdiom.FindControl("iIsLearnLater").Visible = false;
-                FormIdiom.FindControl("iIsNotLearnLater").Visible = true;
+                iIsLearnLater.Visible = false;
+                iIsNotLearnLater.Visible = true;
             }
 
         }
 
-        // The id parameter should match the DataKeyNames value set on the control
-        // or be decorated with a value provider attribute, e.g. [QueryString]int id
-        public AmazEng_WAPP.Models.Idiom FormIdiom_GetItem([RouteData] int? id)
-        {
-            if (id is null)
-            {
-                Response.Redirect(GetRouteUrl("ExploreRoute", new { }));
-                return null;
-            }
+        //// The id parameter should match the DataKeyNames value set on the control
+        //// or be decorated with a value provider attribute, e.g. [QueryString]int id
+        //public AmazEng_WAPP.Models.Idiom FormIdiom_GetItem([RouteData] int? id)
+        //{
+        //    if (id is null)
+        //    {
+        //        Response.Redirect(GetRouteUrl("ExploreRoute", new { }));
+        //        return null;
+        //    }
 
-            AmazengContext db = new AmazengContext();
-            var idiom = db.Idioms.Find(id);
+        //    AmazengContext db = new AmazengContext();
+        //    var idiom = db.Idioms.Find(id);
 
-            if (idiom is null)
-            {
-                Response.Redirect(GetRouteUrl("ExploreRoute", new { }));
-                return null;
-            }
+        //    if (idiom is null)
+        //    {
+        //        Response.Redirect(GetRouteUrl("ExploreRoute", new { }));
+        //        return null;
+        //    }
 
-            return idiom;
-        }
+        //    return idiom;
+        //}
 
         protected void btnFavourite_Click(object sender, EventArgs e)
         {
             if (!Request.IsAuthenticated)
             {
-                Response.Redirect("/login?alert");
+                Response.Redirect("/login?alert=true");
                 return;
             }
 
@@ -227,7 +234,7 @@ namespace AmazEng_WAPP
         {
             if (!Request.IsAuthenticated)
             {
-                Response.Redirect("/login?alert");
+                Response.Redirect("/login?alert=true");
                 return;
             }
 
@@ -242,9 +249,9 @@ namespace AmazEng_WAPP
 
         protected void btnSubmitReport_Click(object sender, EventArgs e)
         {
-            var txtName = FormIdiom.FindControl("txtReportName") as TextBox;
-            var txtEmail = FormIdiom.FindControl("txtReportEmail") as TextBox;
-            var txtDescription = FormIdiom.FindControl("txtReportDescription") as TextBox;
+            var txtName = txtReportName;
+            var txtEmail = txtReportEmail;
+            var txtDescription = txtReportDescription;
 
             string name = txtName.Text;
             string email = txtEmail.Text;
