@@ -20,6 +20,7 @@ Version      : 1.0
 9. Contact
 10. Footer / #footer
 -------------------------------------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@400;600;700&display=swap");
 
 
@@ -5078,4 +5079,10 @@ body {
 
 .member-manage .nav-item .nav-link:hover {
     color: var(--theme-primary-color);
+}
+
+.square-img {
+    object-fit: cover;
+    width: 230px;
+    height: 230px;
 }
