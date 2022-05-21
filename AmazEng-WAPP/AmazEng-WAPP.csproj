@@ -143,8 +143,7 @@
     <Content Include="About.aspx" />
     <Content Include="AdminPages\Assets\css\admin-global.css" />
     <Content Include="AdminPages\Forgot.aspx" />
-    <Content Include="AdminPages\images\example.jpg" />
-    <Content Include="AdminPages\images\statistic.png" />
+    <Content Include="AdminPages\IdiomPages\ViewIdiom.aspx" />
     <Content Include="AdminPages\Login.aspx" />
     <Content Include="AdminPages\Assets\js\Admin.js" />
     <Content Include="AdminPages\Assets\vendors\%40popperjs\core\dist\cjs\popper-base.js" />
@@ -353,6 +352,7 @@
     <Content Include="AdminPages\Assets\vendors\waypoints\licenses.txt" />
     <Content Include="AdminPages\Assets\vendors\waypoints\testem.json" />
     <Content Include="AdminPages\Dashboard.aspx" />
+    <Content Include="AdminPages\ManageIdioms.aspx" />
     <Content Include="AdminPages\ManageMembers.aspx" />
     <Content Include="AdminPages\MemberPages\ViewMember.aspx" />
     <Content Include="App_Data\AmazengDb.mdf" />
@@ -668,6 +668,13 @@
     <Compile Include="AdminPages\Forgot.aspx.designer.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminPages\IdiomPages\ViewIdiom.aspx.cs">
+      <DependentUpon>ViewIdiom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\IdiomPages\ViewIdiom.aspx.designer.cs">
+      <DependentUpon>ViewIdiom.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -681,6 +688,13 @@
     </Compile>
     <Compile Include="AdminPages\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\ManageIdioms.aspx.cs">
+      <DependentUpon>ManageIdioms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ManageIdioms.aspx.designer.cs">
+      <DependentUpon>ManageIdioms.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPages\ManageMembers.aspx.cs">
       <DependentUpon>ManageMembers.aspx</DependentUpon>
@@ -1080,6 +1094,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminPages\Assets\vendors\chartist\dist\scss\settings\" />
+    <Folder Include="AdminPages\Assets\vendors\multiselect\" />
     <Folder Include="AdminPages\Assets\vendors\waypoints\src\" />
     <Folder Include="AdminPages\Assets\vendors\waypoints\test\" />
     <Folder Include="Public\Uploads\" />

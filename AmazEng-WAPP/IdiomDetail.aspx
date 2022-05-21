@@ -11,7 +11,7 @@
             Copied url to clipboard!
         </div>
         <a href="#" id="btn-back" class="btn btn-main-outline btn-back rounded ms-2">Back</a>
-        <div class="my-4">
+        <div class="my-4 p-5 card">
 
             <div class="mx-1 d-flex justify-content-between">
                 <div>

@@ -1,4 +1,5 @@
-﻿using AmazEng_WAPP.DataAccess;
+﻿using AmazEng_WAPP.Class.Utils;
+using AmazEng_WAPP.DataAccess;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,6 @@ namespace AmazEng_WAPP.Models
         {
             dynamic meanings = JsonConvert.DeserializeObject(this.Meaning);
             List<string> meaningList = new List<string>();
-
             foreach (var meaning in meanings)
             {
                 if (meaning.ToString().Length == 0)
@@ -50,6 +50,22 @@ namespace AmazEng_WAPP.Models
             }
 
             return meaningList;
+        }
+
+        public ICollection<string> GetExamples()
+        {
+            dynamic examples = JsonConvert.DeserializeObject(this.Example);
+            List<string> exampleList = new List<string>();
+            foreach (var example in examples)
+            {
+                if (example.ToString().Length == 0)
+                {
+                    continue;
+                }
+                exampleList.Add(example.ToString());
+            }
+
+            return exampleList;
         }
 
         public string FormatMeaning()
@@ -136,6 +152,44 @@ namespace AmazEng_WAPP.Models
                 }
             }
             return count;
+        }
+
+        public string GetMeaningForEdit()
+        {
+            dynamic meanings = JsonConvert.DeserializeObject(this.Meaning);
+            StringBuilder stringBuilder = new StringBuilder();
+            int i = 1;
+
+            foreach (var meaning in meanings)
+            {
+                if (meaning.ToString().Length == 0)
+                {
+                    continue;
+                }
+                stringBuilder.Append($"{meaning.ToString()}\n");
+                i++;
+            }
+
+            return stringBuilder.ToString();
+        }
+
+        public string GetExampleForEdit()
+        {
+            dynamic examples = JsonConvert.DeserializeObject(this.Example);
+            StringBuilder stringBuilder = new StringBuilder();
+            int i = 1;
+
+            foreach (var example in examples)
+            {
+                if (example.ToString().Length == 0)
+                {
+                    continue;
+                }
+                stringBuilder.Append($"{example.ToString()}\n");
+                i++;
+            }
+
+            return stringBuilder.ToString();
         }
     }
 }

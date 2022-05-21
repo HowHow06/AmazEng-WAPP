@@ -112,7 +112,23 @@ namespace AmazEng_WAPP
             routes.MapPageRoute(
               "AdminIdiomsRoute",
               "Admin/Idioms",
-              "~/AdminPages/ManageMembers.aspx"
+              "~/AdminPages/ManageIdioms.aspx"
+          );
+
+            routes.MapPageRoute(
+             "AdminViewIdiomRoute",
+             "Admin/Idiom/{Id}/{Mode}",
+             "~/AdminPages/IdiomPages/ViewIdiom.aspx",
+             false,
+             new RouteValueDictionary { { "Mode", string.Empty } }
+         );
+
+            routes.MapPageRoute(
+              "AdminNewIdiomRoute",
+              "Admin/CreateIdiom/{Mode}",
+              "~/AdminPages/IdiomPages/ViewIdiom.aspx",
+              false,
+              new RouteValueDictionary { { "Mode", "New" } }
           );
 
             routes.MapPageRoute(

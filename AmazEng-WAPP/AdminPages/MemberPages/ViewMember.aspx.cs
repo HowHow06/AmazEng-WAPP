@@ -94,7 +94,7 @@ namespace AmazEng_WAPP.AdminPages.MemberPages
             member.Name = txtEditName.Text;
             member.Username = txtEditUsername.Text;
             member.Email = txtEditEmail.Text;
-            member.ProfilePicture = profileImagePath;
+            member.ProfilePicture = profileImagePath ?? member.ProfilePicture;
             db.SaveChanges();
             Response.Redirect(GetRouteUrl("AdminViewMemberRoute", new { Id = memberId }));
             return;
