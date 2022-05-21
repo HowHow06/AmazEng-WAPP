@@ -90,7 +90,7 @@
 
     <!--  Why Us Section End -->
 
-     <!-- Our Quote Start -->
+        <!-- Our Quote Start -->
     <section class="choose-area pb-60 pt-60">
         <div class="container">
             <div class="row">
@@ -99,7 +99,7 @@
                         <div class="quote-icon">
                             <i class="fas fa-quote-left fa-2x"></i>
                         </div>
-                        <p class="quote-text py-5">We belive that learning new things will bring you the opportunity to make a difference.</p>
+                        <p class="quote-text py-5">We believe that idioms are fun to understand the meaning of each of it.</p>
                         <p class="choose-option">- The AmazEng Team</p>
                     </div>
                 </div>
