@@ -17,3 +17,8 @@
 .vr {
     padding: 0;
 }
+
+.sidebar-icon {
+    display: inline-block;
+    width: 20px;
+}

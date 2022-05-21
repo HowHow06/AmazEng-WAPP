@@ -36,7 +36,7 @@
         <div class="col-md-4">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div class="col-auto d-none d-lg-block">
-                    <i class="fa-solid fa-square-user"></i>
+                    <i class="fa-solid fa-user fa-9x"></i>
                     <%--<img height="250" src="/AdminPages/images/statistic.png" />--%>
                 </div>
                 <div class="col p-4 d-flex flex-column position-static">
