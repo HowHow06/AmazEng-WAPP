@@ -60,6 +60,12 @@ namespace AmazEng_WAPP
                 "Idiom/{Id}",
                 "~/IdiomDetail.aspx"
             );
+
+            routes.MapPageRoute(
+               "ManagePasswordRoute",
+               "ManagePassword",
+               "~/ManagePassword.aspx"
+           );
             //more routes to go...
 
 

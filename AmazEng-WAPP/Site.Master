@@ -115,7 +115,10 @@
                                         <asp:LinkButton ID="LinkButton2" Text="test2" runat="server" class="dropdown-item d-flex align-items-center" />
                                     </li>
                                     <li>
-                                        <asp:LinkButton ID="btnLogout" Text="Logout" runat="server" class="dropdown-item d-flex align-items-center" OnClick="btnLogout_Click" />
+                                        <asp:Hyperlink ID="btnManagePassword" NavigateUrl='<%$RouteUrl:RouteName=ManagePasswordRoute%>' Text="Manage Password" runat="server" class="dropdown-item d-flex align-items-center" />
+                                    </li>
+                                    <li>
+                                        <asp:LinkButton ID="btnLogout" Text="Logout" runat="server" class="dropdown-item d-flex align-items-center" OnClick="btnLogout_Click" OnClientClick="return confirm('Confirm logout?');" />
                                     </li>
                                 </ul>
                                 <%--Hi bro member
