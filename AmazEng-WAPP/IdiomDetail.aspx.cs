@@ -218,7 +218,8 @@ namespace AmazEng_WAPP
         {
             if (!Request.IsAuthenticated)
             {
-                Response.Redirect("/login?alert=true");
+                string returnUrl = Server.UrlEncode(Request.Url.PathAndQuery);
+                Response.Redirect($"/login?alert=true&ReturnUrl={returnUrl}");
                 return;
             }
 
@@ -234,7 +235,8 @@ namespace AmazEng_WAPP
         {
             if (!Request.IsAuthenticated)
             {
-                Response.Redirect("/login?alert=true");
+                string returnUrl = Server.UrlEncode(Request.Url.PathAndQuery);
+                Response.Redirect($"/login?alert=true&ReturnUrl={returnUrl}");
                 return;
             }
 

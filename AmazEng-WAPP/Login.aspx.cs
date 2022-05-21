@@ -53,8 +53,12 @@ namespace AmazEng_WAPP
 
             Auth.SetCustomAuthCookie(member.Username, role, rememberMe);
 
-            //Util.RedirectToLastPage(this);
-            Response.Redirect("/", true);
+            var returnUrl = Request.QueryString["ReturnURL"];
+            if (string.IsNullOrEmpty(returnUrl))
+            {
+                Response.Redirect("/", true);
+            }
+            Response.Redirect(returnUrl);
         }
     }
 }
