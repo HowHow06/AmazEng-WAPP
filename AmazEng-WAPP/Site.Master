@@ -109,7 +109,7 @@
                                 </div>
                                 <ul class="dropdown-menu" aria-labelledby="btnAccount">
                                     <li>
-                                        <asp:LinkButton ID="btnManageProbile" Text="Manage Profile" runat="server" class="dropdown-item d-flex align-items-center" OnClick="btnManageProfile_Click" />
+                                        <asp:Hyperlink ID="btnManageProbile" Text="Manage Profile" runat="server" class="dropdown-item d-flex align-items-center"  NavigateUrl='<%$RouteUrl:RouteName=ManageProfileRoute%>'  />
                                     </li>
                                     <li>
                                         <asp:LinkButton ID="LinkButton2" Text="test2" runat="server" class="dropdown-item d-flex align-items-center" />
