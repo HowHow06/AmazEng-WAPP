@@ -5070,3 +5070,12 @@ body {
 .on-hover-underline:hover {
     text-decoration: underline;
 }
+
+.member-manage .nav-item .nav-link {
+    color: #222;
+    border: 0px;
+}
+
+.member-manage .nav-item .nav-link:hover {
+    color: var(--theme-primary-color);
+}

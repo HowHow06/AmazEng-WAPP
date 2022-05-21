@@ -20,7 +20,9 @@
                                     <span class="subheading">Idiom of the day</span>
                                     <h1 class="cd-headline clip is-full-width">
                                         <div runat="server" id="divLoading" style="display: none">
-                                            loading...
+                                            <%--loading...--%>
+                                            <i class="fas fa-sync fa-spin"></i>
+                                            <p>loading...</p>
                                         </div>
                                         <div runat="server" id="divIdiomOfTheDay">
                                             <asp:PlaceHolder runat="server" ID="phIdiomOfTheDay"></asp:PlaceHolder>
@@ -43,7 +45,7 @@
 
                                     <asp:TextBox runat="server" class="form-control" ID="txtSearchKey" placeholder="Search Idioms" />
                                     <asp:LinkButton ID="btnSearch" OnClick="btnSearch_Click" class="search-submit" runat="server">
-                                        <label><i class="far fa-search"></i></label>
+                                        <label class="on-on-hover-pointer"><i class="fa fa-search"></i></label>
                                     </asp:LinkButton>
                                 </div>
                                 <p runat="server" id="lblViewCountStatement" class="mt-3" visible="false">

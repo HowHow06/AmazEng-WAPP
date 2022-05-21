@@ -463,6 +463,7 @@
     <Content Include="Global.asax" />
     <Content Include="IdiomDetail.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="ManagePassword.aspx" />
     <Content Include="ManageProfile.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Result.aspx" />
@@ -544,6 +545,7 @@
     <Content Include="AdminPages\Site.Admin.Master" />
     <Content Include="AdminPages\Site.EmptyAdmin.Master" />
     <Content Include="AdminPages\Site.Auth.Master" />
+    <Content Include="NestedMemberManage.master" />
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
@@ -940,6 +942,13 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ManagePassword.aspx.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManagePassword.aspx.designer.cs">
+      <DependentUpon>ManagePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ManageProfile.aspx.cs">
       <DependentUpon>ManageProfile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -978,6 +987,13 @@
     <Compile Include="DataAccess\AmazengContext.cs" />
     <Compile Include="Models\Quiz.cs" />
     <Compile Include="Models\Tag.cs" />
+    <Compile Include="NestedMemberManage.master.cs">
+      <DependentUpon>NestedMemberManage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NestedMemberManage.master.designer.cs">
+      <DependentUpon>NestedMemberManage.master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
