@@ -39,8 +39,18 @@ namespace AmazEng_WAPP.AdminPages.IdiomPages
 
             if (FormIdiomDetail.CurrentMode == FormViewMode.Insert && !IsPostBack)
             {
-                RenderEditTags();
+                RenderNewTags();
             }
+        }
+
+        private void RenderNewTags()
+        {
+            AmazengContext db = new AmazengContext();
+            var control = FormIdiomDetail.FindControl("lstNewTags") as ListBox;
+            control.DataSource = db.Tags.OrderBy(t => t.Name).ToList();
+            control.DataTextField = "Name";
+            control.DataValueField = "Id";
+            control.DataBind();
         }
 
         private void RenderEditTagsValue()
@@ -272,7 +282,7 @@ namespace AmazEng_WAPP.AdminPages.IdiomPages
             if (uploadEditPronunciation.HasFile)
             {
                 string str = uploadEditPronunciation.FileName;
-                profileImagePath = $"/Public/Uploads/Pronunciation/{str}";
+                profileImagePath = $"/Public/Uploads/{str}";
                 uploadEditPronunciation.PostedFile.SaveAs(Server.MapPath("~" + profileImagePath));
             }
 
