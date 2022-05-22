@@ -353,6 +353,7 @@
     <Content Include="AdminPages\Assets\vendors\waypoints\testem.json" />
     <Content Include="AdminPages\Dashboard.aspx" />
     <Content Include="AdminPages\ManageAdmins.aspx" />
+    <Content Include="AdminPages\ManageIdioms.aspx" />
     <Content Include="AdminPages\ManageMembers.aspx" />
     <Content Include="AdminPages\MemberPages\ViewMember.aspx" />
     <Content Include="AdminPages\ViewAdmin.aspx" />
@@ -703,6 +704,13 @@
     </Compile>
     <Compile Include="AdminPages\ManageAdmins.aspx.designer.cs">
       <DependentUpon>ManageAdmins.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\ManageIdioms.aspx.cs">
+      <DependentUpon>ManageIdioms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ManageIdioms.aspx.designer.cs">
+      <DependentUpon>ManageIdioms.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPages\ManageMembers.aspx.cs">
       <DependentUpon>ManageMembers.aspx</DependentUpon>
