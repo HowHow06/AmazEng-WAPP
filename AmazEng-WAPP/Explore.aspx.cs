@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 using System.Web.UI.WebControls;
 
 namespace AmazEng_WAPP
@@ -27,12 +28,17 @@ namespace AmazEng_WAPP
                 lblViewCountStatement.Visible = true;
             }
             BindDataToRepeater();
+            txtSearchKey.Attributes.Add("onkeypress", "return clickButton(event,'" + btnSearch.ClientID + "')");
         }
 
         private void GenerateAndDisplayRandomIdiom()
         {
             Idiom idiom = GetRandomIdiom();
-            lblIdiomOfTheDay.Text = Util.CapitalizeFirstLetter(idiom.Name);
+            HtmlGenericControl a = new HtmlGenericControl("a");
+            a.InnerText = Util.CapitalizeFirstLetter(idiom.Name);
+            a.Attributes.Add("href", $"/idiom/{idiom.Id}");
+            a.Attributes.Add("class", $"on-hover-current-color on-hover-underline");
+            phIdiomOfTheDay.Controls.Add(a);
             lblIdiomMeaning.Text = idiom.GetMeanings().First();
         }
 
@@ -55,6 +61,12 @@ namespace AmazEng_WAPP
         protected void btnRegenerateIdiom_Click(object sender, EventArgs e)
         {
             GenerateAndDisplayRandomIdiom();
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchKey = txtSearchKey.Text;
+            Response.Redirect($"/result?q={searchKey}");
         }
     }
 }

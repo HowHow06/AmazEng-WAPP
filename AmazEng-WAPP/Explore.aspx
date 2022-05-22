@@ -23,7 +23,7 @@
                                             loading...
                                         </div>
                                         <div runat="server" id="divIdiomOfTheDay">
-                                            <asp:Literal runat="server" ID="lblIdiomOfTheDay"></asp:Literal>
+                                            <asp:PlaceHolder runat="server" ID="phIdiomOfTheDay"></asp:PlaceHolder>
                                             <div class="d-inline">
                                                 <asp:LinkButton ID="btnRegenerateIdiom" OnClick="btnRegenerateIdiom_Click" ToolTip="Change an idiom" runat="server">
                                                 <asp:Image Width="120px" ImageUrl="~/Assets/images/autorenew-white.svg" runat="server" />
@@ -40,13 +40,16 @@
                                 </div>
                                 <div class="topbar-search mx-auto mt-4" style="max-width: 550px">
                                     <%--<a href="#" class="btn btn-white rounded ms-2">Get started </a>--%>
-                                    <input type="text" placeholder="Search Idioms" class="form-control">
-                                    <label><i class="fa fa-search"></i></label>
+
+                                    <asp:TextBox runat="server" class="form-control" ID="txtSearchKey" placeholder="Search Idioms" />
+                                    <asp:LinkButton ID="btnSearch" OnClick="btnSearch_Click" class="search-submit" runat="server">
+                                        <label><i class="far fa-search"></i></label>
+                                    </asp:LinkButton>
                                 </div>
                                 <p runat="server" id="lblViewCountStatement" class="mt-3" visible="false">
                                     You viewed
                             <asp:Literal ID="lblViewCount" runat="server"></asp:Literal>
-                                    idiom(s) today.
+                                    unique idiom(s) today.
                                 </p>
                             </ContentTemplate>
                             <Triggers>

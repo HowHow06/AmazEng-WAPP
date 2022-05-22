@@ -1,8 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using AmazEng_WAPP.DataAccess;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace AmazEng_WAPP.Models
@@ -44,10 +46,96 @@ namespace AmazEng_WAPP.Models
                 {
                     continue;
                 }
-                meaningList.Add(HttpUtility.UrlDecode(meaning.ToString()));
+                meaningList.Add(meaning.ToString());
             }
 
             return meaningList;
+        }
+
+        public string FormatMeaning()
+        {
+            dynamic meanings = JsonConvert.DeserializeObject(this.Meaning);
+            StringBuilder stringBuilder = new StringBuilder();
+            int i = 1;
+
+            foreach (var meaning in meanings)
+            {
+                if (meaning.ToString().Length == 0)
+                {
+                    continue;
+                }
+                stringBuilder.Append($"<p>{i}. {meaning.ToString()}</p>");
+                i++;
+            }
+
+            return stringBuilder.ToString();
+        }
+
+        public string FormatExample()
+        {
+            dynamic examples = JsonConvert.DeserializeObject(this.Example);
+            StringBuilder stringBuilder = new StringBuilder();
+            int i = 1;
+
+            foreach (var example in examples)
+            {
+                if (example.ToString().Length == 0)
+                {
+                    continue;
+                }
+                stringBuilder.Append($"<p>{i}. {example.ToString()}</p>");
+                i++;
+            }
+
+            return stringBuilder.ToString();
+        }
+
+        public string FormatOrigin()
+        {
+            if (string.IsNullOrEmpty(this.Origin))
+            {
+                return "<p>-</p>";
+            }
+
+
+            return $"<p>{this.Origin}</p>";
+        }
+
+        public string FormatTags()
+        {
+            if (this.Tags is null || this.Tags.Count() == 0)
+            {
+                return string.Empty;
+            }
+
+            StringBuilder stringBuilder = new StringBuilder();
+            //stringBuilder.Append("<p><b>Check out the similar idioms: </b>");
+            stringBuilder.Append("Check out the similar idioms: \n");
+
+            foreach (var tag in this.Tags)
+            {
+                stringBuilder.Append($"<a href='/result?tags={tag.Name}' target='_blank'><u>{tag.Name}</u></a>\t");
+                //stringBuilder.Append($"{tag.Name}\t");
+            }
+
+            //stringBuilder.Append("</p>");
+
+            return stringBuilder.ToString();
+        }
+
+        public int GetFavouriteCount()
+        {
+            AmazengContext db = new AmazengContext();
+            int count = 0;
+            foreach (var member in db.Members)
+            {
+                var query = member.GetFavouriteLibrary().GetIdioms().Where(i => i.Id == this.Id);
+                if (query != null && query.Any())
+                {
+                    count++;
+                }
+            }
+            return count;
         }
     }
 }

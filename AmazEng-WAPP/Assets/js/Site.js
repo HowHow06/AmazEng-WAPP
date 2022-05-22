@@ -50,7 +50,6 @@
 
 
     // Offcanvas Info menu
-
     $('.offcanvas-icon').on('click', function (e) {
         $('.offcanvas-info').toggleClass('offcanvas-on');
         e.preventDefault();
@@ -80,7 +79,6 @@
 
     $(window).scroll(function () {
         var window_top = $(window).scrollTop() + 1;
-
         if (window_top > 50) {
             $('.fixed-btm-top').addClass('reveal');
         } else {

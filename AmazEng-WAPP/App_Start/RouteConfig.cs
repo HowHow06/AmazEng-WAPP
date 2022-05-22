@@ -32,10 +32,8 @@ namespace AmazEng_WAPP
               );
             routes.MapPageRoute(
                  "ResultRoute",
-                 "Result/{SearchKey}",
-                 "~/Result.aspx",
-                 false,
-                 new RouteValueDictionary { { "SearchKey", string.Empty } }
+                 "Result",
+                 "~/Result.aspx"
              );
             routes.MapPageRoute(
                   "ContactRoute",
@@ -58,14 +56,9 @@ namespace AmazEng_WAPP
                 "~/Register.aspx"
             );
             routes.MapPageRoute(
-                "SearchRoute",
-                "Search",
-                "~/Search.aspx"
-            );
-            routes.MapPageRoute(
                 "IdiomRoute",
-                "Idiom",
-                "~/Idiom.aspx"
+                "Idiom/{Id}",
+                "~/IdiomDetail.aspx"
             );
             //more routes to go...
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AmazEng_WAPP.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -26,7 +27,7 @@ namespace AmazEng_WAPP.Models
 
         internal int GetTodayBrowsedToday()
         {
-            return this.GetHistoryLibrary().LibraryIdioms.Where(li => li.AddedAt > DateTime.Today).Count();
+            return this.GetHistoryLibrary().LibraryIdioms.Where(li => li.AddedAt.ToLocalTime() > DateTime.Today).Count();
         }
 
         public virtual ICollection<Message> Messages { get; set; }
@@ -78,5 +79,30 @@ namespace AmazEng_WAPP.Models
             return this.Libraries.Where(l => l.LibraryTypeId == LibraryType.GetLearnLaterLibraryType().Id).First();
         }
 
+        internal void ToggleIdiomInFavouriteLibrary(Idiom idiom, AmazengContext db)
+        {
+            Library favouriteLibrary = this.GetFavouriteLibrary();
+            bool isFavourite = favouriteLibrary.IsIdiomInLibrary(idiom.Id);
+
+            if (isFavourite)
+            {
+                favouriteLibrary.RemoveIdiom(idiom, db);
+                return;
+            }
+            favouriteLibrary.AddIdiom(idiom, db);
+        }
+
+        internal void ToggleIdiomInLearnLaterLibrary(Idiom idiom, AmazengContext db)
+        {
+            Library learnLaterLibrary = this.GetLearnLaterLibrary();
+            bool isLearnLater = learnLaterLibrary.IsIdiomInLibrary(idiom.Id);
+
+            if (isLearnLater)
+            {
+                learnLaterLibrary.RemoveIdiom(idiom, db);
+                return;
+            }
+            learnLaterLibrary.AddIdiom(idiom, db);
+        }
     }
 }

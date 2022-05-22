@@ -42,13 +42,13 @@ namespace AmazEng_WAPP
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl divIdiomOfTheDay;
 
         /// <summary>
-        /// lblIdiomOfTheDay control.
+        /// phIdiomOfTheDay control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal lblIdiomOfTheDay;
+        protected global::System.Web.UI.WebControls.PlaceHolder phIdiomOfTheDay;
 
         /// <summary>
         /// btnRegenerateIdiom control.
@@ -76,6 +76,24 @@ namespace AmazEng_WAPP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lblIdiomMeaning;
+
+        /// <summary>
+        /// txtSearchKey control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtSearchKey;
+
+        /// <summary>
+        /// btnSearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnSearch;
 
         /// <summary>
         /// lblViewCountStatement control.

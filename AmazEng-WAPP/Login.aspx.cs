@@ -21,6 +21,11 @@ namespace AmazEng_WAPP
             {
                 Response.Redirect("/", true);
             }
+
+            if (Request.QueryString["alert"] is object)
+            {
+                Util.ShowAlert(this, "This action requires login.");
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
