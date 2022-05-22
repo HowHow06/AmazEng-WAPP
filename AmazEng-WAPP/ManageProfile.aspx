@@ -3,8 +3,6 @@
     <div class="col-md-12">
             <h1>Edit Profile</h1>
             <div class="col-xl-12 col-md-6">
-                <div class="row mb-2">
-                    <div class="col-md-6">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
