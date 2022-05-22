@@ -22,29 +22,29 @@
                 <hr class="opacity-100 mb-1 mt-3" />
                 <ul class="nav flex-column pt-3 pt-md-0">
                     <li class="nav-item">
-                        <asp:HyperLink NavigateUrl="#" runat="server" class="nav-link">
+                        <asp:HyperLink NavigateUrl='<%$RouteUrl:RouteName=ManageProfileRoute%>' runat="server" class="nav-link">
                             <i class="fas fa-user fa-fw"></i>
                             <span class="sidebar-text">Manage Profile</span>
                         </asp:HyperLink>
                     </li>
                     <li role="separator" class="dropdown-divider my-1 border-gray-700"></li>
                     <li class="nav-item">
-                        <asp:HyperLink NavigateUrl="#" runat="server" class="nav-link"><i class="fa-solid fa-book-open"></i>
+                        <asp:HyperLink NavigateUrl='<%$RouteUrl:RouteName=ManageLibraryRoute%>' runat="server" class="nav-link"><i class="fa-solid fa-book-open"></i>
                             <span class="sidebar-text">Manage Library</span>
                         </asp:HyperLink>
                     </li>
                     <li role="separator" class="dropdown-divider my-1 border-gray-700"></li>
                     <li class="nav-item">
-                        <asp:HyperLink NavigateUrl="#" runat="server" class="nav-link">
+                        <asp:HyperLink NavigateUrl='<%$RouteUrl:RouteName=ManagePasswordRoute%>' runat="server" class="nav-link">
                             <i class="fa-solid fa-lock"></i>
                             <span class="sidebar-text">Manage Password</span>
                         </asp:HyperLink>
                     </li>
                     <li role="separator" class="dropdown-divider my-1 border-gray-700"></li>
                     <li class="nav-item">
-                        <asp:HyperLink NavigateUrl="#" runat="server" class="nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <asp:linkButton ID="btnLogout" Text="Logout" runat="server"  OnClick="btnLogout_Click" OnClientClick="return confirm('Confirm logout?');" class="nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i>
                             <span class="sidebar-text">Logout</span>
-                        </asp:HyperLink>
+                        </asp:linkButton>
                     </li>
                 </ul>
             </div>

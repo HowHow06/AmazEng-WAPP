@@ -71,6 +71,11 @@ namespace AmazEng_WAPP
               "ManageProfile",
               "~/ManageProfile.aspx"
           );
+            routes.MapPageRoute(
+             "ManageLibraryRoute",
+             "ManageLibrary",
+             "~/ManageLibrary.aspx"
+         );
             //more routes to go...
 
 

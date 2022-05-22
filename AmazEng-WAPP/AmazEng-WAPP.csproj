@@ -476,6 +476,7 @@
     <Content Include="Global.asax" />
     <Content Include="IdiomDetail.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="ManageLibrary.aspx" />
     <Content Include="ManagePassword.aspx" />
     <Content Include="ManageProfile.aspx" />
     <Content Include="Register.aspx" />
@@ -1015,6 +1016,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageLibrary.aspx.cs">
+      <DependentUpon>ManageLibrary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageLibrary.aspx.designer.cs">
+      <DependentUpon>ManageLibrary.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManagePassword.aspx.cs">
       <DependentUpon>ManagePassword.aspx</DependentUpon>
