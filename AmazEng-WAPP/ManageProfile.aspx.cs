@@ -12,26 +12,28 @@ namespace AmazEng_WAPP
 {
     public partial class ManageProfile : System.Web.UI.Page
     {
-        private Member Member;
-        private Member UpdateMember;
         protected void Page_Load(object sender, EventArgs e)
         {
-            AmazengContext db = new AmazengContext();
-            Member = db.GetMemberByUsername(HttpContext.Current.User.Identity.Name);
-            txtUsername.Text = Member.Username.ToString();
-            txtName.Text = Member.Name.ToString();
-            txtEmail.Text = Member.Email.ToString();
-           // imgProfilePicture.ImageUrl = Member.ProfilePicture;
-          //  txtImageUpload.
+            if (!Request.IsAuthenticated)
+            {
+                Response.Redirect(GetRouteUrl("LoginRoute", new { }));
+            }
+            if (!IsPostBack)
+            {
+                formRefresh();
+            }
+           
         }
-    //    private void RenderProfilePicture()
-    //    {
-    //        if (!string.IsNullOrEmpty(Member.ProfilePicture))
-    //        {
-    //            imgProfilePicture.ImageUrl = Member.ProfilePicture;
-    //        }
-    //    }
 
+        private void formRefresh()
+        {
+                AmazengContext db = new AmazengContext();
+                Member Member = db.GetMemberByUsername(HttpContext.Current.User.Identity.Name);
+                txtUsername.Text = Member.Username.ToString();
+                txtName.Text = Member.Name.ToString();
+                txtEmail.Text = Member.Email.ToString();
+                imgProfilePicture.ImageUrl = Member.ProfilePicture ?? "https://via.placeholder.com/400x400";
+        }
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
             var Username = txtUsername.Text;
@@ -42,13 +44,20 @@ namespace AmazEng_WAPP
                 return;
             }
             AmazengContext db = new AmazengContext();
-            UpdateMember = db.GetMemberByUsername(Username);
+            Member UpdateMember = db.GetMemberByUsername(HttpContext.Current.User.Identity.Name);
             UpdateMember.Name = Name;
             UpdateMember.Email = Email;
-
-            Util.ShowAlert(this.Page, "Edit successfully" + UpdateMember.Name + Name + txtName.Text.ToString());
+            string profileImagePath = null;
+            if (txtImageUpload.HasFile)
+            {
+                string str = txtImageUpload.FileName;
+                profileImagePath = $"/Public/Uploads/{str}";
+                txtImageUpload.PostedFile.SaveAs(Server.MapPath("~" + profileImagePath));
+            }
+            UpdateMember.ProfilePicture = profileImagePath ?? UpdateMember.ProfilePicture;
+            Util.ShowAlert(this.Page, "Edit successfully" );
             db.SaveChanges();
-            return;
+            formRefresh();
         }
     }
 }
