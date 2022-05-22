@@ -366,6 +366,7 @@
     <Content Include="App_Data\RemoveIdiomDataQuery.sql" />
     <Content Include="Assets\css\home.css" />
     <Content Include="Assets\css\auth.css" />
+    <Content Include="Assets\css\meetourteam.css" />
     <Content Include="Assets\css\responsive.css" />
     <Content Include="Assets\css\Site.css" />
     <Content Include="Assets\css\woocomerce.css" />
@@ -375,6 +376,10 @@
     <Content Include="Assets\images\contact-us.jpg" />
     <Content Include="Assets\images\feature-image.jpg" />
     <Content Include="Assets\images\home-banner.jpg" />
+    <Content Include="Assets\images\meet-our-team-jane.jpg" />
+    <Content Include="Assets\images\meet-our-team-john.jpg" />
+    <Content Include="Assets\images\meet-our-team-marry.jpg" />
+    <Content Include="Assets\images\meet-our-team-mike.jpg" />
     <Content Include="Assets\images\message.png" />
     <Content Include="Assets\images\logo-long-white-v1.png" />
     <Content Include="Assets\images\logo-long-white-v2.png" />

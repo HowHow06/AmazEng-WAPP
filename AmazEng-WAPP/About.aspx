@@ -2,6 +2,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <link rel="stylesheet" href="/Assets/css/home.css">
+    <link rel="stylesheet" href="/Assets/css/meetourteam.css">
     <!-- Banner Section Start -->
     <section class="banner-style-2 ">
         <div class="container">
@@ -25,7 +26,7 @@
                 <div class="col-xl-6 pe-xl-5 col-lg-6">
                     <span class="subheading">What do we do?</span>
                         <h2 class="mb-20 font-lg">Welcome to AmazEng </h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis recusandae reiciendis cumque, sequi vitae illum dolorem</p>
+                        <p>We provide an online platform for anyone to access and learn English idioms.</p>
                     
                 </div>
 
@@ -44,7 +45,7 @@
     <section class="course-wrapper section-padding-btm">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-xl-8">
+                <div class="col-xl-3 col-md-6">
                     <div class="section-heading mb-70 text-center">
                         <h2 class="font-lg">Our goal</h2>
                     </div>
@@ -91,7 +92,7 @@
 
     <!--  Why Us Section End -->
 
-        <!-- Our Quote Start -->
+    <!-- Our Quote Start -->
     <section class="choose-area pb-60 pt-60">
         <div class="container">
             <div class="row">
@@ -100,7 +101,7 @@
                         <div class="quote-icon">
                             <i class="fas fa-quote-left fa-2x"></i>
                         </div>
-                        <p class="quote-text py-5">We believe that idioms are fun to understand the meaning of each of it.</p>
+                        <p class="quote-text py-5">Learning new things will bring you the opportunity to make the difference.</p>
                         <p class="choose-option">- The AmazEng Team</p>
                     </div>
                 </div>
@@ -108,5 +109,49 @@
         </div>
     </section>
     <!-- Our Quote End -->
+
+
+    <!-- Meet Our Team Start -->
+    <div class="container text-center mt-5 mb-2">
+        <h1 class="mb-0">Meet Our Team</h1></div>
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="assets/images/meet-our-team-john.jpg" width="150">
+                    <h5 class="mt-3 name">CEO</h5><span class="work d-block">John Plamer</span>
+                    <div class="mt-4 about"><span>I started AmazEng 5 years ago to provide the best English idom learning platform.</span></div>
+                    <div class="mt-4">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="assets/images/meet-our-team-jane.jpg" width="150">
+                    <h5 class="mt-3 name">Designer</h5><span class="work d-block">Jane Markus</span>
+                    <div class="mt-4 about"><span>Design is not just what it looks like and feels like. Design is how it works.</span></div>
+                    <div class="mt-4">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="assets/images/meet-our-team-mike.jpg" width="150">
+                    <h5 class="mt-3 name">Developer</h5><span class="work d-block">Mike Jane</span>
+                    <div class="mt-4 about"><span>My primary aim is to make this platform user-friendly and higly interactive.</span></div>
+                    <div class="mt-4">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="assets/images/meet-our-team-marry.jpg" width="150">
+                    <h5 class="mt-3 name">Linguist</h5><span class="work d-block">Marry Jones</span>
+                    <div class="mt-4 about"><span>Learning a language starts from memorizing vocabraries and idioms.</span></div>
+                    <div class="mt-4">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Meet Our Team End -->
+
 
 </asp:Content>
