@@ -78,6 +78,15 @@
                             <span class="form-text"><%#: Item.Email %></span>
                         </div>
                     </div>
+
+                    <div class="row g-3 align-items-center">
+                        <div class="col-2">
+                            <label class="col-form-label">Role</label>
+                        </div>
+                        <div class="col-auto">
+                            <span class="form-text"><%#: GetAdminRoleName((int) (Item.RoleId)) %></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </ItemTemplate>
@@ -121,7 +130,7 @@
                     <div class="row g-3 align-items-center  mb-1">
                         <div class="col-2">
                             <label class="col-form-label">Id</label>
-                        </div>
+                        </div> 
                         <div class="col-auto">
                             <span class="form-text"><%#: Item.Id %></span>
                         </div>
@@ -193,6 +202,22 @@
                                 ControlToValidate="txtEditEmail"
                                 OnServerValidate="validatorEditEmail_ServerValidate"
                                 runat="server"></asp:CustomValidator>
+                        </div>
+                    </div>
+
+
+                    
+                    <div class="row g-3 align-items-center  mb-1">
+                        <div class="col-2">
+                            <label for="txtEditEmail" class="col-form-label">Admin Role</label>
+                        </div>
+                        
+                        <div class="col-auto" >
+                            <asp:DropDownList ID="EditDropDownAdminRole" runat="server" SelectedValue='<%# GetAdminRoleName((int)Eval("RoleId")) %>'>  
+                                <asp:ListItem Value="">Please Select Role</asp:ListItem>  
+                                <asp:ListItem>Admin</asp:ListItem>  
+                                <asp:ListItem>Super Admin</asp:ListItem>  
+                            </asp:DropDownList>
                         </div>
                     </div>
 

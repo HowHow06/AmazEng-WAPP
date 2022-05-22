@@ -81,7 +81,37 @@ namespace AmazEng_WAPP.AdminPages
             var txtEditName = FormAdminDetail.FindControl("txtEditName") as TextBox;
             var txtEditUsername = FormAdminDetail.FindControl("txtEditUsername") as TextBox;
             var txtEditEmail = FormAdminDetail.FindControl("txtEditEmail") as TextBox;
+            var txtAdminRole = FormAdminDetail.FindControl("EditDropDownAdminRole") as DropDownList;
             string profileImagePath = null;
+            string AdminRole = txtAdminRole.SelectedValue.ToString();
+            int roleId = 0;
+
+
+            // Debug Code to show selected dropdown value
+            // Util.ShowAlert(this.Page, AdminRole);
+            //return;
+
+
+
+            //get DropDown from Admin Role and process the ID
+
+            if (AdminRole.Equals(""))
+            {
+                Util.ShowAlert(this.Page, "Please Select Role!");
+                return;
+            }
+
+            if (AdminRole.Equals("Admin"))
+            {
+                roleId = 1;
+            }
+
+            if (AdminRole.Equals("Super Admin"))
+            {
+                roleId = 2;
+            }
+
+
 
             if (uploadProfile.HasFile)
             {
@@ -95,6 +125,7 @@ namespace AmazEng_WAPP.AdminPages
             admin.Username = txtEditUsername.Text;
             admin.Email = txtEditEmail.Text;
             admin.ProfilePicture = profileImagePath;
+            admin.RoleId = roleId;
             db.SaveChanges();
             Response.Redirect(GetRouteUrl("AdminViewAdminRoute", new { Id = adminId }));
             return;
@@ -288,7 +319,7 @@ namespace AmazEng_WAPP.AdminPages
         {
             int adminId = Convert.ToInt32((string)RouteData.Values["Id"]);
             AmazengContext db = new AmazengContext();
-            Member admin = db.Members.Find(adminId);
+            Admin admin = db.Admins.Find(adminId);
 
             if (admin == null)
             {
@@ -313,5 +344,21 @@ namespace AmazEng_WAPP.AdminPages
                 );
             Util.ShowAlertAndRedirect(this, "The password is successfully reset.", Request.RawUrl);
         }
+
+
+        //Convert ID to AdminRole Name for the dropdown code 
+        //Reference : https://stackoverflow.com/questions/2469005/bind-a-users-role-to-dropdown
+
+        public String GetAdminRoleName(int adminID)
+        {
+           
+            AmazengContext db = new AmazengContext();
+            AdminRole admin;
+            admin = db.AdminRoles.Find(adminID);
+            String adminRoleName = admin.Name;
+
+            return adminRoleName;
+        }
+
     }
 }
