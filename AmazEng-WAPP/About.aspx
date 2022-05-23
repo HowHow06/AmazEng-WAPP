@@ -142,7 +142,7 @@
                     <img class="img-responsive rounded-circle" src="assets/images/meet-our-team-mike.jpg" width="150">
                     <h5 class="mt-3 name">Developer</h5>
                     <span class="work d-block">Loh Kae Shyan</span>
-                    <div class="mt-4 about"><span>Her Quote</span></div>
+                    <div class="mt-4 about"><span>His Quote</span></div>
                     <div class="mt-4">
                     </div>
                 </div>
@@ -152,7 +152,7 @@
                     <img class="img-responsive rounded-circle" src="assets/images/meet-our-team-marry.jpg" width="150">
                     <h5 class="mt-3 name">Developer</h5>
                     <span class="work d-block">Mohin</span>
-                    <div class="mt-4 about"><span>Her Quote</span></div>
+                    <div class="mt-4 about"><span>His Quote</span></div>
                     <div class="mt-4">
                     </div>
                 </div>
