@@ -33,11 +33,18 @@ namespace AmazEng_WAPP
             if (!IsPostBack)
             {
                 TryAddIdiomToMemberHistory(db);
+                UpdateIdiomViewCount(db);
             }
 
         }
 
+        private void UpdateIdiomViewCount(AmazengContext db)
+        {
+            var idiom = db.Idioms.Find(Idiom.Id);
+            idiom.ViewCount++;
 
+            db.SaveChanges();
+        }
 
         protected void Page_PreRender(object sender, EventArgs e)
         {

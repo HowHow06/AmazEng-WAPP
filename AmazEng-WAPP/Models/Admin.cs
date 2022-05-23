@@ -16,6 +16,7 @@ namespace AmazEng_WAPP.Models
         [Required]
         public string Password { get; set; }
         public string ProfilePicture { get; set; }
+        public DateTime? LastLoginAt { get; set; }
         public string RememberToken { get; set; }
         public DateTime? TokenExpiresAt { get; set; }
         [Required]

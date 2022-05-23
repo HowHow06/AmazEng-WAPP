@@ -142,6 +142,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AdminPages\Assets\css\admin-global.css" />
+    <Content Include="AdminPages\FeedbackPages\ViewFeedback.aspx" />
     <Content Include="AdminPages\Forgot.aspx" />
     <Content Include="AdminPages\IdiomPages\ViewIdiom.aspx" />
     <Content Include="AdminPages\Login.aspx" />
@@ -353,9 +354,12 @@
     <Content Include="AdminPages\Assets\vendors\waypoints\testem.json" />
     <Content Include="AdminPages\Dashboard.aspx" />
     <Content Include="AdminPages\ManageAdmins.aspx" />
+    <Content Include="AdminPages\ManageFeedbacks.aspx" />
     <Content Include="AdminPages\ManageIdioms.aspx" />
     <Content Include="AdminPages\ManageMembers.aspx" />
+    <Content Include="AdminPages\ManageMessages.aspx" />
     <Content Include="AdminPages\MemberPages\ViewMember.aspx" />
+    <Content Include="AdminPages\MessagePages\ViewMessage.aspx" />
     <Content Include="AdminPages\ViewAdmin.aspx" />
     <Content Include="App_Data\AmazengDb.mdf" />
     <Content Include="App_Data\AmazengDb_log.ldf">
@@ -675,6 +679,13 @@
     <Content Include="Scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminPages\FeedbackPages\ViewFeedback.aspx.cs">
+      <DependentUpon>ViewFeedback.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\FeedbackPages\ViewFeedback.aspx.designer.cs">
+      <DependentUpon>ViewFeedback.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\Forgot.aspx.cs">
       <DependentUpon>Forgot.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -710,6 +721,13 @@
     <Compile Include="AdminPages\ManageAdmins.aspx.designer.cs">
       <DependentUpon>ManageAdmins.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminPages\ManageFeedbacks.aspx.cs">
+      <DependentUpon>ManageFeedbacks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ManageFeedbacks.aspx.designer.cs">
+      <DependentUpon>ManageFeedbacks.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\ManageIdioms.aspx.cs">
       <DependentUpon>ManageIdioms.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -724,12 +742,26 @@
     <Compile Include="AdminPages\ManageMembers.aspx.designer.cs">
       <DependentUpon>ManageMembers.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminPages\ManageMessages.aspx.cs">
+      <DependentUpon>ManageMessages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ManageMessages.aspx.designer.cs">
+      <DependentUpon>ManageMessages.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\MemberPages\ViewMember.aspx.cs">
       <DependentUpon>ViewMember.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminPages\MemberPages\ViewMember.aspx.designer.cs">
       <DependentUpon>ViewMember.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\MessagePages\ViewMessage.aspx.cs">
+      <DependentUpon>ViewMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\MessagePages\ViewMessage.aspx.designer.cs">
+      <DependentUpon>ViewMessage.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPages\Site.Admin.Master.cs">
       <DependentUpon>Site.Admin.Master</DependentUpon>
@@ -1014,6 +1046,10 @@
     <Compile Include="Migrations\202205201722433_changeMemberIdToNullableFeedbackTable.designer.cs">
       <DependentUpon>202205201722433_changeMemberIdToNullableFeedbackTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205230956234_addLastLoginAtToMemberAndAdminTable.cs" />
+    <Compile Include="Migrations\202205230956234_addLastLoginAtToMemberAndAdminTable.designer.cs">
+      <DependentUpon>202205230956234_addLastLoginAtToMemberAndAdminTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\AdminRole.cs" />
@@ -1118,6 +1154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205201722433_changeMemberIdToNullableFeedbackTable.resx">
       <DependentUpon>202205201722433_changeMemberIdToNullableFeedbackTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205230956234_addLastLoginAtToMemberAndAdminTable.resx">
+      <DependentUpon>202205230956234_addLastLoginAtToMemberAndAdminTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

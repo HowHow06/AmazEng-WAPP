@@ -20,7 +20,7 @@
                 <div class="btn-toolbar mb-2 mb-md-0 d-flex">
                     <a href='<%#: GetRouteUrl("AdminAdminsRoute", new { }) %>' class="btn btn-sm  btn-outline-gray-600  d-inline-flex align-items-center">Back
                     </a>
-                    <asp:Button ID="btnResetPassword" Text="Reset Password" runat="server" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center" OnClick="btnResetPassword_Click" OnClientClick='return confirm("Reset password for this Admin Account?");'/>
+                    <asp:Button ID="btnResetPassword" Text="Reset Password" runat="server" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center" OnClick="btnResetPassword_Click" OnClientClick='return confirm("Reset password for this Admin Account?");' />
                     <a href='<%#: GetRouteUrl("AdminViewAdminRoute", new {Id = Item.Id , Mode = "Edit"}) %>' class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center">Edit
                     </a>
                     <asp:Button class="btn btn-sm btn-gray-800 ms-2" Text="Delete" runat="server" ID="btnDelete" OnClick="btnDelete_Click"
@@ -87,6 +87,16 @@
                             <span class="form-text"><%#: GetAdminRoleName((int) (Item.RoleId)) %></span>
                         </div>
                     </div>
+
+                    <%--field--%>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-2">
+                            <label class="col-form-label">Last login at</label>
+                        </div>
+                        <div class="col-auto">
+                            <span class="form-text"><%#: Item.LastLoginAt.HasValue ? Item.LastLoginAt.Value.ToLocalTime().ToString() : "-" %></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </ItemTemplate>
@@ -130,7 +140,7 @@
                     <div class="row g-3 align-items-center  mb-1">
                         <div class="col-2">
                             <label class="col-form-label">Id</label>
-                        </div> 
+                        </div>
                         <div class="col-auto">
                             <span class="form-text"><%#: Item.Id %></span>
                         </div>
@@ -206,17 +216,17 @@
                     </div>
 
 
-                    
+
                     <div class="row g-3 align-items-center  mb-1">
                         <div class="col-2">
                             <label for="txtEditEmail" class="col-form-label">Admin Role</label>
                         </div>
-                        
-                        <div class="col-auto" >
-                            <asp:DropDownList ID="EditDropDownAdminRole" runat="server" SelectedValue='<%# GetAdminRoleName((int)Eval("RoleId")) %>'>  
-                                <asp:ListItem Value="">Please Select Role</asp:ListItem>  
-                                <asp:ListItem>Admin</asp:ListItem>  
-                                <asp:ListItem>Super Admin</asp:ListItem>  
+
+                        <div class="col-auto">
+                            <asp:DropDownList ID="EditDropDownAdminRole" runat="server" SelectedValue='<%# GetAdminRoleName((int)Eval("RoleId")) %>'>
+                                <asp:ListItem Value="">Please Select Role</asp:ListItem>
+                                <asp:ListItem>Admin</asp:ListItem>
+                                <asp:ListItem>Super Admin</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                     </div>
@@ -292,7 +302,7 @@
                         </div>
                         <div class="col-auto">
                             <asp:RequiredFieldValidator class="invalid-feedback" Display="Dynamic" ID="RequiredFieldValidator1" runat="server" ErrorMessage="*This field must not be empty" ControlToValidate="txtNewUsername"></asp:RequiredFieldValidator>
-                              <asp:CustomValidator
+                            <asp:CustomValidator
                                 class="invalid-feedback"
                                 Display="Dynamic"
                                 ErrorMessage="*This username is used by other admin."
@@ -319,7 +329,7 @@
                                 ValidationExpression="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"></asp:RegularExpressionValidator>
 
                             <asp:RequiredFieldValidator class="invalid-feedback" Display="Dynamic" ID="RequiredFieldValidator5" runat="server" ErrorMessage="*This field must not be empty" ControlToValidate="txtNewEmail"></asp:RequiredFieldValidator>
-                             <asp:CustomValidator
+                            <asp:CustomValidator
                                 class="invalid-feedback"
                                 Display="Dynamic"
                                 ErrorMessage="*This email is used by other admin."
@@ -357,32 +367,32 @@
                         </div>
 
                         <div class="row g-3 align-items-center  mb-1">
-                        <div class="col-2">
-                            <label for="txtAdminRole" class="col-form-label">Admin Role</label>
-                        </div>
-                        <div class="col-4">
-                            <asp:DropDownList ID="DropDownAdminRole" runat="server" >  
-                                <asp:ListItem Value="">Please Select Role</asp:ListItem>  
-                                <asp:ListItem>Admin</asp:ListItem>  
-                                <asp:ListItem>Super Admin</asp:ListItem>  
-                            </asp:DropDownList>  
+                            <div class="col-2">
+                                <label for="txtAdminRole" class="col-form-label">Admin Role</label>
+                            </div>
+                            <div class="col-4">
+                                <asp:DropDownList ID="DropDownAdminRole" runat="server">
+                                    <asp:ListItem Value="">Please Select Role</asp:ListItem>
+                                    <asp:ListItem>Admin</asp:ListItem>
+                                    <asp:ListItem>Super Admin</asp:ListItem>
+                                </asp:DropDownList>
+                            </div>
+
+                            <div class="col-auto">
+                                <asp:CompareValidator
+                                    class="invalid-feedback"
+                                    Display="Dynamic"
+                                    ErrorMessage="*Please make sure both passwords are the same"
+                                    ControlToValidate="txtNewPassword"
+                                    ControlToCompare="txtNewRePassword"
+                                    Operator="Equal"
+                                    runat="server" />
+                                <asp:RequiredFieldValidator class="invalid-feedback" Display="Dynamic" ID="RequiredFieldValidator7" runat="server" ErrorMessage="*This field must not be empty" ControlToValidate="txtNewRePassword"></asp:RequiredFieldValidator>
+                            </div>
                         </div>
 
-                        <div class="col-auto">
-                            <asp:CompareValidator
-                                class="invalid-feedback"
-                                Display="Dynamic"
-                                ErrorMessage="*Please make sure both passwords are the same"
-                                ControlToValidate="txtNewPassword"
-                                ControlToCompare="txtNewRePassword"
-                                Operator="Equal"
-                                runat="server" />
-                            <asp:RequiredFieldValidator class="invalid-feedback" Display="Dynamic" ID="RequiredFieldValidator7" runat="server" ErrorMessage="*This field must not be empty" ControlToValidate="txtNewRePassword"></asp:RequiredFieldValidator>
-                        </div>
                     </div>
-
                 </div>
-            </div>
         </InsertItemTemplate>
     </asp:FormView>
 

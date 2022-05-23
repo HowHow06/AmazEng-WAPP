@@ -52,6 +52,8 @@ namespace AmazEng_WAPP
             }
 
             Auth.SetCustomAuthCookie(member.Username, role, rememberMe);
+            member.LastLoginAt = DateTime.UtcNow;
+            db.SaveChanges();
 
             var returnUrl = Request.QueryString["ReturnURL"];
             if (string.IsNullOrEmpty(returnUrl))

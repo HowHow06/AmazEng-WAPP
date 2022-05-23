@@ -58,6 +58,8 @@ namespace AmazEng_WAPP.AdminPages
                 Response.Cookies.Add(rememberTokenCookie);
             }
 
+            admin.LastLoginAt = DateTime.UtcNow;
+            db.SaveChanges();
             Response.Redirect(GetRouteUrl("AdminDashboardRoute", new { }), true);
         }
     }

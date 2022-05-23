@@ -1,157 +1,102 @@
 ﻿<%@ Page Title="Dashboard" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="Dashboard.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.Dashboard" %>
 
+<%@ Register TagPrefix="my" TagName="Leaderboard" Src="~/Class/Controls/Leaderboard.ascx" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <!-- top Section -->
     <div class="row mb-2">
         <div class="col-md-4">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col-auto d-none d-lg-block">
-                    <i class="fa-solid fa-square-poll-vertical fa-9x"></i>
-                    <%--<img height="250" src="/AdminPages/images/statistic.png" />--%>
+            <div class="card row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-100 position-relative p-3">
+                <div class="col-6 d-flex flex-column justify-content-center">
+                    <i class="fa-solid fa-square-poll-vertical fa-8x"></i>
                 </div>
-                <div class="col p-4 d-flex flex-column position-static">
-                    <h1>100</h1>
-                    <h6>Idioms browsed</h6>
-                    <h6>date here  </h6>
+                <div class="col-6 d-flex flex-column position-static justify-content-center">
+                    <h1>
+                        <asp:Literal ID="lblTotalIdiomViewCount" runat="server" />
+
+                    </h1>
+                    <h6>Total Idioms View</h6>
+                    <h6>
+                        <asp:Literal ID="lblCurrentMonthYear1" runat="server" />
+                    </h6>
                 </div>
 
             </div>
         </div>
         <div class="col-md-4">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col-auto d-none d-lg-block">
-                    <i class="fa-solid fa-people-group fa-9x"></i>
-                    <%--<img height="250" src="/AdminPages/images/statistic.png" />--%>
+            <div class="card row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm  h-100 position-relative p-3">
+                <div class="col-6 d-flex flex-column justify-content-center">
+                    <i class="fa-solid fa-people-group fa-8x"></i>
                 </div>
-                <div class="col p-4 d-flex flex-column position-static">
-                    <h1>100</h1>
-                    <h6>visitor</h6>
-                    <h6>date here  </h6>
+                <div class="col-6 d-flex flex-column position-static justify-content-center">
+                    <h1>
+                        <asp:Literal ID="lblMemberCount" runat="server" /></h1>
+                    <h6>Registered Members</h6>
+                    <h6>
+                        <asp:Literal ID="lblCurrentMonthYear3" runat="server" />
+                    </h6>
                 </div>
 
             </div>
         </div>
         <div class="col-md-4">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-                <div class="col-auto d-none d-lg-block">
-                    <i class="fa-solid fa-user fa-9x"></i>
-                    <%--<img height="250" src="/AdminPages/images/statistic.png" />--%>
+            <div class="card row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm  h-100 position-relative p-3">
+                <div class="col-6 d-flex flex-column justify-content-center">
+                    <i class="fa-solid fa-user fa-8x"></i>
                 </div>
-                <div class="col p-4 d-flex flex-column position-static">
-                    <h1>100</h1>
-                    <h6>active member</h6>
-                    <h6>date here  </h6>
+                <div class="col-6 d-flex flex-column position-static justify-content-center">
+                    <h1>
+                        <asp:Literal ID="lblActiveMemberCount" runat="server" /></h1>
+                    <h6>Active Members</h6>
+                    <h6>
+                        <asp:Literal ID="lblCurrentMonthYear2" runat="server" />
+                    </h6>
                 </div>
-
             </div>
         </div>
     </div>
     <!--  top Section -->
     <!--  mid Section -->
-    <div class="row mb-2">
+    <div class="row my-4">
         <div class="col-md-6">
-            <div class="card">
-                <table class="table table-striped table-sm">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Header</th>
-                            <th scope="col">Header</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1,001</td>
-                            <td>random</td>
-                            <td>data</td>
-                        </tr>
-                        <tr>
-                            <td>1,002</td>
-                            <td>placeholder</td>
-                            <td>irrelevant</td>
-                        </tr>
-                        <tr>
-                            <td>1,003</td>
-                            <td>data</td>
-                            <td>rich</td>
-                        </tr>
-                        <tr>
-                            <td>1,003</td>
-                            <td>information</td>
-                            <td>placeholder</td>
-                        </tr>
-                        <tr>
-                            <td>1,004</td>
-                            <td>text</td>
-                            <td>random</td>
-                        </tr>
-                        <tr>
-                            <td>1,005</td>
-                            <td>dashboard</td>
-                            <td>irrelevant</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="card h-100  shadow-sm ">
+                <my:Leaderboard runat="server" CssClass="p-4 my-2" />
             </div>
         </div>
         <div class="col-md-6">
-            <div class="card">
-                <table class="table table-striped table-sm">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Header</th>
-                            <th scope="col">Header</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1,001</td>
-                            <td>random</td>
-                            <td>data</td>
-                        </tr>
-                        <tr>
-                            <td>1,002</td>
-                            <td>placeholder</td>
-                            <td>irrelevant</td>
-                        </tr>
-                        <tr>
-                            <td>1,003</td>
-                            <td>data</td>
-                            <td>rich</td>
-                        </tr>
-                        <tr>
-                            <td>1,003</td>
-                            <td>information</td>
-                            <td>placeholder</td>
-                        </tr>
-                        <tr>
-                            <td>1,004</td>
-                            <td>text</td>
-                            <td>random</td>
-                        </tr>
-                        <tr>
-                            <td>1,005</td>
-                            <td>dashboard</td>
-                            <td>irrelevant</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="card h-100  shadow-sm ">
+                <div class="p-4 my-2">
+                    <span class="h4 mb-1 ">Most View Idioms</span>
+                    <asp:GridView ID="GridMostViewIdiom"
+                        runat="server"
+                        ItemType="AmazEng_WAPP.Models.Idiom"
+                        DataKeyNames="Id"
+                        SelectMethod="GridMostViewIdiom_GetData"
+                        AutoGenerateColumns="false" BorderStyle="None" Width="100%">
+                        <Columns>
+                            <asp:TemplateField HeaderText="No." ItemStyle-Width="100">
+                                <ItemTemplate>
+                                    <asp:Label ID="lblRowNumber" Text='<%# Container.DataItemIndex + 1 %>' runat="server" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                            <asp:DynamicField DataField="Name" />
+                            <asp:TemplateField HeaderText="Points">
+                                <ItemTemplate>
+                                    <span><%# Item.ViewCount %></span>
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                        <EmptyDataTemplate>
+                            There is no idiom
+                        </EmptyDataTemplate>
+                    </asp:GridView>
+                </div>
+
             </div>
         </div>
     </div>
     <!--  mid Section -->
-    <!--  bottom Section -->
-    <div class="row mb-2">
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title">Popular Search Keywords</h3>
-                <img class="" src="/AdminPages/Assets/images/word-cloud-demo.png" />
-            </div>
-        </div>
-    </div>
-    <!--  bottom Section -->
 
 </asp:Content>

@@ -69,12 +69,11 @@
                         <asp:DynamicField DataField="Username" />
                         <asp:DynamicField DataField="Name" />
                         <asp:DynamicField DataField="Email" />
-                        <%--        <asp:TemplateField HeaderText="Verified">
+                        <asp:TemplateField HeaderText="Last login at">
                             <ItemTemplate>
-                                <asp:Label Text='<%# Item.EmailVerifiedAt is object ? "Verified" : "Not Verified" %>'
-                                    runat="server" />
+                                <%#: Item.LastLoginAt.HasValue ? Item.LastLoginAt.Value.ToLocalTime().ToString() : "-" %>
                             </ItemTemplate>
-                        </asp:TemplateField>--%>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <asp:HyperLink runat="server" NavigateUrl='<%#: GetRouteUrl("AdminViewMemberRoute", new {Id = Item.Id }) %>'>

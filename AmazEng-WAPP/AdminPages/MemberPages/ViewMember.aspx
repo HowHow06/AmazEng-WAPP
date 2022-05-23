@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Member" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="ViewMember.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.MemberPages.ViewMember" %>
+﻿
+<%@ Page Title="Member" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="ViewMember.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.MemberPages.ViewMember" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -20,7 +21,7 @@
                 <div class="btn-toolbar mb-2 mb-md-0 d-flex">
                     <a href='<%#: GetRouteUrl("AdminMembersRoute", new { }) %>' class="btn btn-sm  btn-outline-gray-600  d-inline-flex align-items-center">Back
                     </a>
-                    <asp:Button ID="btnResetPassword" Text="Reset Password" runat="server" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center" OnClick="btnResetPassword_Click" OnClientClick='return confirm("Reset password for this member?");'/>
+                    <asp:Button ID="btnResetPassword" Text="Reset Password" runat="server" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center" OnClick="btnResetPassword_Click" OnClientClick='return confirm("Reset password for this member?");' />
                     <a href='<%#: GetRouteUrl("AdminViewMemberRoute", new {Id = Item.Id , Mode = "Edit"}) %>' class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center">Edit
                     </a>
                     <asp:Button class="btn btn-sm btn-gray-800 ms-2" Text="Delete" runat="server" ID="btnDelete" OnClick="btnDelete_Click"
@@ -76,6 +77,16 @@
                         </div>
                         <div class="col-auto">
                             <span class="form-text"><%#: Item.Email %></span>
+                        </div>
+                    </div>
+
+                    <%--field--%>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-2">
+                            <label class="col-form-label">Last login at</label>
+                        </div>
+                        <div class="col-auto">
+                            <span class="form-text"><%#: Item.LastLoginAt.HasValue ? Item.LastLoginAt.Value.ToLocalTime().ToString() : "-" %></span>
                         </div>
                     </div>
                 </div>
@@ -267,7 +278,7 @@
                         </div>
                         <div class="col-auto">
                             <asp:RequiredFieldValidator class="invalid-feedback" Display="Dynamic" ID="RequiredFieldValidator1" runat="server" ErrorMessage="*This field must not be empty" ControlToValidate="txtNewUsername"></asp:RequiredFieldValidator>
-                              <asp:CustomValidator
+                            <asp:CustomValidator
                                 class="invalid-feedback"
                                 Display="Dynamic"
                                 ErrorMessage="*This username is used by other member."
@@ -294,7 +305,7 @@
                                 ValidationExpression="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"></asp:RegularExpressionValidator>
 
                             <asp:RequiredFieldValidator class="invalid-feedback" Display="Dynamic" ID="RequiredFieldValidator5" runat="server" ErrorMessage="*This field must not be empty" ControlToValidate="txtNewEmail"></asp:RequiredFieldValidator>
-                             <asp:CustomValidator
+                            <asp:CustomValidator
                                 class="invalid-feedback"
                                 Display="Dynamic"
                                 ErrorMessage="*This email is used by other member."
