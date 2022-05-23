@@ -1050,6 +1050,10 @@
     <Compile Include="Migrations\202205230956234_addLastLoginAtToMemberAndAdminTable.designer.cs">
       <DependentUpon>202205230956234_addLastLoginAtToMemberAndAdminTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205231047568_removeUnnecessaryFields.cs" />
+    <Compile Include="Migrations\202205231047568_removeUnnecessaryFields.designer.cs">
+      <DependentUpon>202205231047568_removeUnnecessaryFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\AdminRole.cs" />
@@ -1063,7 +1067,6 @@
     <Compile Include="Models\Member.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="DataAccess\AmazengContext.cs" />
-    <Compile Include="Models\Quiz.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="NestedMemberManage.master.cs">
       <DependentUpon>NestedMemberManage.master</DependentUpon>
@@ -1157,6 +1160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205230956234_addLastLoginAtToMemberAndAdminTable.resx">
       <DependentUpon>202205230956234_addLastLoginAtToMemberAndAdminTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205231047568_removeUnnecessaryFields.resx">
+      <DependentUpon>202205231047568_removeUnnecessaryFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

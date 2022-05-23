@@ -27,7 +27,6 @@ namespace AmazEng_WAPP.Models
 
         public virtual ICollection<LibraryIdiom> LibraryIdioms { get; set; }
         public virtual ICollection<Tag> Tags { get; set; }
-        public virtual ICollection<Quiz> Quizzes { get; set; }
 
         //public ICollection<Library> Libraries { get { return LibraryIdioms.Select(e => e.Library).ToList(); } }
 
