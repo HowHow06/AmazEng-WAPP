@@ -11,7 +11,6 @@ namespace AmazEng_WAPP.Models
         [Key, Required]
         public int Id { get; set; }
         public int IdiomId { get; set; }
-        public int? MemberId { get; set; }
         public string IssuerName { get; set; }
         public string IssuerEmail { get; set; }
         [Required]
@@ -21,7 +20,6 @@ namespace AmazEng_WAPP.Models
         public DateTime? DeletedAt { get; set; }
 
 
-        public virtual Member Member { get; set; }
         public virtual Idiom Idiom { get; set; }
     }
 }

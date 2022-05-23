@@ -20,7 +20,6 @@ namespace AmazEng_WAPP.Models
         public string Email { get; set; }
         public string ProfilePicture { get; set; }
         public DateTime? LastLoginAt { get; set; }
-        public DateTime? EmailVerifiedAt { get; set; }
         public string RememberToken { get; set; }
         public DateTime? TokenExpiresAt { get; set; }
         public int BrowsedIdiomCount { get; set; }//default 0
