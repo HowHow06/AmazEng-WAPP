@@ -490,10 +490,10 @@ textarea.form-control {
 Page Banner Area
 ======================*/
 .page-header {
-    padding: 90px 0px;
+    padding: 120px 0px;
     background: #F4F5F8;
     position: relative;
-    background: url("../images/bg/page-title.jpg");
+    background: url("../images/page-header.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     z-index: 1;
@@ -506,7 +506,7 @@ Page Banner Area
         top: 0px;
         width: 100%;
         height: 100%;
-        background: rgba(3, 31, 66, 0.9);
+        background: rgba(2, 6, 22, 0.5);
         z-index: -1;
     }
 
@@ -519,6 +519,9 @@ Page Banner Area
             line-height: 50px;
             margin-bottom: 20px;
             text-transform: capitalize;
+        }
+        .page-header .title-block p {
+            color: #fff;
         }
 
         .page-header .title-block ul li {

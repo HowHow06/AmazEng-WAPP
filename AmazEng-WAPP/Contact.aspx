@@ -2,19 +2,17 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <!-- Banner Section Start -->
-    <section class="banner-style-2 ">
+    <section class="page-header">
         <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-12">
-                    <div class="banner-content text-center">
-                        <h1 class="cd-headline clip is-full-width">Contact Us</h1>
-                         <p>Feel free to contact us with te method below.</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-8">
+                    <div class="title-block">
+                        <h1>Contact Us</h1>
+                        <p>Feel free to contact us with the method below.</p>
                     </div>
                 </div>
             </div>
-            <!-- / .row -->
         </div>
-        <!-- / .container -->
     </section>
     <!-- Banner Section End -->
 

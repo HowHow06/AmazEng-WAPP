@@ -4,35 +4,35 @@
     <link rel="stylesheet" href="/Assets/css/home.css">
     <link rel="stylesheet" href="/Assets/css/meetourteam.css">
     <!-- Banner Section Start -->
-    <section class="banner-style-2 ">
-        <div class="container">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-12">
-                    <div class="banner-content text-center">
-                        <h1 class="cd-headline clip is-full-width">About</h1>
-                    </div>
-                </div>
-            </div>
-            <!-- / .row -->
-        </div>
-        <!-- / .container -->
+
     </section>
+     <section class="page-header">
+         <div class="container">
+             <div class="row justify-content-center">
+                 <div class="col-lg-8 col-xl-8">
+                     <div class="title-block">
+                         <h1>About Us</h1>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
     <!-- Banner Section End -->
 
-       <!-- Welcome to AmazEng Start -->
+    <!-- Welcome to AmazEng Start -->
     <section class="features section-padding ">
         <div class="container">
             <div class="row align-items-center justify-content-end mb-50">
                 <div class="col-xl-6 pe-xl-5 col-lg-6">
                     <span class="subheading">What do we do?</span>
-                        <h2 class="mb-20 font-lg">Welcome to AmazEng </h2>
-                        <p>We provide an online platform for anyone to access and learn English idioms.</p>
-                    
+                    <h2 class="mb-20 font-lg">Welcome to AmazEng </h2>
+                    <p>We provide an online platform for anyone to access and learn English idioms.</p>
+
                 </div>
 
                 <div class="col-xl-6 col-lg-6 ">
                     <div class="section-heading mt-5 mt-lg-0 mb-4">
-                        <img src="assets/images/feature-image.jpg" alt="" class="img-fluid">
+                        <img src="assets/images/feature-image-2.jpg" alt="" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@
     </section>
     <!-- Welcome to AmazEng Section END -->
 
-        <!--  Our goal Section -->
+    <!--  Our goal Section -->
 
     <section class="course-wrapper section-padding-btm">
         <div class="container">
@@ -58,13 +58,13 @@
                         <div class="counter-box bg-1 mb-4 mb-lg-0">
                             <i class="flaticon-man"></i>
                             <div class="count">
-                            <span>Availability</span>
+                                <span>Availability</span>
                             </div>
                             <p>Provide the best english learning platform for everyone, everywhere</p>
                         </div>
                     </div>
 
-                    
+
 
                     <div class="col-lg-4 col-md-6">
                         <div class="counter-box bg-3">
@@ -113,37 +113,46 @@
 
     <!-- Meet Our Team Start -->
     <div class="container text-center mt-5 mb-2">
-        <h1 class="mb-0">Meet Our Team</h1></div>
+        <h1 class="mb-0">Meet Our Team</h1>
+    </div>
     <div class="container mt-3">
         <div class="row">
             <div class="col-md-3">
-                <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="assets/images/meet-our-team-john.jpg" width="150">
-                    <h5 class="mt-3 name">CEO</h5><span class="work d-block">John Plamer</span>
-                    <div class="mt-4 about"><span>I started AmazEng 5 years ago to provide the best English idom learning platform.</span></div>
+                <div class="bg-white p-3 text-center rounded box h-100">
+                    <img class="img-responsive rounded-circle" src="assets/images/howard.jpg" width="150">
+                    <h5 class="mt-3 name">Leader</h5>
+                    <span class="work d-block">Howard Lim</span>
+                    <div class="mt-4 about"><span>Use your loaf.</span></div>
                     <div class="mt-4">
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="assets/images/meet-our-team-jane.jpg" width="150">
-                    <h5 class="mt-3 name">Designer</h5><span class="work d-block">Jane Markus</span>
-                    <div class="mt-4 about"><span>Design is not just what it looks like and feels like. Design is how it works.</span></div>
+                <div class="bg-white p-3 text-center rounded box h-100">
+                    <img class="img-responsive rounded-circle" src="assets/images/meet-our-team-jane.jpg" width="150">
+                    <h5 class="mt-3 name">Developer</h5>
+                    <span class="work d-block">Rin Mirakumi</span>
+                    <div class="mt-4 about"><span>Her Quote</span></div>
                     <div class="mt-4">
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="assets/images/meet-our-team-mike.jpg" width="150">
-                    <h5 class="mt-3 name">Developer</h5><span class="work d-block">Mike Jane</span>
-                    <div class="mt-4 about"><span>My primary aim is to make this platform user-friendly and higly interactive.</span></div>
+                <div class="bg-white p-3 text-center rounded box h-100">
+                    <img class="img-responsive rounded-circle" src="assets/images/meet-our-team-mike.jpg" width="150">
+                    <h5 class="mt-3 name">Developer</h5>
+                    <span class="work d-block">Loh Kae Shyan</span>
+                    <div class="mt-4 about"><span>Her Quote</span></div>
                     <div class="mt-4">
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="bg-white p-3 text-center rounded box"><img class="img-responsive rounded-circle" src="assets/images/meet-our-team-marry.jpg" width="150">
-                    <h5 class="mt-3 name">Linguist</h5><span class="work d-block">Marry Jones</span>
-                    <div class="mt-4 about"><span>Learning a language starts from memorizing vocabraries and idioms.</span></div>
+                <div class="bg-white p-3 text-center rounded box h-100">
+                    <img class="img-responsive rounded-circle" src="assets/images/meet-our-team-marry.jpg" width="150">
+                    <h5 class="mt-3 name">Developer</h5>
+                    <span class="work d-block">Mohin</span>
+                    <div class="mt-4 about"><span>Her Quote</span></div>
                     <div class="mt-4">
                     </div>
                 </div>
@@ -151,7 +160,7 @@
         </div>
     </div>
 
-     <!-- Meet Our Team End -->
+    <!-- Meet Our Team End -->
 
 
 </asp:Content>
