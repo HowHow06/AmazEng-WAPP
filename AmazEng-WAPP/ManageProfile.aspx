@@ -23,45 +23,38 @@
                                 </p>
                             </div>
 
-                                    <div class="col-xl-12">
-                                        <p class="form-row form-row-wide">
-                                            <label>Email&nbsp;<span class="required">*&nbsp;&nbsp;</span></label>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please Enter Field" ControlToValidate="txtEmail" ForeColor="Red"></asp:RequiredFieldValidator>
-                                            <asp:TextBox class="form-control" ID="txtEmail" runat="server" placeholder="Subject" TextMode="Email"></asp:TextBox>
-                                        </p>
-                                    </div>      </div>
-                                   
-                                    <div class="col-md-6">
-                                     <div class="col-xl-12">
-                                        <p class="form-row form-row-wide">
-                                            <asp:Image width="100" Height="30%" style="border-radius: 50%" ID="imgProfilePicture" ImageUrl="https://via.placeholder.com/400x400" runat="server" />
-                                <asp:FileUpload ID= "txtImageUpload" runat = "server" />
-                                        </p>
-                                    </div>                                   
-
-                                    </div>
-                                    <p class="form-row form-row-wide d-grid">
-                                        <div class="row mb-2">
-                                            <%--<asp:Button class="button col-xl-3" Text="Cancel" runat="server" ID="btnCancel" />--%>
-                                            <asp:Button class="button col-xl-3" Text="Submit" runat="server" ID="btnSubmit" OnClick="btnSubmit_Click" />
-                                        </div>
-                                    </p>
-                                </div>
+                            <div class="col-xl-12">
+                                <p class="form-row form-row-wide">
+                                    <label>Email&nbsp;<span class="required">*&nbsp;&nbsp;</span></label>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Please Enter Field" ControlToValidate="txtEmail" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    <asp:TextBox class="form-control" ID="txtEmail" runat="server" placeholder="Subject" TextMode="Email"></asp:TextBox>
+                                </p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
 
-                        <div class="card">
-                            <div class="card-body">
-                            <img style="border-radius:50%" width="250" height="250" src="/Assets/images/NA.jpg" alt="Avatar">
-                            <input class="form-control" type="file" id="txtImageUpload">
-                                </div>
+                        <div class="col-md-6">
+                            <div class="col-xl-12">
+                                <p class="form-row form-row-wide">
+                                    <asp:Image Width="100" Height="30%" Style="border-radius: 50%" ID="imgProfilePicture" ImageUrl="https://via.placeholder.com/400x400" runat="server" />
+                                    <asp:FileUpload ID="txtImageUpload" runat="server" />
+                                </p>
+                            </div>
+
                         </div>
+                        <p class="form-row form-row-wide d-grid">
+                            <div class="row mb-2">
+                                <asp:LinkButton runat="server" ID="btnSubmitReport" OnClick="btnSubmit_Click">
+            <span id="btnClientReportSubmit" type="submit" class="btn btn-main rounded btn-sm">Submit</span>
+                                </asp:LinkButton>
+                                <%--<asp:Button class="button col-xl-3" Text="Cancel" runat="server" ID="btnCancel" />--%>
+                                <%--<asp:Button class="btn btn-main rounded btn-sm" Text="Submit" runat="server" ID="btnSubmit" OnClick="btnSubmit_Click" />--%>
+                            </div>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
     <script>
         const image_input = document.querySelector("#MainContent_MainInnerContent_txtImageUpload");

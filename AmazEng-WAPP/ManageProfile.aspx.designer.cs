@@ -78,21 +78,12 @@ namespace AmazEng_WAPP
         protected global::System.Web.UI.WebControls.FileUpload txtImageUpload;
 
         /// <summary>
-        /// txtImageUpload control.
+        /// btnSubmitReport control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload txtImageUpload;
-
-        /// <summary>
-        /// btnSubmit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSubmit;
+        protected global::System.Web.UI.WebControls.LinkButton btnSubmitReport;
     }
 }
