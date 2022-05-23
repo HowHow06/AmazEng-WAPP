@@ -14,6 +14,7 @@ namespace AmazEng_WAPP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            //AmazengContext db = new AmazengContext();
             if (!Request.IsAuthenticated)
             {
                 Response.Redirect(GetRouteUrl("LoginRoute", new { }));
@@ -23,9 +24,9 @@ namespace AmazEng_WAPP
                 formRefresh();
             }
 
-            Util.ShowAlert(this.Page, "Edit successfully" + UpdateMember.Name + Name + txtName.Text.ToString());
-            db.SaveChanges();
-            return;
+            //Util.ShowAlert(this.Page, "Edit successfully" + UpdateMember.Name + Name + txtName.Text.ToString());
+            //db.SaveChanges();
+            //return;
         }
 
         private void formRefresh()

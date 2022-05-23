@@ -1,25 +1,27 @@
 ﻿<%@ Page Title="Manage Profile" Language="C#" MasterPageFile="~/NestedMemberManage.master" AutoEventWireup="true" CodeBehind="ManageProfile.aspx.cs" Inherits="AmazEng_WAPP.ManageProfile" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainInnerContent" runat="server">
     <div class="col-md-12">
-            <h1>Edit Profile</h1>
-            <div class="col-xl-12 col-md-6">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-md-6"> <div class="col-xl-12">
-                                        <p class="form-row form-row-wide">
-                                            <label>Username&nbsp;<span class="required">*&nbsp;&nbsp;</span></label>
-                                            <asp:TextBox class="form-control" ID="txtUsername" runat="server" placeholder="Name" readonly></asp:TextBox>
-                                        </p>
-                                    </div>
-                                    
-                                    <div class="col-xl-12">
-                                        <p class="form-row form-row-wide">
-                                            <label>Name&nbsp;<span class="required">*&nbsp;&nbsp;</span></label>
-                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please Enter Field" ControlToValidate="txtName" ForeColor="Red"></asp:RequiredFieldValidator>
-                                            <asp:TextBox class="form-control" ID="txtName" runat="server" placeholder="name here" TextMode="SingleLine"></asp:TextBox>
-                                        </p>
-                                    </div>
+        <h1>Edit Profile</h1>
+        <div class="col-xl-12 col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="col-xl-12">
+                                <p class="form-row form-row-wide">
+                                    <label>Username&nbsp;<span class="required">*&nbsp;&nbsp;</span></label>
+                                    <asp:TextBox class="form-control" ID="txtUsername" runat="server" placeholder="Name" ReadOnly></asp:TextBox>
+                                </p>
+                            </div>
+
+                            <div class="col-xl-12">
+                                <p class="form-row form-row-wide">
+                                    <label>Name&nbsp;<span class="required">*&nbsp;&nbsp;</span></label>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Please Enter Field" ControlToValidate="txtName" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    <asp:TextBox class="form-control" ID="txtName" runat="server" placeholder="name here" TextMode="SingleLine"></asp:TextBox>
+                                </p>
+                            </div>
 
                                     <div class="col-xl-12">
                                         <p class="form-row form-row-wide">
