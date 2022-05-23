@@ -163,14 +163,27 @@ namespace AmazEng_WAPP
             routes.MapPageRoute(
               "AdminMessagesRoute",
               "Admin/Messages",
-              "~/AdminPages/ManageMembers.aspx"
+              "~/AdminPages/ManageMessages.aspx"
+          );
+
+
+            routes.MapPageRoute(
+              "AdminViewMessageRoute",
+              "Admin/Message/{Id}",
+              "~/AdminPages/MessagePages/ViewMessage.aspx"
           );
 
             routes.MapPageRoute(
-              "AdminReportsRoute",
-              "Admin/Reports",
-              "~/AdminPages/ManageMembers.aspx"
+              "AdminFeedbacksRoute",
+              "Admin/Feedbacks",
+              "~/AdminPages/ManageFeedbacks.aspx"
           );
+
+            routes.MapPageRoute(
+             "AdminViewFeedbackRoute",
+             "Admin/Feedback/{Id}",
+             "~/AdminPages/FeedbackPages/ViewFeedback.aspx"
+         );
         }
     }
 }
