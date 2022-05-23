@@ -125,6 +125,13 @@
                         </div>
                         <div class="col-auto">
                             <asp:FileUpload ID="uploadProfilePicture" runat="server" />
+                             <asp:RegularExpressionValidator ID="regexValidator" runat="server"
+                                    CssClass="invalid-feedback"
+                                    Display="Dynamic"
+                                    ControlToValidate="uploadProfilePicture"
+                                    ErrorMessage="Only JPEG or PNG images are allowed"
+                                    ValidationExpression="\.(jpe?g|tiff?|png|webp|bmp)$">
+                                </asp:RegularExpressionValidator>
                         </div>
                     </div>
 
@@ -245,6 +252,14 @@
                         </div>
                         <div class="col-auto">
                             <asp:FileUpload ID="uploadProfilePicture" runat="server" />
+                            
+                             <asp:RegularExpressionValidator ID="regexValidator" runat="server"
+                                    CssClass="invalid-feedback"
+                                    Display="Dynamic"
+                                    ControlToValidate="uploadProfilePicture"
+                                    ErrorMessage="Only JPEG or PNG images are allowed"
+                                    ValidationExpression="\.(jpe?g|tiff?|png|webp|bmp)$">
+                                </asp:RegularExpressionValidator>
                         </div>
                     </div>
 

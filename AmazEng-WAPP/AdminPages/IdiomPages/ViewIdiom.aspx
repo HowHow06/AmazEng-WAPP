@@ -118,7 +118,7 @@
                     <div class="btn-toolbar mb-2 mb-md-0 d-flex">
                         <a href='<%#: GetRouteUrl("AdminViewIdiomRoute", new {Id = Item.Id }) %>' class="btn btn-sm  btn-outline-gray-600  d-inline-flex align-items-center">Cancel
                         </a>
-                        <asp:Button Text="Done" CausesValidation="true" runat="server" ID="btnSubmit" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center" OnClick="btnSubmit_Click"/>
+                        <asp:Button Text="Done" CausesValidation="true" runat="server" ID="btnSubmit" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center" OnClick="btnSubmit_Click" />
                     </div>
                 </div>
                 <div class="card">
@@ -210,6 +210,14 @@
                             </div>
                             <div class="col-auto">
                                 <asp:FileUpload CssClass="form-control" ID="uploadEditPronunciation" runat="server" />
+                                
+                             <asp:RegularExpressionValidator ID="regexValidator" runat="server"
+                                    CssClass="invalid-feedback"
+                                    Display="Dynamic"
+                                    ControlToValidate="uploadEditPronunciation"
+                                    ErrorMessage="Only mp3 is allowed"
+                                    ValidationExpression="\.(mp3)$">
+                                </asp:RegularExpressionValidator>
                             </div>
                         </div>
                         <hr />
@@ -246,17 +254,17 @@
                 </script>
             </EditItemTemplate>
             <InsertItemTemplate>
-              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
-                <div class="d-block mb-4 mb-md-0">
-                    <h2 class="h3 m-0">New Idiom</h2>
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+                    <div class="d-block mb-4 mb-md-0">
+                        <h2 class="h3 m-0">New Idiom</h2>
+                    </div>
+                    <div class="btn-toolbar mb-2 mb-md-0 d-flex">
+                        <a href='<%#: GetRouteUrl("AdminIdiomsRoute", new { }) %>' class="btn btn-sm  btn-outline-gray-600  d-inline-flex align-items-center">Cancel
+                        </a>
+                        <asp:Button Text="Done" runat="server" ID="btnCreate" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center"
+                            OnClick="btnCreate_Click" />
+                    </div>
                 </div>
-                <div class="btn-toolbar mb-2 mb-md-0 d-flex">
-                    <a href='<%#: GetRouteUrl("AdminIdiomsRoute", new { }) %>' class="btn btn-sm  btn-outline-gray-600  d-inline-flex align-items-center">Cancel
-                    </a>
-                    <asp:Button Text="Done" runat="server" ID="btnCreate" class="btn btn-sm btn-gray-800  ms-2 d-inline-flex align-items-center"
-                        OnClick="btnCreate_Click" />
-                </div>
-            </div>
                 <div class="card">
                     <div class="card-body">
                         <%--field--%>
