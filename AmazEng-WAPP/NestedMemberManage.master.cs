@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -54,6 +55,14 @@ namespace AmazEng_WAPP
         {
             AmazengContext db = new AmazengContext();
             Member = db.GetMemberByUsername(HttpContext.Current.User.Identity.Name);
+        }
+
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            //sign out from form authentication
+            FormsAuthentication.SignOut();
+            //refresh
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

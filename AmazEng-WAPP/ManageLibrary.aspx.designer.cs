@@ -11,43 +11,61 @@ namespace AmazEng_WAPP
 {
 
 
-    public partial class NestedMemberManage
+    public partial class ManageLibrary
     {
 
         /// <summary>
-        /// imgProfilePicture control.
+        /// lblHistoryCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgProfilePicture;
+        protected global::System.Web.UI.WebControls.Literal lblHistoryCount;
 
         /// <summary>
-        /// spnBadge control.
+        /// GridHistory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl spnBadge;
+        protected global::System.Web.UI.WebControls.GridView GridHistory;
 
         /// <summary>
-        /// btnLogout control.
+        /// lblFavouriteCount control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnLogout;
+        protected global::System.Web.UI.WebControls.Literal lblFavouriteCount;
 
         /// <summary>
-        /// MainInnerContent control.
+        /// GridFavourite control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainInnerContent;
+        protected global::System.Web.UI.WebControls.GridView GridFavourite;
+
+        /// <summary>
+        /// lblLearnLaterCount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal lblLearnLaterCount;
+
+        /// <summary>
+        /// GridLearnLater control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridLearnLater;
     }
 }
