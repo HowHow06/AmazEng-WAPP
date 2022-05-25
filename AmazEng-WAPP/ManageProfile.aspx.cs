@@ -45,6 +45,7 @@ namespace AmazEng_WAPP
             var Email = txtEmail.Text;
             if (string.IsNullOrEmpty(Username) || string.IsNullOrEmpty(Name) || string.IsNullOrEmpty(Email))
             {
+                Util.ShowAlert(this.Page, "Please Fill Up All Required Fields!");
                 return;
             }
             AmazengContext db = new AmazengContext();

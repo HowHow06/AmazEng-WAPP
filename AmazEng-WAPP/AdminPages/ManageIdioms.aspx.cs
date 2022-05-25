@@ -94,7 +94,9 @@ namespace AmazEng_WAPP.AdminPages
                 //GridMembers.DataBind();
 
                 // reload page
-                Response.Redirect(Request.RawUrl);
+
+                Util.ShowAlertAndRedirect(Page, "Deleted Successfully!", Request.RawUrl);
+                //Response.Redirect(Request.RawUrl);
             }
         }
 

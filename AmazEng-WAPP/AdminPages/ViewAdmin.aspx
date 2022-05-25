@@ -139,7 +139,7 @@
                                     Display="Dynamic"
                                     ControlToValidate="uploadProfilePicture"
                                     ErrorMessage="Only JPEG or PNG images are allowed"
-                                    ValidationExpression="\.(jpe?g|tiff?|png|webp|bmp)$">
+                                    ValidationExpression="(.*?)\.(jpg|jpeg|png|JPG|PNG)$">
                                 </asp:RegularExpressionValidator>
                         </div>
                     </div>
