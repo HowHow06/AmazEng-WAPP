@@ -37,6 +37,13 @@
                                 <p class="form-row form-row-wide">
                                     <asp:Image Width="100" Height="30%" Style="border-radius: 50%" ID="imgProfilePicture" ImageUrl="https://via.placeholder.com/400x400" runat="server" />
                                     <asp:FileUpload ID="txtImageUpload" runat="server" />
+                                    <asp:RegularExpressionValidator ID="regexValidator" runat="server"
+                                    CssClass="invalid-feedback"
+                                    Display="Dynamic"
+                                    ControlToValidate="txtImageUpload"
+                                    ErrorMessage="Only JPEG or PNG images are allowed"
+                                    ValidationExpression="(.*?)\.(jpg|jpeg|png|JPG|PNG)$">
+                                </asp:RegularExpressionValidator>
                                 </p>
                             </div>
 
