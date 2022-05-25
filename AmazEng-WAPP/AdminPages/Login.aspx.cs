@@ -37,6 +37,7 @@ namespace AmazEng_WAPP.AdminPages
 
             if (string.IsNullOrEmpty(loginKey) || string.IsNullOrEmpty(password))
             {
+                Util.ShowAlert(this.Page, "Please Fill Up All Required Fields!");
                 return;
             }
 

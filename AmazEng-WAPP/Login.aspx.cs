@@ -40,6 +40,7 @@ namespace AmazEng_WAPP
 
             if (string.IsNullOrEmpty(loginKey) || string.IsNullOrEmpty(password))
             {
+                Util.ShowAlert(this.Page, "Please Fill Up All Required Fields!");
                 return;
             }
 

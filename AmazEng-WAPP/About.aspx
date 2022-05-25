@@ -121,38 +121,44 @@
                 <div class="bg-white p-3 text-center rounded box h-100">
                     <img class="img-responsive rounded-circle" src="assets/images/howard.jpg" width="150">
                     <h5 class="mt-3 name">Leader</h5>
+                      <br />
                     <span class="work d-block">Howard Lim</span>
-                    <div class="mt-4 about"><span>Use your loaf.</span></div>
+                   
+                    <div class="mt-4 about"><span> Use your loaf 🍞 </span></div>
                     <div class="mt-4">
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="bg-white p-3 text-center rounded box h-100">
-                    <img class="img-responsive rounded-circle" src="assets/images/meet-our-team-jane.jpg" width="150">
+                    <img class="img-responsive rounded-circle" src="assets/images/rin.jpg" width="150">
                     <h5 class="mt-3 name">Developer</h5>
-                    <span class="work d-block">Rin Mirakumi</span>
-                    <div class="mt-4 about"><span>Her Quote</span></div>
+                         <br />
+                    <span class="work d-block">Rin Murakami</span>
+                   
+                    <div class="mt-4 about"><span> It works on my machine :)</span></div>
                     <div class="mt-4">
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="bg-white p-3 text-center rounded box h-100">
-                    <img class="img-responsive rounded-circle" src="assets/images/meet-our-team-mike.jpg" width="150">
+                    <img class="img-responsive rounded-circle" src="assets/images/loh.jpg" width="150">
                     <h5 class="mt-3 name">Developer</h5>
+                     <br />
                     <span class="work d-block">Loh Kae Shyan</span>
-                    <div class="mt-4 about"><span>His Quote</span></div>
+                    <div class="mt-4 about"><span> It’s not a bug... it’s an undocumented feature ¯\_(ツ)_/¯ </span></div>
                     <div class="mt-4">
                     </div>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="bg-white p-3 text-center rounded box h-100">
-                    <img class="img-responsive rounded-circle" src="assets/images/meet-our-team-marry.jpg" width="150">
+                    <img class="img-responsive rounded-circle" src="assets/images/mohin.png" width="150">
                     <h5 class="mt-3 name">Developer</h5>
-                    <span class="work d-block">Mohin</span>
-                    <div class="mt-4 about"><span>His Quote</span></div>
+                    <br />
+                    <span class="work d-block">Mohin Paramasivam</span>
+                    <div class="mt-4 about"><span> If it works, don't touch it!  ◑.◑  </span></div>
                     <div class="mt-4">
                     </div>
                 </div>

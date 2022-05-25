@@ -26,7 +26,7 @@ namespace AmazEng_WAPP.Class.Utils
         {
             try
             {
-                return Regex.IsMatch(name, @"^[a-zA-Z]+$");
+                return Regex.IsMatch(name, @"^[a-zA-Z\s]+$");
             }
             catch
             {
