@@ -1,4 +1,5 @@
-﻿namespace AmazEng_WAPP.Migrations
+﻿
+namespace AmazEng_WAPP.Migrations
 {
     using AmazEng_WAPP.Class.Auth;
     using AmazEng_WAPP.DataAccess;

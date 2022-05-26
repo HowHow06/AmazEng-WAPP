@@ -11,15 +11,21 @@ namespace AmazEng_WAPP.Models
         [Key]
         public int Id { get; set; }
         [Required]
+        [StringLength(80)]
         public string Name { get; set; }
         [Required]
+        [StringLength(80)]
         public string Username { get; set; }
         [Required]
+        [StringLength(255)]
         public string Password { get; set; }
         [Required]
+        [StringLength(80)]
         public string Email { get; set; }
+        [StringLength(255)]
         public string ProfilePicture { get; set; }
         public DateTime? LastLoginAt { get; set; }
+        [StringLength(150)]
         public string RememberToken { get; set; }
         public DateTime? TokenExpiresAt { get; set; }
         public int BrowsedIdiomCount { get; set; }//default 0

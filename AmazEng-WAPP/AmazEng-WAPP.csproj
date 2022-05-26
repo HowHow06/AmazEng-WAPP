@@ -1069,6 +1069,14 @@
     <Compile Include="Migrations\202205261254546_removeUnusedFields.designer.cs">
       <DependentUpon>202205261254546_removeUnusedFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205261443456_addNvarcharLengthLimit.cs" />
+    <Compile Include="Migrations\202205261443456_addNvarcharLengthLimit.designer.cs">
+      <DependentUpon>202205261443456_addNvarcharLengthLimit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205261511061_makeFeedbackAndMessagIssuerFieldRequired.cs" />
+    <Compile Include="Migrations\202205261511061_makeFeedbackAndMessagIssuerFieldRequired.designer.cs">
+      <DependentUpon>202205261511061_makeFeedbackAndMessagIssuerFieldRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\AdminRole.cs" />
@@ -1181,6 +1189,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205261254546_removeUnusedFields.resx">
       <DependentUpon>202205261254546_removeUnusedFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205261443456_addNvarcharLengthLimit.resx">
+      <DependentUpon>202205261443456_addNvarcharLengthLimit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205261511061_makeFeedbackAndMessagIssuerFieldRequired.resx">
+      <DependentUpon>202205261511061_makeFeedbackAndMessagIssuerFieldRequired.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

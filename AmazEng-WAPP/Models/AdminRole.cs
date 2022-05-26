@@ -10,8 +10,10 @@ namespace AmazEng_WAPP.Models
         [Key, Required]
         public int Id { get; set; }
         [Required]
+        [StringLength(50)]
         public string Name { get; set; }
         [Required]
+        [StringLength(255)]
         public string Permission { get; set; }
 
         public virtual ICollection<Admin> Admins { get; set; }
