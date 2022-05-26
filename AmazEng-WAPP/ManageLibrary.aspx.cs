@@ -24,24 +24,10 @@ namespace AmazEng_WAPP
 
         public IQueryable<AmazEng_WAPP.Models.Idiom> GridHistory_GetData()
         {
-            //string searchKey = Request.QueryString["q"] is null ? string.Empty : Request.QueryString["q"].ToString();
-            //string tagsKey = Request.QueryString["tags"] is null ? string.Empty : Request.QueryString["tags"].ToString();
+            
             AmazengContext db = new AmazengContext();
             Member member = db.GetMemberByUsername(HttpContext.Current.User.Identity.Name);
             IQueryable<Idiom> query = member.GetHistoryLibrary().GetIdioms().AsQueryable();
-
-            //searchKey = searchKey.ToLower();
-            //if (!string.IsNullOrEmpty(searchKey))
-            //{
-            //    query = query.Where(i => i.Name.ToLower().Contains(searchKey) || i.Meaning.ToLower().Contains(searchKey));
-            //}
-
-            //if (!string.IsNullOrEmpty(tagsKey))
-            //{
-            //    List<String> tags = tagsKey.Split(',').ToList();
-            //    query = query.Where(i => i.Tags.Where(t => tags.Contains(t.Name)).Any());
-            //}
-
             totalHistoryCount = query.Count();
             return query;
         }
@@ -55,24 +41,9 @@ namespace AmazEng_WAPP
         }
         public IQueryable<AmazEng_WAPP.Models.Idiom> GridFavourite_GetData()
         {
-            //string searchKey = Request.QueryString["q"] is null ? string.Empty : Request.QueryString["q"].ToString();
-            //string tagsKey = Request.QueryString["tags"] is null ? string.Empty : Request.QueryString["tags"].ToString();
             AmazengContext db = new AmazengContext();
             Member member = db.GetMemberByUsername(HttpContext.Current.User.Identity.Name);
             IQueryable<Idiom> query = member.GetFavouriteLibrary().GetIdioms().AsQueryable();
-
-            //searchKey = searchKey.ToLower();
-            //if (!string.IsNullOrEmpty(searchKey))
-            //{
-            //    query = query.Where(i => i.Name.ToLower().Contains(searchKey) || i.Meaning.ToLower().Contains(searchKey));
-            //}
-
-            //if (!string.IsNullOrEmpty(tagsKey))
-            //{
-            //    List<String> tags = tagsKey.Split(',').ToList();
-            //    query = query.Where(i => i.Tags.Where(t => tags.Contains(t.Name)).Any());
-            //}
-
             totalFavouriteCount = query.Count();
             return query;
         }
@@ -86,24 +57,9 @@ namespace AmazEng_WAPP
         }
         public IQueryable<AmazEng_WAPP.Models.Idiom> GridLearnLater_GetData()
         {
-            //string searchKey = Request.QueryString["q"] is null ? string.Empty : Request.QueryString["q"].ToString();
-            //string tagsKey = Request.QueryString["tags"] is null ? string.Empty : Request.QueryString["tags"].ToString();
             AmazengContext db = new AmazengContext();
             Member member = db.GetMemberByUsername(HttpContext.Current.User.Identity.Name);
             IQueryable<Idiom> query = member.GetLearnLaterLibrary().GetIdioms().AsQueryable();
-
-            //searchKey = searchKey.ToLower();
-            //if (!string.IsNullOrEmpty(searchKey))
-            //{
-            //    query = query.Where(i => i.Name.ToLower().Contains(searchKey) || i.Meaning.ToLower().Contains(searchKey));
-            //}
-
-            //if (!string.IsNullOrEmpty(tagsKey))
-            //{
-            //    List<String> tags = tagsKey.Split(',').ToList();
-            //    query = query.Where(i => i.Tags.Where(t => tags.Contains(t.Name)).Any());
-            //}
-
             totalLearnLaterCount = query.Count();
             return query;
         }
@@ -118,8 +74,6 @@ namespace AmazEng_WAPP
 
         protected void GridLearnLater_PageIndexChanged(object sender, EventArgs e)
         {
-            //GridLearnLater.PageIndex = e.;
-            //54           bindmygrd()
         }
     }
 }
