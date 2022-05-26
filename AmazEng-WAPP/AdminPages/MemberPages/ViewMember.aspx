@@ -124,7 +124,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <asp:FileUpload ID="uploadProfilePicture" runat="server" />
+                            <asp:FileUpload ID="uploadProfilePicture" runat="server" CssClass="form-control" />
                              <asp:RegularExpressionValidator ID="regexValidator" runat="server"
                                     CssClass="invalid-feedback"
                                     Display="Dynamic"
@@ -251,7 +251,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <asp:FileUpload ID="uploadProfilePicture" runat="server" />
+                            <asp:FileUpload ID="uploadProfilePicture" runat="server"  CssClass="form-control"/>
                             
                              <asp:RegularExpressionValidator ID="regexValidator" runat="server"
                                     CssClass="invalid-feedback"

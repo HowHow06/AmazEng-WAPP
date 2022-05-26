@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="ManageFeedbacks.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.ManageFeedbacks" %>
+﻿<%@ Page Title="Feedbacks" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="ManageFeedbacks.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.ManageFeedbacks" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

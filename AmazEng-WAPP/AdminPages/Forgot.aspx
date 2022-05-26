@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/Site.Auth.Master" AutoEventWireup="true" CodeBehind="Forgot.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.AdminForgot" %>
+﻿<%@ Page Title="Forgot Password" Language="C#" MasterPageFile="~/AdminPages/Site.Auth.Master" AutoEventWireup="true" CodeBehind="Forgot.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.AdminForgot" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>

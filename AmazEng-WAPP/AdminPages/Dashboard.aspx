@@ -82,7 +82,7 @@
                                 </ItemTemplate>
                             </asp:TemplateField>
                             <asp:DynamicField DataField="Name" />
-                            <asp:TemplateField HeaderText="Points">
+                            <asp:TemplateField HeaderText="View">
                                 <ItemTemplate>
                                     <span><%# Item.ViewCount %></span>
                                 </ItemTemplate>
