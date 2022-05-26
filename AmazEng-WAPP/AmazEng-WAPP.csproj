@@ -1065,6 +1065,10 @@
     <Compile Include="Migrations\202205231047568_removeUnnecessaryFields.designer.cs">
       <DependentUpon>202205231047568_removeUnnecessaryFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205261254546_removeUnusedFields.cs" />
+    <Compile Include="Migrations\202205261254546_removeUnusedFields.designer.cs">
+      <DependentUpon>202205261254546_removeUnusedFields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\AdminRole.cs" />
@@ -1174,6 +1178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205231047568_removeUnnecessaryFields.resx">
       <DependentUpon>202205231047568_removeUnnecessaryFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205261254546_removeUnusedFields.resx">
+      <DependentUpon>202205261254546_removeUnusedFields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

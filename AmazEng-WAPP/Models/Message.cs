@@ -16,7 +16,6 @@ namespace AmazEng_WAPP.Models
         [Required]
         public string Content { get; set; }
         public DateTime? DeletedAt { get; set; }
-        public virtual Member Member { get; set; }
 
     }
 }

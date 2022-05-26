@@ -30,9 +30,7 @@ namespace AmazEng_WAPP.Models
             return this.GetHistoryLibrary().LibraryIdioms.Where(li => li.AddedAt.ToLocalTime() > DateTime.Today).Count();
         }
 
-        public virtual ICollection<Message> Messages { get; set; }
         public virtual ICollection<Library> Libraries { get; set; }
-        public virtual ICollection<Feedback> Feedbacks { get; set; }
 
         //public Member()
         //{
