@@ -145,6 +145,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AdminPages\Assets\css\admin-global.css" />
+    <Content Include="AdminPages\Assets\css\custom-multiselect.css" />
     <Content Include="AdminPages\FeedbackPages\ViewFeedback.aspx" />
     <Content Include="AdminPages\Forgot.aspx" />
     <Content Include="AdminPages\IdiomPages\ViewIdiom.aspx" />

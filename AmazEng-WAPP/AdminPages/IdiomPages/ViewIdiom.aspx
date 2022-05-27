@@ -3,19 +3,34 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <%-- <link href="/AdminPages/Assets/vendors/multiselect/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
+    <script src="/AdminPages/Assets/vendors/multiselect/jquery-2.2.4.min.js" type="text/javascript"></script>
+    <%--<link href="/AdminPages/Assets/vendors/multiselect/bootstrap-4.5.2.min.css" rel="stylesheet" type="text/css" />--%>
+    <script src="/AdminPages/Assets/vendors/multiselect/bootstrap.bundle-4.5.2.min.js" type="text/javascript"></script>
+    <link href="/AdminPages/Assets/vendors/multiselect/bootstrap-multiselect.css" rel="stylesheet" type="text/css" />
     <script src="/AdminPages/Assets/vendors/multiselect/bootstrap-multiselect.js" type="text/javascript"></script>
+    <link href="/AdminPages/Assets/css/custom-multiselect.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript">
         $(function () {
-            $('[id*=lstTags]').multiselect({
+            $('[id*=lstEditTags]').multiselect({
                 includeSelectAllOption: true,
-                //enableFiltering: true,
-                //filterPlaceholder: 'Search',
-                //enableCaseInsensitiveFiltering: true,
-                //dropRight: true
+                enableFiltering: true,
+                filterPlaceholder: 'Search',
+                enableCaseInsensitiveFiltering: true,
+                dropRight: true,
+                maxHeight: 400,
+                numberDisplayed: 15
+            });
+            $('[id*=lstNewTags]').multiselect({
+                includeSelectAllOption: true,
+                enableFiltering: true,
+                filterPlaceholder: 'Search',
+                enableCaseInsensitiveFiltering: true,
+                dropRight: true,
+                maxHeight: 400,
+                numberDisplayed: 15
             });
         });
-    </script>--%>
+    </script>
     <div class="mb-5">
         <asp:FormView ID="FormIdiomDetail" runat="server" ItemType="AmazEng_WAPP.Models.Idiom" SelectMethod="FormIdiomDetail_GetItem" RenderOuterTable="false">
             <ItemTemplate>
@@ -210,8 +225,8 @@
                             </div>
                             <div class="col-auto">
                                 <asp:FileUpload CssClass="form-control" ID="uploadEditPronunciation" runat="server" />
-                                
-                             <asp:RegularExpressionValidator ID="regexValidator" runat="server"
+
+                                <asp:RegularExpressionValidator ID="regexValidator" runat="server"
                                     CssClass="invalid-feedback"
                                     Display="Dynamic"
                                     ControlToValidate="uploadEditPronunciation"
@@ -350,7 +365,7 @@
                                 <label for="lstNewTags" class="col-form-label">Tags</label>
                             </div>
                             <div class="col-6">
-                                <asp:ListBox runat="server" CssClass="form-control" ItemType="AmazEng_WAPP.Models.Tags" ID="lstNewTags" SelectionMode="Multiple"
+                                <asp:ListBox  runat="server" CssClass="form-control" ItemType="AmazEng_WAPP.Models.Tags" ID="lstNewTags" SelectionMode="Multiple"
                                     Height="250px"></asp:ListBox>
                             </div>
                             <div class="col-auto">
@@ -377,6 +392,6 @@
             </InsertItemTemplate>
 
         </asp:FormView>
-    </div>
 
+    </div>
 </asp:Content>
