@@ -31,6 +31,11 @@
             });
         });
     </script>
+    <style>
+        .multiselect {
+            border-radius: 10px
+        }
+    </style>
     <div class="mb-5">
         <asp:FormView ID="FormIdiomDetail" runat="server" ItemType="AmazEng_WAPP.Models.Idiom" SelectMethod="FormIdiomDetail_GetItem" RenderOuterTable="false">
             <ItemTemplate>
@@ -265,7 +270,6 @@
                         $('[id*=txtEditMeaning]').val(decode($('[id*=txtEditMeaning]').val()));
                         $('[id*=txtEditExample]').val(decode($('[id*=txtEditExample]').val()));
                     })();
-
                 </script>
             </EditItemTemplate>
             <InsertItemTemplate>
@@ -365,7 +369,7 @@
                                 <label for="lstNewTags" class="col-form-label">Tags</label>
                             </div>
                             <div class="col-6">
-                                <asp:ListBox  runat="server" CssClass="form-control" ItemType="AmazEng_WAPP.Models.Tags" ID="lstNewTags" SelectionMode="Multiple"
+                                <asp:ListBox runat="server" CssClass="form-control" ItemType="AmazEng_WAPP.Models.Tags" ID="lstNewTags" SelectionMode="Multiple"
                                     Height="250px"></asp:ListBox>
                             </div>
                             <div class="col-auto">
