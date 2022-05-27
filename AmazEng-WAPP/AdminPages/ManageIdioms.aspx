@@ -60,6 +60,7 @@
                     SelectMethod="GridIdioms_GetData"
                     OnRowDeleted="GridIdioms_RowDeleted"
                     OnRowCommand="GridIdioms_RowCommand"
+                    OnRowCreated="GridIdioms_RowCreated"
                     AllowSorting="true"
                     AllowPaging="true" PageSize="10"
                     AutoGenerateColumns="false" BorderStyle="None" Width="100%">
