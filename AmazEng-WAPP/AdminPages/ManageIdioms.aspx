@@ -66,8 +66,13 @@
                     AutoGenerateColumns="false" BorderStyle="None" Width="100%">
                     <Columns>
                         <asp:DynamicField DataField="Id" />
-                        <asp:DynamicField DataField="Name" />
-                        <asp:TemplateField HeaderText="Meaning" ItemStyle-Width="500">
+                        <%--<asp:DynamicField DataField="Name" />--%>
+                        <asp:TemplateField HeaderText="Name" >
+                            <ItemTemplate>
+                                <%#: Item.Name %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Meaning" ItemStyle-Width="700">
                             <ItemTemplate>
                                 <%#: Item.GetMeanings().First() %>
                             </ItemTemplate>
