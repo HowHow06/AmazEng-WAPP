@@ -144,14 +144,14 @@
                             <span class="sidebar-text">Idioms</span>
                         </asp:HyperLink>
                     </li>
-              <%--      <li class="nav-item ">
-                        <asp:HyperLink NavigateUrl="<%$RouteUrl:RouteName=AdminIdiomTagsRoute%>" runat="server" class="nav-link">
+                    <li class="nav-item ">
+                        <asp:HyperLink NavigateUrl="<%$RouteUrl:RouteName=AdminTagsRoute%>" runat="server" class="nav-link">
                             <span class="sidebar-icon">
                               <i class="fa-solid fa-tag"></i>
                             </span>
-                            <span class="sidebar-text">Idiom Tags</span>
+                            <span class="sidebar-text">Tags</span>
                         </asp:HyperLink>
-                    </li>--%>
+                    </li>
                     <%if (this.Admin.Role.HasManageAdminsPermission())
                         { %>
                     <li class="nav-item ">

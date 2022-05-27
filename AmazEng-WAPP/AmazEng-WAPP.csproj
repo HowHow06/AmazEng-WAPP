@@ -361,8 +361,10 @@
     <Content Include="AdminPages\ManageIdioms.aspx" />
     <Content Include="AdminPages\ManageMembers.aspx" />
     <Content Include="AdminPages\ManageMessages.aspx" />
+    <Content Include="AdminPages\ManageTags.aspx" />
     <Content Include="AdminPages\MemberPages\ViewMember.aspx" />
     <Content Include="AdminPages\MessagePages\ViewMessage.aspx" />
+    <Content Include="AdminPages\TagPages\ViewTag.aspx" />
     <Content Include="AdminPages\ViewAdmin.aspx" />
     <Content Include="App_Data\AmazengDb.mdf" />
     <Content Include="App_Data\AmazengDb_log.ldf">
@@ -753,6 +755,13 @@
     <Compile Include="AdminPages\ManageMessages.aspx.designer.cs">
       <DependentUpon>ManageMessages.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminPages\ManageTags.aspx.cs">
+      <DependentUpon>ManageTags.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ManageTags.aspx.designer.cs">
+      <DependentUpon>ManageTags.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\MemberPages\ViewMember.aspx.cs">
       <DependentUpon>ViewMember.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -787,6 +796,13 @@
     </Compile>
     <Compile Include="AdminPages\Site.EmptyAdmin.Master.designer.cs">
       <DependentUpon>Site.EmptyAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\TagPages\ViewTag.aspx.cs">
+      <DependentUpon>ViewTag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\TagPages\ViewTag.aspx.designer.cs">
+      <DependentUpon>ViewTag.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPages\ViewAdmin.aspx.cs">
       <DependentUpon>ViewAdmin.aspx</DependentUpon>
