@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AmazEng_WAPP.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -15,5 +16,21 @@ namespace AmazEng_WAPP.Models
 
         public virtual ICollection<Idiom> Idioms { get; set; }
 
+        public static bool IsNameRegistered(AmazengContext db, string name, int tagIdToExclude)
+        {
+            var query = db.Tags.Where(t =>
+                t.Name == name &&
+                t.Id != tagIdToExclude
+            );
+            return query.Any();
+        }
+
+        public static bool IsNameRegistered(AmazengContext db, string name)
+        {
+            var query = db.Tags.Where(t =>
+                t.Name == name
+            );
+            return query.Any();
+        }
     }
 }

@@ -134,7 +134,7 @@ namespace AmazEng_WAPP.AdminPages.TagPages
             int tagId = Convert.ToInt32((string)RouteData.Values["Id"]);
             AmazengContext db = new AmazengContext();
             db.Tags.Where(t => t.Name == args.Value).Any();
-            bool isNameRegistered = Auth.IsNameRegistered(db, name, tagId);
+            bool isNameRegistered = Tag.IsNameRegistered(db, name, tagId);
             var validator = FormTagDetail.FindControl("validatorName") as CustomValidator;
             var controlToValidate = FormTagDetail.FindControl(validator.ControlToValidate) as TextBox;
 
@@ -155,7 +155,7 @@ namespace AmazEng_WAPP.AdminPages.TagPages
         {
             string name = args.Value;
             AmazengContext db = new AmazengContext();
-            bool isNameRegistered = Auth.IsNameRegistered(db, name);
+            bool isNameRegistered = Tag.IsNameRegistered(db, name);
             var validator = FormTagDetail.FindControl("validatorNewTag") as CustomValidator;
             var controlToValidate = FormTagDetail.FindControl(validator.ControlToValidate) as TextBox;
 
@@ -172,54 +172,6 @@ namespace AmazEng_WAPP.AdminPages.TagPages
             args.IsValid = true;
         }
 
-
-
-
     }
 }
-
-
-//protected void validatorUsername_ServerValidate(object source, ServerValidateEventArgs args)
-//{
-//    string username = args.Value;
-//    int memberId = Convert.ToInt32((string)RouteData.Values["Id"]);
-//    AmazengContext db = new AmazengContext();
-//    bool isUsernameRegistered = Auth.IsUsernameRegistered(db, username, memberId);
-//    var validator = FormMemberDetail.FindControl("validatorUsername") as CustomValidator;
-//    var controlToValidate = FormMemberDetail.FindControl(validator.ControlToValidate) as TextBox;
-
-//    if (isUsernameRegistered)
-//    {  //username invalid
-//        Util.ShowAlert(this, "This username is used by other member.");
-//        controlToValidate.Attributes.Add("class", "form-control error");
-//        validator.Attributes.Add("class", "invalid-feedback d-inline");
-//        args.IsValid = false;
-//        return;
-//    }
-//    controlToValidate.Attributes.Add("class", "form-control");
-//    validator.Attributes.Add("class", "invalid-feedback");
-//    args.IsValid = true;
-//}
-
-
-//        protected void validatorNewUsername_ServerValidate(object source, ServerValidateEventArgs args)
-//        {
-//            string username = args.Value;
-//            AmazengContext db = new AmazengContext();
-//            bool isUsernameRegistered = Auth.IsUsernameRegistered(db, username);
-//            var validator = FormMemberDetail.FindControl("validatorNewUsername") as CustomValidator;
-//            var controlToValidate = FormMemberDetail.FindControl(validator.ControlToValidate) as TextBox;
-
-//            if (isUsernameRegistered)
-//            {  //username invalid
-//                Util.ShowAlert(this, "This username is used by other member.");
-//                controlToValidate.Attributes.Add("class", "form-control error");
-//                validator.Attributes.Add("class", "invalid-feedback d-inline");
-//                args.IsValid = false;
-//                return;
-//            }
-//            controlToValidate.Attributes.Add("class", "form-control");
-//            validator.Attributes.Add("class", "invalid-feedback");
-//            args.IsValid = true;
-//        }
 
