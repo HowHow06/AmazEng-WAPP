@@ -140,7 +140,7 @@ namespace AmazEng_WAPP.AdminPages.TagPages
 
             if (isNameRegistered)
             {  //name invalid
-                Util.ShowAlert(this, "This name is used by other member.");
+                Util.ShowAlert(this, "This name is used by other tag.");
                 controlToValidate.Attributes.Add("class", "form-control error");
                 validator.Attributes.Add("class", "invalid-feedback d-inline");
                 args.IsValid = false;
@@ -152,25 +152,25 @@ namespace AmazEng_WAPP.AdminPages.TagPages
         }
 
         protected void validatorNewName_ServerValidate(object source, ServerValidateEventArgs args)
-{
-    string name = args.Value;
-    AmazengContext db = new AmazengContext();
-    bool isNameRegistered = Auth.IsNameRegistered(db, name);
-    var validator = FormTagDetail.FindControl("validatorNewTag") as CustomValidator;
-    var controlToValidate = FormTagDetail.FindControl(validator.ControlToValidate) as TextBox;
+        {
+            string name = args.Value;
+            AmazengContext db = new AmazengContext();
+            bool isNameRegistered = Auth.IsNameRegistered(db, name);
+            var validator = FormTagDetail.FindControl("validatorNewTag") as CustomValidator;
+            var controlToValidate = FormTagDetail.FindControl(validator.ControlToValidate) as TextBox;
 
-    if (isNameRegistered)
-    {  //name invalid
-        Util.ShowAlert(this, "This name is used by other tag.");
-        controlToValidate.Attributes.Add("class", "form-control error");
-        validator.Attributes.Add("class", "invalid-feedback d-inline");
-        args.IsValid = false;
-        return;
-    }
-    controlToValidate.Attributes.Add("class", "form-control");
-    validator.Attributes.Add("class", "invalid-feedback");
-    args.IsValid = true;
-}
+            if (isNameRegistered)
+            {  //name invalid
+                Util.ShowAlert(this, "This name is used by other tag.");
+                controlToValidate.Attributes.Add("class", "form-control error");
+                validator.Attributes.Add("class", "invalid-feedback d-inline");
+                args.IsValid = false;
+                return;
+            }
+            controlToValidate.Attributes.Add("class", "form-control");
+            validator.Attributes.Add("class", "invalid-feedback");
+            args.IsValid = true;
+        }
 
 
 
