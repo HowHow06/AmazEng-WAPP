@@ -150,7 +150,7 @@ namespace AmazEng_WAPP
             routes.MapPageRoute(
              "AdminViewTagRoute",
              "Admin/Tag/{Id}/{Mode}",
-             "~/AdminPages/TagsPages/ViewTag.aspx",
+             "~/AdminPages/TagPages/ViewTag.aspx",
              false,
              new RouteValueDictionary { { "Mode", string.Empty } }
          );

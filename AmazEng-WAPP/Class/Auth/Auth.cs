@@ -242,6 +242,7 @@ namespace AmazEng_WAPP.Class.Auth
             return query.Any();
         }
 
+
         internal static bool isEmailRegistered(AmazengContext db, string email, int memberIdToExclude)
         {
             var query = db.Members.Where(m =>
