@@ -242,6 +242,24 @@ namespace AmazEng_WAPP.Class.Auth
             return query.Any();
         }
 
+        internal static bool IsNameRegistered(AmazengContext db, string name, int tagIdToExclude)
+        {
+            var query = db.Tags.Where(t =>
+                t.Name == name &&
+                t.Id != tagIdToExclude
+            );
+            return query.Any();
+        }
+
+        internal static bool IsNameRegistered(AmazengContext db, string name)
+        {
+            var query = db.Tags.Where(t =>
+                t.Name == name 
+            );
+            return query.Any();
+        }
+
+
         internal static bool isEmailRegistered(AmazengContext db, string email, int memberIdToExclude)
         {
             var query = db.Members.Where(m =>
