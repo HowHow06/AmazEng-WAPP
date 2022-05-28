@@ -178,7 +178,7 @@
                             <span>
                                 <span class="sidebar-icon"><i class="fa-solid fa-flag"></i>
                                 </span>
-                                <span class="sidebar-text">Idiom Reports</span>
+                                <span class="sidebar-text">Idiom Feedbacks</span>
                             </span>
                         <%--    <span>
                                 <span class="badge badge-sm bg-secondary ms-1 text-gray-800">1</span>

@@ -101,5 +101,15 @@ namespace AmazEng_WAPP.Class.Utils
         {
             System.Diagnostics.Debug.WriteLine(msg);
         }
+
+        internal static string GetAscendingIcon()
+        {
+            return @"<i class='fas fa-sort-down'></i>";
+        }
+
+        internal static string GetDescendingIcon()
+        {
+            return @"<i class='fas fa-sort-up'></i>";
+        }
     }
 }

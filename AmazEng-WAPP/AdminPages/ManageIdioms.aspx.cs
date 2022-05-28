@@ -112,5 +112,34 @@ namespace AmazEng_WAPP.AdminPages
             GridIdioms.PageSize = Convert.ToInt32(pageSize);
             CheckPageSizeButtonControl(btn, Convert.ToInt32(pageSize));
         }
+
+        protected void GridIdioms_RowCreated(object sender, GridViewRowEventArgs e)
+        {
+            if (!(e.Row.RowType == DataControlRowType.Header))
+            {
+                return;
+            }
+            foreach (TableCell tc in e.Row.Cells)
+            {
+                if (!(tc.HasControls()))
+                {
+                    continue;
+                }
+                // search for the header link
+                LinkButton lnk = (LinkButton)tc.Controls[0];
+                var Grid = GridIdioms;
+
+                if (!(lnk != null && Grid.SortExpression == lnk.CommandArgument))
+                {
+                    continue;
+                }
+
+                HtmlGenericControl img = new HtmlGenericControl();
+                img.InnerHtml = Grid.SortDirection == SortDirection.Ascending ? Util.GetAscendingIcon() : Util.GetDescendingIcon();
+                // adding a space and the image to the header link
+                tc.Controls.Add(new LiteralControl(" "));
+                tc.Controls.Add(img);
+            }
+        }
     }
 }

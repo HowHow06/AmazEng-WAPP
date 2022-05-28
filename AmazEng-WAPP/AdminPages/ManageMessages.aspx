@@ -53,6 +53,7 @@
                     SelectMethod="GridMessages_GetData"
                     OnRowDeleted="GridMessages_RowDeleted"
                     OnRowCommand="GridMessages_RowCommand"
+                    OnRowCreated="GridMessages_RowCreated"
                     AllowSorting="true"
                     AllowPaging="true" PageSize="10"
                     AutoGenerateColumns="false" BorderStyle="None" Width="100%">
