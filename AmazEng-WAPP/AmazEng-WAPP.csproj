@@ -59,6 +59,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Faker.Net.4.7, Version=2.0.154.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Faker.Net.2.0.154\lib\net472\Faker.Net.4.7.dll</HintPath>
+    </Reference>
     <Reference Include="MailKit, Version=3.2.0.0, Culture=neutral, PublicKeyToken=4e064fe7c44a8f1b, processorArchitecture=MSIL">
       <HintPath>..\packages\MailKit.3.2.0\lib\net47\MailKit.dll</HintPath>
     </Reference>
@@ -142,6 +145,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="AdminPages\Assets\css\admin-global.css" />
+    <Content Include="AdminPages\Assets\css\custom-multiselect.css" />
     <Content Include="AdminPages\FeedbackPages\ViewFeedback.aspx" />
     <Content Include="AdminPages\Forgot.aspx" />
     <Content Include="AdminPages\IdiomPages\ViewIdiom.aspx" />
@@ -358,8 +362,10 @@
     <Content Include="AdminPages\ManageIdioms.aspx" />
     <Content Include="AdminPages\ManageMembers.aspx" />
     <Content Include="AdminPages\ManageMessages.aspx" />
+    <Content Include="AdminPages\ManageTags.aspx" />
     <Content Include="AdminPages\MemberPages\ViewMember.aspx" />
     <Content Include="AdminPages\MessagePages\ViewMessage.aspx" />
+    <Content Include="AdminPages\TagPages\ViewTag.aspx" />
     <Content Include="AdminPages\ViewAdmin.aspx" />
     <Content Include="App_Data\AmazengDb.mdf" />
     <Content Include="App_Data\AmazengDb_log.ldf">
@@ -750,6 +756,13 @@
     <Compile Include="AdminPages\ManageMessages.aspx.designer.cs">
       <DependentUpon>ManageMessages.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminPages\ManageTags.aspx.cs">
+      <DependentUpon>ManageTags.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\ManageTags.aspx.designer.cs">
+      <DependentUpon>ManageTags.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPages\MemberPages\ViewMember.aspx.cs">
       <DependentUpon>ViewMember.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -784,6 +797,13 @@
     </Compile>
     <Compile Include="AdminPages\Site.EmptyAdmin.Master.designer.cs">
       <DependentUpon>Site.EmptyAdmin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPages\TagPages\ViewTag.aspx.cs">
+      <DependentUpon>ViewTag.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPages\TagPages\ViewTag.aspx.designer.cs">
+      <DependentUpon>ViewTag.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPages\ViewAdmin.aspx.cs">
       <DependentUpon>ViewAdmin.aspx</DependentUpon>
@@ -1062,6 +1082,18 @@
     <Compile Include="Migrations\202205231047568_removeUnnecessaryFields.designer.cs">
       <DependentUpon>202205231047568_removeUnnecessaryFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205261254546_removeUnusedFields.cs" />
+    <Compile Include="Migrations\202205261254546_removeUnusedFields.designer.cs">
+      <DependentUpon>202205261254546_removeUnusedFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205261443456_addNvarcharLengthLimit.cs" />
+    <Compile Include="Migrations\202205261443456_addNvarcharLengthLimit.designer.cs">
+      <DependentUpon>202205261443456_addNvarcharLengthLimit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205261511061_makeFeedbackAndMessagIssuerFieldRequired.cs" />
+    <Compile Include="Migrations\202205261511061_makeFeedbackAndMessagIssuerFieldRequired.designer.cs">
+      <DependentUpon>202205261511061_makeFeedbackAndMessagIssuerFieldRequired.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\AdminRole.cs" />
@@ -1172,6 +1204,15 @@
     <EmbeddedResource Include="Migrations\202205231047568_removeUnnecessaryFields.resx">
       <DependentUpon>202205231047568_removeUnnecessaryFields.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205261254546_removeUnusedFields.resx">
+      <DependentUpon>202205261254546_removeUnusedFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205261443456_addNvarcharLengthLimit.resx">
+      <DependentUpon>202205261443456_addNvarcharLengthLimit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205261511061_makeFeedbackAndMessagIssuerFieldRequired.resx">
+      <DependentUpon>202205261511061_makeFeedbackAndMessagIssuerFieldRequired.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminPages\Assets\vendors\chartist\dist\scss\settings\" />
@@ -1212,9 +1253,11 @@
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
     <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets'))" />
+    <Error Condition="!Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
   </Target>
   <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\build\net472\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.targets')" />
+  <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

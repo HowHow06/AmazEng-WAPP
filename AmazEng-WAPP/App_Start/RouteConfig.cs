@@ -142,9 +142,25 @@ namespace AmazEng_WAPP
           );
 
             routes.MapPageRoute(
-              "AdminIdiomTagsRoute",
-              "Admin/IdiomTags",
-              "~/AdminPages/ManageMembers.aspx"
+              "AdminTagsRoute",
+              "Admin/Tags",
+              "~/AdminPages/ManageTags.aspx"
+          );
+
+            routes.MapPageRoute(
+             "AdminViewTagRoute",
+             "Admin/Tag/{Id}/{Mode}",
+             "~/AdminPages/TagPages/ViewTag.aspx",
+             false,
+             new RouteValueDictionary { { "Mode", string.Empty } }
+         );
+
+            routes.MapPageRoute(
+              "AdminNewTagRoute",
+              "Admin/CreateTag/{Mode}",
+              "~/AdminPages/TagPages/ViewTag.aspx",
+              false,
+              new RouteValueDictionary { { "Mode", "New" } }
           );
 
             routes.MapPageRoute(

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="ManageMessages.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.ManageMessages" %>
+﻿<%@ Page Title="Messages" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="ManageMessages.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.ManageMessages" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
@@ -53,6 +53,7 @@
                     SelectMethod="GridMessages_GetData"
                     OnRowDeleted="GridMessages_RowDeleted"
                     OnRowCommand="GridMessages_RowCommand"
+                    OnRowCreated="GridMessages_RowCreated"
                     AllowSorting="true"
                     AllowPaging="true" PageSize="10"
                     AutoGenerateColumns="false" BorderStyle="None" Width="100%">

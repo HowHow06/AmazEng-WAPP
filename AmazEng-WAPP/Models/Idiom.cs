@@ -15,11 +15,16 @@ namespace AmazEng_WAPP.Models
         [Key, Required]
         public int Id { get; set; }
         [Required]
+        [StringLength(255)]
         public string Name { get; set; }
         [Required]
+        [StringLength(500)]
         public string Meaning { get; set; }
+        [StringLength(500)]
         public string Example { get; set; }
+        [StringLength(500)]
         public string Origin { get; set; }
+        [StringLength(255)]
         public string Pronunciation { get; set; }
         public int ViewCount { get; set; }//default 0
         public DateTime? DeletedAt { get; set; }

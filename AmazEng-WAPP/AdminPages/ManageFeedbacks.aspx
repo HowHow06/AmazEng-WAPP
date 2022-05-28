@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="ManageFeedbacks.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.ManageFeedbacks" %>
+﻿<%@ Page Title="Feedbacks" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="ManageFeedbacks.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.ManageFeedbacks" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -52,6 +52,7 @@
                     SelectMethod="GridFeedbacks_GetData"
                     OnRowDeleted="GridFeedbacks_RowDeleted"
                     OnRowCommand="GridFeedbacks_RowCommand"
+                    OnRowCreated="GridFeedbacks_RowCreated"
                     AllowSorting="true"
                     AllowPaging="true" PageSize="10"
                     AutoGenerateColumns="false" BorderStyle="None" Width="100%">

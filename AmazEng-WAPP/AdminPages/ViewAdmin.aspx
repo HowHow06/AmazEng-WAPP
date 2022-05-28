@@ -132,7 +132,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <asp:FileUpload ID="uploadProfilePicture" runat="server" />
+                            <asp:FileUpload ID="uploadProfilePicture" runat="server" CssClass="form-control" />
                             
                              <asp:RegularExpressionValidator ID="regexValidator" runat="server"
                                     CssClass="invalid-feedback"
@@ -231,7 +231,7 @@
                         </div>
 
                         <div class="col-auto">
-                            <asp:DropDownList ID="EditDropDownAdminRole" runat="server" SelectedValue='<%# GetAdminRoleName((int)Eval("RoleId")) %>'>
+                            <asp:DropDownList ID="EditDropDownAdminRole" runat="server" SelectedValue='<%# GetAdminRoleName((int)Eval("RoleId")) %>'  CssClass="form-control">
                                 <asp:ListItem Value="">Please Select Role</asp:ListItem>
                                 <asp:ListItem>Admin</asp:ListItem>
                                 <asp:ListItem>Super Admin</asp:ListItem>
@@ -276,7 +276,7 @@
                             </div>
                         </div>
                         <div class="col-auto">
-                            <asp:FileUpload ID="uploadProfilePicture" runat="server" />
+                            <asp:FileUpload ID="uploadProfilePicture" runat="server"  CssClass="form-control"/>
                             
                              <asp:RegularExpressionValidator ID="regexValidator" runat="server"
                                     CssClass="invalid-feedback"
@@ -387,7 +387,7 @@
                                 <label for="txtAdminRole" class="col-form-label">Admin Role</label>
                             </div>
                             <div class="col-4">
-                                <asp:DropDownList ID="DropDownAdminRole" runat="server">
+                                <asp:DropDownList ID="DropDownAdminRole" runat="server"  CssClass="form-control">
                                     <asp:ListItem Value="">Please Select Role</asp:ListItem>
                                     <asp:ListItem>Admin</asp:ListItem>
                                     <asp:ListItem>Super Admin</asp:ListItem>

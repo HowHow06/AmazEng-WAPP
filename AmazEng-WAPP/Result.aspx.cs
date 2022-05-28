@@ -53,7 +53,8 @@ namespace AmazEng_WAPP
             int currentCount = GridIdioms.PageSize > totalCount ? totalCount : GridIdioms.PageSize;
             int currentPageIndex = GridIdioms.PageIndex + 1;
             int fristItemIndex = totalCount != 0 ? (currentPageIndex - 1) * GridIdioms.PageSize + 1 : 0;
-            lblResultCount.Text = $"Showing {fristItemIndex}-{currentCount * currentPageIndex} of {totalCount} results.";
+            int lastItemIndex = currentCount * currentPageIndex > totalCount ? totalCount : currentCount * currentPageIndex;
+            lblResultCount.Text = $"Showing {fristItemIndex}-{lastItemIndex} of {totalCount} results.";
         }
     }
 }

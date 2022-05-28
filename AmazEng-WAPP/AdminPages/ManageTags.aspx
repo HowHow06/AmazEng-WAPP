@@ -1,13 +1,13 @@
-﻿<%@ Page Title="Idioms" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="ManageIdioms.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.ManageIdioms" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPages/Site.Admin.Master" AutoEventWireup="true" CodeBehind="ManageTags.aspx.cs" Inherits="AmazEng_WAPP.AdminPages.ManageTags" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center py-4">
         <div class="d-block mb-4 mb-md-0">
-            <h2 class="h3 m-0">Idioms</h2>
+            <h2 class="h3 m-0">Tags</h2>
         </div>
         <div class="btn-toolbar mb-2 mb-md-0 d-flex">
-            <asp:HyperLink runat="server" NavigateUrl='<%$RouteUrl:RouteName=AdminNewIdiomRoute%>' class="btn btn-sm btn-gray-800 d-inline-flex align-items-center">
+            <asp:HyperLink runat="server" NavigateUrl='<%$RouteUrl:RouteName=AdminNewTagRoute%>' class="btn btn-sm btn-gray-800 d-inline-flex align-items-center">
                 <svg class="icon icon-xs me-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
                 New
@@ -24,7 +24,7 @@
                             <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path>
                         </svg>
                     </span>
-                    <asp:TextBox ID="txtSearch" runat="server" class="form-control" placeholder="Search name, meaning" OnTextChanged="txtSearch_TextChanged" />
+                    <asp:TextBox ID="txtSearch" runat="server" class="form-control" placeholder="Search tag" OnTextChanged="txtSearch_TextChanged" />
                 </div>
             </div>
             <div class="col-4 col-md-2 col-xl-1 ps-md-0 text-end">
@@ -53,42 +53,26 @@
     <asp:UpdatePanel ID="updatePanelGrid" runat="server">
         <ContentTemplate>
             <div class="card card-body border-0 shadow table-wrapper table-responsive">
-                <asp:GridView ID="GridIdioms"
+                <asp:GridView ID="GridTags"
                     runat="server"
-                    ItemType="AmazEng_WAPP.Models.Idiom"
+                    ItemType="AmazEng_WAPP.Models.Tag"
                     DataKeyNames="Id"
-                    SelectMethod="GridIdioms_GetData"
-                    OnRowDeleted="GridIdioms_RowDeleted"
-                    OnRowCommand="GridIdioms_RowCommand"
-                    OnRowCreated="GridIdioms_RowCreated"
+                    SelectMethod="GridTags_GetData"
+                    OnRowDeleted="GridTags_RowDeleted"
+                    OnRowCommand="GridTags_RowCommand"
                     AllowSorting="true"
                     AllowPaging="true" PageSize="10"
                     AutoGenerateColumns="false" BorderStyle="None" Width="100%">
                     <Columns>
                         <asp:DynamicField DataField="Id" />
-                        <%--<asp:DynamicField DataField="Name" />--%>
-                        <asp:TemplateField HeaderText="Name" >
-                            <ItemTemplate>
-                                <%#: Item.Name %>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Meaning" ItemStyle-Width="700">
-                            <ItemTemplate>
-                                <%#: Item.GetMeanings().First() %>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <%--        <asp:TemplateField HeaderText="Verified">
-                            <ItemTemplate>
-                                <asp:Label Text='<%# Item.EmailVerifiedAt is object ? "Verified" : "Not Verified" %>'
-                                    runat="server" />
-                            </ItemTemplate>
-                        </asp:TemplateField>--%>
+                        <asp:DynamicField DataField="Name" />
+
                         <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
-                                <asp:HyperLink runat="server" NavigateUrl='<%#: GetRouteUrl("AdminViewIdiomRoute", new {Id = Item.Id }) %>'>
+                                <asp:HyperLink runat="server" NavigateUrl='<%#: GetRouteUrl("AdminViewTagRoute", new {Id = Item.Id }) %>'>
                             <i class="fas fa-eye pe-2"></i></asp:HyperLink>
-                                <asp:HyperLink runat="server" NavigateUrl='<%#: GetRouteUrl("AdminViewIdiomRoute", new {Id = Item.Id , Mode = "Edit"}) %>'><i class="fas fa-pen-square pe-2"></i></asp:HyperLink>
-                                <%--the link below will pass the item's Id as parameter to GridMembers_RowCommand with the Command name "delete"--%>
+                                <asp:HyperLink runat="server" NavigateUrl='<%#: GetRouteUrl("AdminViewTagRoute", new {Id = Item.Id , Mode = "Edit"}) %>'><i class="fas fa-pen-square pe-2"></i></asp:HyperLink>
+                                <%--the link below will pass the item's Id as parameter to GridTags_RowCommand with the Command name "delete"--%>
                                 <asp:LinkButton ID="LinkButton1" runat="server"
                                     CommandArgument='<%# Eval("Id") %>'
                                     CommandName="del"
@@ -97,7 +81,7 @@
                         </asp:TemplateField>
                     </Columns>
                     <EmptyDataTemplate>
-                        There is no idiom
+                        There is no tag
                     </EmptyDataTemplate>
                     <PagerStyle CssClass="pager-control" />
                 </asp:GridView>

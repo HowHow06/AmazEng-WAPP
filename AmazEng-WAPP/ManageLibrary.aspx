@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/NestedMemberManage.master" AutoEventWireup="true" CodeBehind="ManageLibrary.aspx.cs" Inherits="AmazEng_WAPP.ManageLibrary" %>
+﻿<%@ Page Title="Manage Library" Language="C#" MasterPageFile="~/NestedMemberManage.master" AutoEventWireup="true" CodeBehind="ManageLibrary.aspx.cs" Inherits="AmazEng_WAPP.ManageLibrary" %>
 
 <%@ Register TagPrefix="my" TagName="IdiomCard" Src="~/Class/Controls/IdiomCard.ascx" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainInnerContent" runat="server">

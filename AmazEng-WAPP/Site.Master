@@ -69,7 +69,7 @@
 
                         <div class="header-search-bar d-none d-md-block" style="width:25%; min-width:200px">
                             <asp:TextBox runat="server" class="form-control" ID="txtSearchKey" placeholder="Search for Idiom" />
-                            <asp:LinkButton ID="btnSearch" OnClick="btnSearch_Click" class="search-submit" runat="server">
+                            <asp:LinkButton ID="btnSearch" OnClick="btnSearch_Click" class="search-submit" runat="server" CausesValidation="false">
                                 <i class="fa fa-search"></i>
                                 </asp:LinkButton>
                         </div>
@@ -118,7 +118,7 @@
                                         <asp:Hyperlink ID="btnManagePassword" NavigateUrl='<%$RouteUrl:RouteName=ManagePasswordRoute%>' Text="Manage Password" runat="server" class="dropdown-item d-flex align-items-center" />
                                     </li>
                                     <li>
-                                        <asp:LinkButton ID="btnLogout" Text="Logout" runat="server" class="dropdown-item d-flex align-items-center" OnClick="btnLogout_Click" OnClientClick="return confirm('Confirm logout?');" />
+                                        <asp:LinkButton ID="btnLogout" Text="Logout" runat="server" class="dropdown-item d-flex align-items-center" OnClick="btnLogout_Click" CausesValidation="false" OnClientClick="return confirm('Confirm logout?');" />
                                     </li>
                                 </ul>
                                 <%--Hi bro member

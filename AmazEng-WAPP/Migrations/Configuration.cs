@@ -1,4 +1,5 @@
-﻿namespace AmazEng_WAPP.Migrations
+﻿
+namespace AmazEng_WAPP.Migrations
 {
     using AmazEng_WAPP.Class.Auth;
     using AmazEng_WAPP.DataAccess;
@@ -41,6 +42,50 @@
             InitialiseAdminRole(context);
             // add admin
             InitialiseDefaultAdmin(context);
+
+            ClearMessageAndFeedbackTable(context);
+            InitialiseMessageAndFeedback(context);
+        }
+
+        private void InitialiseMessageAndFeedback(AmazengContext context)
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                context.Messages.AddOrUpdate(
+                        new Message
+                        {
+                            IssuerEmail = Faker.Internet.Email(),
+                            IssuerName = Faker.Name.FullName(),
+                            Subject = Faker.Lorem.Sentence(),
+                            Content = Faker.Lorem.Paragraph(),
+                            SentAt = DateTime.UtcNow,
+                        }
+                    );
+                context.Feedbacks.AddOrUpdate(
+                        new Feedback
+                        {
+                            IssuerEmail = Faker.Internet.Email(),
+                            IssuerName = Faker.Name.FullName(),
+                            Idiom = context.Idioms.ToList().ElementAt(i + 20),
+                            Content = Faker.Lorem.Paragraph(),
+                            SentAt = DateTime.UtcNow,
+                        }
+                    );
+            }
+
+            context.SaveChanges();
+            Console.WriteLine("Created Message and Feedback types");
+        }
+
+        private void ClearMessageAndFeedbackTable(AmazengContext context)
+        {
+            context.Database.ExecuteSqlCommand(@"
+                DELETE FROM [dbo].Messages;
+                DELETE FROM [dbo].Feedbacks;
+                DBCC CHECKIDENT ('Messages', RESEED, 0);
+                DBCC CHECKIDENT ('Feedbacks', RESEED, 0);
+            ");
+            Console.WriteLine("Cleared Message and Feedback data");
         }
 
         private void InitializeLibraryTypes(AmazengContext context)
@@ -127,16 +172,20 @@
 
             Console.WriteLine("Cleared Members Table Data");
 
-            context.Members.AddOrUpdate(
-                new Member
-                {
-                    Id = 1,
-                    Name = "John the Member",
-                    Username = "member",
-                    Password = Auth.CreatePasswordHash("member"),
-                    Email = "limhowardbb+member01@gmail.com",
-                }
-                );
+            for (int i = 0; i < 20; i++)
+            {
+                context.Members.AddOrUpdate(
+                               new Member
+                               {
+                                   Name = Faker.Name.FullName(),
+                                   Username = $"{Faker.Name.Last()}{i}",
+                                   Password = Auth.CreatePasswordHash("member"),
+                                   //Email = $"limhowardbb+member0{i}@gmail.com",
+                                   Email = Faker.Internet.Email(),
+                               }
+                               );
+            }
+
             context.SaveChanges();
             Console.WriteLine("Created default member");
         }
@@ -156,7 +205,7 @@
                  new Admin
                  {
                      Name = "Berry Newbie Admin",
-                     Username = "admin23",
+                     Username = "normalAdmin",
                      Password = Auth.CreatePasswordHash("admin"),
                      Email = "limhowardbb+admin02@gmail.com",
                      Role = context.GetNormalAdminRole()

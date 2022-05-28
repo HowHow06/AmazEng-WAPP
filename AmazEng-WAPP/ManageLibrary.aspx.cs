@@ -37,7 +37,8 @@ namespace AmazEng_WAPP
             int currentCount = GridHistory.PageSize > totalHistoryCount ? totalHistoryCount : GridHistory.PageSize;
             int currentPageIndex = GridHistory.PageIndex + 1;
             int fristItemIndex = totalHistoryCount != 0 ? (currentPageIndex - 1) * GridHistory.PageSize + 1 : 0;
-            lblHistoryCount.Text = $"Showing {fristItemIndex}-{currentCount * currentPageIndex} of {totalHistoryCount} results.";
+            int lastItemIndex = currentCount * currentPageIndex > totalHistoryCount ? totalHistoryCount : currentCount * currentPageIndex;
+            lblHistoryCount.Text = $"Showing {fristItemIndex}-{lastItemIndex} of {totalHistoryCount} results.";
         }
         public IQueryable<AmazEng_WAPP.Models.Idiom> GridFavourite_GetData()
         {
@@ -50,10 +51,12 @@ namespace AmazEng_WAPP
 
         protected void GridFavourite_DataBound(object sender, EventArgs e)
         {
-            int currentCount = GridFavourite.PageSize > totalFavouriteCount ? totalFavouriteCount : GridFavourite.PageSize;
+
+            int currentCount = GridFavourite.PageSize > totalHistoryCount ? totalHistoryCount : GridFavourite.PageSize;
             int currentPageIndex = GridFavourite.PageIndex + 1;
-            int fristItemIndex = totalFavouriteCount != 0 ? (currentPageIndex - 1) * GridFavourite.PageSize + 1 : 0;
-            lblFavouriteCount.Text = $"Showing {fristItemIndex}-{currentCount * currentPageIndex} of {totalFavouriteCount} results.";
+            int fristItemIndex = totalHistoryCount != 0 ? (currentPageIndex - 1) * GridFavourite.PageSize + 1 : 0;
+            int lastItemIndex = currentCount * currentPageIndex > totalHistoryCount ? totalHistoryCount : currentCount * currentPageIndex;
+            lblFavouriteCount.Text = $"Showing {fristItemIndex}-{lastItemIndex} of {totalFavouriteCount} results.";
         }
         public IQueryable<AmazEng_WAPP.Models.Idiom> GridLearnLater_GetData()
         {
@@ -66,10 +69,11 @@ namespace AmazEng_WAPP
 
         protected void GridLearnLater_DataBound(object sender, EventArgs e)
         {
-            int currentCount = GridLearnLater.PageSize > totalLearnLaterCount ? totalLearnLaterCount : GridLearnLater.PageSize;
+            int currentCount = GridLearnLater.PageSize > totalHistoryCount ? totalHistoryCount : GridLearnLater.PageSize;
             int currentPageIndex = GridLearnLater.PageIndex + 1;
-            int fristItemIndex = totalLearnLaterCount != 0 ? (currentPageIndex - 1) * GridLearnLater.PageSize + 1 : 0;
-            lblLearnLaterCount.Text = $"Showing {fristItemIndex}-{currentCount * currentPageIndex} of {totalLearnLaterCount} results.";
+            int fristItemIndex = totalHistoryCount != 0 ? (currentPageIndex - 1) * GridLearnLater.PageSize + 1 : 0;
+            int lastItemIndex = currentCount * currentPageIndex > totalHistoryCount ? totalHistoryCount : currentCount * currentPageIndex;
+            lblLearnLaterCount.Text = $"Showing {fristItemIndex}-{lastItemIndex} of {totalLearnLaterCount} results.";
         }
 
         protected void GridLearnLater_PageIndexChanged(object sender, EventArgs e)

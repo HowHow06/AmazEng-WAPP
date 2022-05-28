@@ -23,14 +23,18 @@
             <div class="col-xl-3 col-md-6 ">
                 <div class="card h-100">
                     <img src="Assets\images\message.png" class="card-img-top" alt="...">
-                    <div class="card-header">
-                        <h3 class="my-0 font-weight-normal">Leave Us A Message</h3>
+                    <div class="card-header px-4">
+                        <h3 class="my-0 font-weight-normal">Leave Us <br />
+                            A Message</h3>
                     </div>
-                    <div class="card-body d-flex flex-column">
+                    <div class="card-body d-flex flex-column  px-4">
                         <ul class="list-unstyled mt-3 mb-4">
-                            <li class="fs-5">Email: <a href="mailto:TP055278@mail.apu.edu.my">TP055278@mail.apu.edu.my </a></li>
-                            <li class="fs-5">Phone: <a href="tel:+60111111111">+60111111111</a></li>
-                            <li class="fs-5">Address: 3A, Jalan Ayam Goreng, KFC</li>
+                            <li class="fs-5"><i class="fas fa-envelope"></i><a href="mailto:TP055278@mail.apu.edu.my" class="ps-2" style="color:inherit">TP055278@mail.apu.edu.my </a></li>
+                            <hr />
+                            <li class="fs-5"><i class="fas fa-phone"></i><a href="tel:+60111111111" class="ps-2"  style="color:inherit">+60111111111</a></li>
+                            <hr />
+                            <li class="fs-5"><i class="fas fa-location-dot"></i><span class="ps-2" > 36 Tingkat 3 Persiaran 65C Off Jalan Pahang Barat, 57000 Kuala Lumpur</span>
+                               </li>
                         </ul>
 
                     </div>
