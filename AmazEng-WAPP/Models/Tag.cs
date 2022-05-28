@@ -16,7 +16,7 @@ namespace AmazEng_WAPP.Models
 
         public virtual ICollection<Idiom> Idioms { get; set; }
 
-        public static bool IsNameRegistered(AmazengContext db, string name, int tagIdToExclude)
+        public static bool IsTagNameExisted(AmazengContext db, string name, int tagIdToExclude)
         {
             var query = db.Tags.Where(t =>
                 t.Name == name &&
@@ -25,7 +25,7 @@ namespace AmazEng_WAPP.Models
             return query.Any();
         }
 
-        public static bool IsNameRegistered(AmazengContext db, string name)
+        public static bool IsTagNameExisted(AmazengContext db, string name)
         {
             var query = db.Tags.Where(t =>
                 t.Name == name

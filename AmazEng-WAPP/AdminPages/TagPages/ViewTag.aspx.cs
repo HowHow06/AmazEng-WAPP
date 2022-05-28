@@ -134,7 +134,7 @@ namespace AmazEng_WAPP.AdminPages.TagPages
             int tagId = Convert.ToInt32((string)RouteData.Values["Id"]);
             AmazengContext db = new AmazengContext();
             db.Tags.Where(t => t.Name == args.Value).Any();
-            bool isNameRegistered = Tag.IsNameRegistered(db, name, tagId);
+            bool isNameRegistered = Tag.IsTagNameExisted(db, name, tagId);
             var validator = FormTagDetail.FindControl("validatorName") as CustomValidator;
             var controlToValidate = FormTagDetail.FindControl(validator.ControlToValidate) as TextBox;
 
@@ -155,7 +155,7 @@ namespace AmazEng_WAPP.AdminPages.TagPages
         {
             string name = args.Value;
             AmazengContext db = new AmazengContext();
-            bool isNameRegistered = Tag.IsNameRegistered(db, name);
+            bool isNameRegistered = Tag.IsTagNameExisted(db, name);
             var validator = FormTagDetail.FindControl("validatorNewTag") as CustomValidator;
             var controlToValidate = FormTagDetail.FindControl(validator.ControlToValidate) as TextBox;
 
