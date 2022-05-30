@@ -42,7 +42,7 @@
                     </li>
                     <li role="separator" class="dropdown-divider my-1 border-gray-700"></li>
                     <li class="nav-item">
-                        <asp:linkButton ID="btnLogout" Text="Logout" runat="server"  OnClick="btnLogout_Click" OnClientClick="return confirm('Confirm logout?');" class="nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i>
+                        <asp:linkButton ID="btnLogout" Text="Logout" runat="server"  OnClick="btnLogout_Click" CausesValidation="false" OnClientClick="return confirm('Confirm logout?');" class="nav-link"><i class="fa-solid fa-arrow-right-from-bracket"></i>
                             <span class="sidebar-text">Logout</span>
                         </asp:linkButton>
                     </li>
