@@ -67,21 +67,21 @@ namespace AmazEng_WAPP.Migrations
             int loopCount;
             foreach (var member in members)
             {
-                loopCount = random.Next(5);
+                loopCount = random.Next(2);
                 for (int i = 0; i < loopCount; i++)
                 {
                     idiom = Idiom.GetRandomIdiom(context);
                     member.GetHistoryLibrary().AddIdiom(idiom, context);
                 }
 
-                loopCount = random.Next(5);
+                loopCount = random.Next(2);
                 for (int i = 0; i < loopCount; i++)
                 {
                     idiom = Idiom.GetRandomIdiom(context);
                     member.GetFavouriteLibrary().AddIdiom(idiom, context);
                 }
 
-                loopCount = random.Next(5);
+                loopCount = random.Next(2);
                 for (int i = 0; i < loopCount; i++)
                 {
                     idiom = Idiom.GetRandomIdiom(context);
@@ -223,7 +223,7 @@ namespace AmazEng_WAPP.Migrations
                 context.Members.AddOrUpdate(
                                new Member
                                {
-                                   Name = Faker.Name.FullName(),
+                                   Name = Faker.Name.FullName(Faker.NameFormats.Standard),
                                    Username = $"{Faker.Name.Last()}{i}",
                                    Password = Auth.CreatePasswordHash("member"),
                                    //Email = $"limhowardbb+member0{i}@gmail.com",

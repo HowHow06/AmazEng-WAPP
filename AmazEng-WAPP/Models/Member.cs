@@ -86,7 +86,7 @@ namespace AmazEng_WAPP.Models
         internal void ToggleIdiomInFavouriteLibrary(Idiom idiom, AmazengContext db)
         {
             Library favouriteLibrary = this.GetFavouriteLibrary();
-            bool isFavourite = favouriteLibrary.IsIdiomInLibrary(idiom.Id);
+            bool isFavourite = favouriteLibrary.IsIdiomInLibrary(idiom.Id, db);
 
             if (isFavourite)
             {
@@ -99,7 +99,7 @@ namespace AmazEng_WAPP.Models
         internal void ToggleIdiomInLearnLaterLibrary(Idiom idiom, AmazengContext db)
         {
             Library learnLaterLibrary = this.GetLearnLaterLibrary();
-            bool isLearnLater = learnLaterLibrary.IsIdiomInLibrary(idiom.Id);
+            bool isLearnLater = learnLaterLibrary.IsIdiomInLibrary(idiom.Id, db);
 
             if (isLearnLater)
             {

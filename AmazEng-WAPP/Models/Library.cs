@@ -32,7 +32,7 @@ namespace AmazEng_WAPP.Models
             {
                 this.LibraryIdioms = new List<LibraryIdiom>();
             }
-            if (this.IsIdiomInLibrary(idiom.Id))
+            if (this.IsIdiomInLibrary(idiom.Id, db))
             {
                 var libraryIdiom = this.LibraryIdioms.Where(i => i != null && i.IdiomId == idiom.Id).First();
                 libraryIdiom.AddedAt = DateTime.UtcNow;
@@ -61,14 +61,22 @@ namespace AmazEng_WAPP.Models
             db.SaveChanges();
         }
 
-        internal bool IsIdiomInLibrary(int idiomId)
+        internal bool IsIdiomInLibrary(int idiomId, AmazengContext db)
         {
-            var idioms = this.GetIdioms();
-            if (!idioms.Any())
-            {
-                return false;
-            }
-            return idioms.Where(i => i != null && i.Id == idiomId).Any();
+            //var idioms = this.LibraryIdioms.Select(e => e.Idiom);
+            //if (!idioms.Any())
+            //{
+            //    return false;
+            //}
+
+            int count = (from l in db.Libraries
+                         join li in db.LibraryIdioms on l.Id equals li.LibraryId
+                         join i in db.Idioms on li.IdiomId equals i.Id
+                         where l.Id == this.Id
+                             && li.IdiomId == idiomId
+                         select i).Count();
+            //return this.LibraryIdioms.Select(e => e.Idiom).Where(i => i != null && i.Id == idiomId).Any();
+            return count > 0;
         }
     }
 }

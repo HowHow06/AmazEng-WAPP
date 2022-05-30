@@ -147,14 +147,23 @@ namespace AmazEng_WAPP.Models
         {
             AmazengContext db = new AmazengContext();
             int count = 0;
-            foreach (var member in db.Members)
-            {
-                var query = member.GetFavouriteLibrary().GetIdioms().Where(i => i.Id == this.Id);
-                if (query != null && query.Any())
-                {
-                    count++;
-                }
-            }
+            int favouriteLibraryTypeId = LibraryType.GetFavouriteLibraryType().Id;
+            var membersCount = (from mem in db.Members
+                                join l in db.Libraries on mem.Id equals l.MemberId
+                                join li in db.LibraryIdioms on l.Id equals li.LibraryId
+                                join i in db.Idioms on li.IdiomId equals i.Id
+                                where i.Id == this.Id && l.LibraryType.Id == favouriteLibraryTypeId
+                                select mem).Count();
+
+            //foreach (var member in members)
+            //{
+            //    var query = member.GetFavouriteLibrary().GetIdioms().Where(i => i.Id == this.Id);
+            //    if (query != null && query.Any())
+            //    {
+            //        count++;
+            //    }
+            //}
+            count = membersCount;
             return count;
         }
 

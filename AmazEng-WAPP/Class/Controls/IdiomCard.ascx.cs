@@ -30,7 +30,6 @@ namespace AmazEng_WAPP.Class.Controls
 
         protected void Page_PreRender(object sender, EventArgs e)
         {
-
             AmazengContext db = new AmazengContext();
             SetThisIdiom(db);
             RenderMeaningPreview();
@@ -63,11 +62,31 @@ namespace AmazEng_WAPP.Class.Controls
         {
             bool isFavourite = false;
             bool isLearnLater = false;
+            int favouriteLibraryTypeId = LibraryType.GetFavouriteLibraryType().Id;
+            int learnLaterLibraryTypeId = LibraryType.GetLearnLaterLibraryType().Id;
             if (Request.IsAuthenticated)
             {
-                Member member = db.GetMemberByUsername(HttpContext.Current.User.Identity.Name);
-                isFavourite = member.GetFavouriteLibrary().IsIdiomInLibrary(Idiom.Id);
-                isLearnLater = member.GetLearnLaterLibrary().IsIdiomInLibrary(Idiom.Id);
+                //Member member = db.GetMemberByUsername(HttpContext.Current.User.Identity.Name);
+                //isFavourite = member.GetFavouriteLibrary().IsIdiomInLibrary(Idiom.Id);
+                //isLearnLater = member.GetLearnLaterLibrary().IsIdiomInLibrary(Idiom.Id);
+                int count = (from mem in db.Members
+                             join l in db.Libraries on mem.Id equals l.MemberId
+                             join li in db.LibraryIdioms on l.Id equals li.LibraryId
+                             join i in db.Idioms on li.IdiomId equals i.Id
+                             where mem.Username == HttpContext.Current.User.Identity.Name
+                                 && li.IdiomId == Idiom.Id
+                                 && l.LibraryType.Id == favouriteLibraryTypeId
+                             select i).Count();
+                isFavourite = count > 0;
+                count = (from mem in db.Members
+                         join l in db.Libraries on mem.Id equals l.MemberId
+                         join li in db.LibraryIdioms on l.Id equals li.LibraryId
+                         join i in db.Idioms on li.IdiomId equals i.Id
+                         where mem.Username == HttpContext.Current.User.Identity.Name
+                             && li.IdiomId == Idiom.Id
+                             && l.LibraryType.Id == learnLaterLibraryTypeId
+                         select i).Count();
+                isLearnLater = count > 0;
 
             }
 
