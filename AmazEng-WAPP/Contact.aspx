@@ -18,9 +18,9 @@
 
 
     <!-- Leave us a message + form start -->
-    <section class="features section-padding ">
+    <section class="features section-padding container">
         <div class="row justify-content-center mb-50">
-            <div class="col-xl-3 col-md-6 ">
+            <div class="col-xl-4 col-md-6 ">
                 <div class="card h-100">
                     <img src="Assets\images\message.png" class="card-img-top" alt="...">
                     <div class="card-header px-4">
@@ -41,7 +41,7 @@
                 </div>
             </div>
 
-            <div class="col-xl-7 col-md-6">
+            <div class="col-xl-8 col-md-6">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
@@ -71,7 +71,7 @@
                                 <p class="form-row form-row-wide">
                                     <label>Message&nbsp;<span class="required">*&nbsp;&nbsp;</span></label>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Please Enter Field" ControlToValidate="txtMessage" ForeColor="Red"></asp:RequiredFieldValidator>
-                                    <asp:TextBox class="form-control" ID="txtMessage" runat="server" placeholder="Message" TextMode="MultiLine"></asp:TextBox>
+                                    <asp:TextBox class="form-control" ID="txtMessage" runat="server" placeholder="Message" TextMode="MultiLine" Height="200px"></asp:TextBox>
                                 </p>
                             </div>
                             <p class="form-row form-row-wide d-grid">
