@@ -45,6 +45,52 @@ namespace AmazEng_WAPP.Migrations
 
             ClearMessageAndFeedbackTable(context);
             InitialiseMessageAndFeedback(context);
+
+            ClearLibraryIdiomsTable(context);
+            InitialiseLibraryIdioms(context);
+        }
+
+        private void ClearLibraryIdiomsTable(AmazengContext context)
+        {
+            context.Database.ExecuteSqlCommand(@"
+                DELETE FROM [dbo].LibraryIdioms;
+            ");
+            Console.WriteLine("Cleared Library-Idioms data");
+        }
+
+        // this function will throw exception
+        private void InitialiseLibraryIdioms(AmazengContext context)
+        {
+            var members = context.Members.ToList();
+            Random random = new Random();
+            Idiom idiom;
+            int loopCount;
+            foreach (var member in members)
+            {
+                loopCount = random.Next(5);
+                for (int i = 0; i < loopCount; i++)
+                {
+                    idiom = Idiom.GetRandomIdiom(context);
+                    member.GetHistoryLibrary().AddIdiom(idiom, context);
+                }
+
+                loopCount = random.Next(5);
+                for (int i = 0; i < loopCount; i++)
+                {
+                    idiom = Idiom.GetRandomIdiom(context);
+                    member.GetFavouriteLibrary().AddIdiom(idiom, context);
+                }
+
+                loopCount = random.Next(5);
+                for (int i = 0; i < loopCount; i++)
+                {
+                    idiom = Idiom.GetRandomIdiom(context);
+                    member.GetLearnLaterLibrary().AddIdiom(idiom, context);
+                }
+            }
+
+            context.SaveChanges();
+            Console.WriteLine("Randomly inserted idioms to libraries");
         }
 
         private void InitialiseMessageAndFeedback(AmazengContext context)
@@ -171,7 +217,7 @@ namespace AmazEng_WAPP.Migrations
             ");
 
             Console.WriteLine("Cleared Members Table Data");
-
+            Random random = new Random();
             for (int i = 0; i < 20; i++)
             {
                 context.Members.AddOrUpdate(
@@ -182,6 +228,7 @@ namespace AmazEng_WAPP.Migrations
                                    Password = Auth.CreatePasswordHash("member"),
                                    //Email = $"limhowardbb+member0{i}@gmail.com",
                                    Email = Faker.Internet.Email(),
+                                   BrowsedIdiomCount = random.Next(60)
                                }
                                );
             }
@@ -230,6 +277,7 @@ namespace AmazEng_WAPP.Migrations
         private void InitialiseIdiomData(AmazengContext context)
         {
             List<String> errorIdiom = new List<string>();
+            Random random = new Random();
             using (var reader = new StreamReader(MapPath("~/Assets/data/final_idioms_data_v4.tsv")))
             {
                 bool isFirstLine = true;
@@ -272,6 +320,7 @@ namespace AmazEng_WAPP.Migrations
                         Origin = origin,
                         Tags = tags,
                         Pronunciation = pronunciation,
+                        ViewCount = random.Next(20) * random.Next(20)
                     };
                     //foreach (var tag in tags)
                     //{

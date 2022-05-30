@@ -30,8 +30,13 @@ namespace AmazEng_WAPP.Class.Controls
             IQueryable<Member> query;
 
             query = db.Members.Where(m => m.DeletedAt == null).OrderByDescending(m => m.BrowsedIdiomCount).Take(10);
-
+            var list = query.ToList();
             return query;
         }
+
+        //protected void GridLeaderboard_DataBound(object sender, EventArgs e)
+        //{
+        //    GridLeaderboard.Sort("BrowsedIdiomCount", SortDirection.Descending);
+        //}
     }
 }

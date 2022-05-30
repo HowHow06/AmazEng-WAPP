@@ -32,13 +32,22 @@ namespace AmazEng_WAPP.Models
             {
                 this.LibraryIdioms = new List<LibraryIdiom>();
             }
-            this.LibraryIdioms.Add(
-                new LibraryIdiom
-                {
-                    IdiomId = idiom.Id,
-                    LibraryId = this.Id
-                }
-                );
+            if (this.IsIdiomInLibrary(idiom.Id))
+            {
+                var libraryIdiom = this.LibraryIdioms.Where(i => i != null && i.IdiomId == idiom.Id).First();
+                libraryIdiom.AddedAt = DateTime.UtcNow;
+            }
+            else
+            {
+                this.LibraryIdioms.Add(
+                   new LibraryIdiom
+                   {
+                       IdiomId = idiom.Id,
+                       LibraryId = this.Id
+                   }
+                   );
+            }
+
             db.SaveChanges();
         }
 

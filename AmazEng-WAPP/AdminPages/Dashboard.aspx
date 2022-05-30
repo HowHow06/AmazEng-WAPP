@@ -72,7 +72,6 @@
                     <asp:GridView ID="GridMostViewIdiom"
                         runat="server"
                         ItemType="AmazEng_WAPP.Models.Idiom"
-                        DataKeyNames="Id"
                         SelectMethod="GridMostViewIdiom_GetData"
                         AutoGenerateColumns="false" BorderStyle="None" Width="100%">
                         <Columns>

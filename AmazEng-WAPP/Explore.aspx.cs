@@ -33,22 +33,14 @@ namespace AmazEng_WAPP
 
         private void GenerateAndDisplayRandomIdiom()
         {
-            Idiom idiom = GetRandomIdiom();
+            AmazengContext db = new AmazengContext();
+            Idiom idiom = Idiom.GetRandomIdiom(db);
             HtmlGenericControl a = new HtmlGenericControl("a");
             a.InnerText = Util.CapitalizeFirstLetter(idiom.Name);
             a.Attributes.Add("href", $"/idiom/{idiom.Id}");
             a.Attributes.Add("class", $"on-hover-current-color on-hover-underline");
             phIdiomOfTheDay.Controls.Add(a);
             lblIdiomMeaning.Text = idiom.GetMeanings().First();
-        }
-
-        private Idiom GetRandomIdiom()
-        {
-            AmazengContext db = new AmazengContext();
-            Random rand = new Random();
-            int toSkip = rand.Next(1, db.Idioms.Count());
-
-            return db.Idioms.OrderBy(i => i.Id).Skip(toSkip).Take(1).First();
         }
 
         private void BindDataToRepeater()

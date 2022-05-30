@@ -195,5 +195,14 @@ namespace AmazEng_WAPP.Models
 
             return stringBuilder.ToString();
         }
+
+
+        public static Idiom GetRandomIdiom(AmazengContext db)
+        {
+            Random rand = new Random();
+            int toSkip = rand.Next(1, db.Idioms.Count());
+
+            return db.Idioms.OrderBy(i => i.Id).Skip(toSkip).Take(1).First();
+        }
     }
 }

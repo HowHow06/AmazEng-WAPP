@@ -31,7 +31,7 @@
                     runat="server"
                     ItemType="AmazEng_WAPP.Models.Idiom"
                     DataKeyNames="Id"
-                    AllowPaging="true" PageSize="3"
+                    AllowPaging="true" PageSize="10"
                     OnDataBound="GridHistory_DataBound"
                     SelectMethod="GridHistory_GetData"
                     AutoGenerateColumns="false" BorderStyle="None" Width="100%">
@@ -68,7 +68,7 @@
                     runat="server"
                     ItemType="AmazEng_WAPP.Models.Idiom"
                     DataKeyNames="Id"
-                    AllowPaging="true" PageSize="3"
+                    AllowPaging="true" PageSize="10"
                     OnDataBound="GridFavourite_DataBound"
                     SelectMethod="GridFavourite_GetData"
                     AutoGenerateColumns="false" BorderStyle="None" Width="100%">
@@ -103,7 +103,7 @@
                     runat="server"
                     ItemType="AmazEng_WAPP.Models.Idiom"
                     DataKeyNames="Id"
-                    AllowPaging="true" PageSize="3"
+                    AllowPaging="true" PageSize="10"
                     OnDataBound="GridLearnLater_DataBound"
                     SelectMethod="GridLearnLater_GetData"
                     AutoGenerateColumns="false" BorderStyle="None" Width="100%">

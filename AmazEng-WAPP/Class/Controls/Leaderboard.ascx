@@ -4,7 +4,6 @@
     <asp:GridView ID="GridLeaderboard"
         runat="server"
         ItemType="AmazEng_WAPP.Models.Member"
-        DataKeyNames="Id"
         SelectMethod="GridLeaderboard_GetData"
         AllowSorting="false"
         AllowPaging="true" PageSize="10"
