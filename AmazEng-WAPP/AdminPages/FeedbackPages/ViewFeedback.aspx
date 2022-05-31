@@ -63,7 +63,7 @@
                             <label class="col-form-label">Sent at</label>
                         </div>
                         <div class="col-auto">
-                            <span class="form-text"><%#: Item.SentAt %></span>
+                            <span class="form-text"><%#: Item.SentAt.ToLocalTime().ToString() %></span>
                         </div>
                     </div>
 

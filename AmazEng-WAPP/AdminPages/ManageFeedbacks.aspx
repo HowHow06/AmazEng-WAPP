@@ -64,7 +64,12 @@
                                 <%#: Item.Idiom.Name %>
                             </ItemTemplate>
                         </asp:TemplateField>
-                        <asp:DynamicField DataField="SentAt" HeaderText="Sent At" />
+                        
+                         <asp:TemplateField HeaderText="Sent At">
+                            <ItemTemplate>
+                                <%#: Item.SentAt != null ? Item.SentAt.ToLocalTime().ToString() : "-" %>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Actions">
                             <ItemTemplate>
                                 <asp:HyperLink runat="server" NavigateUrl='<%#: GetRouteUrl("AdminViewFeedbackRoute", new {Id = Item.Id }) %>'>
