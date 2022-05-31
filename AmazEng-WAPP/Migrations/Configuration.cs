@@ -246,7 +246,7 @@ namespace AmazEng_WAPP.Migrations
                     Name = "Jerry the Admin",
                     Username = "admin",
                     Password = Auth.CreatePasswordHash("admin"),
-                    Email = "limhowardbb+admin01@gmail.com",
+                    Email = "limhowardbbsuperadmin@gmail.com",
                     Role = context.GetSuperAdminRole()
                 },
                  new Admin
@@ -254,7 +254,7 @@ namespace AmazEng_WAPP.Migrations
                      Name = "Berry Newbie Admin",
                      Username = "normalAdmin",
                      Password = Auth.CreatePasswordHash("admin"),
-                     Email = "limhowardbb+admin02@gmail.com",
+                     Email = "limhowardbbnormaladmin@gmail.com",
                      Role = context.GetNormalAdminRole()
                  }
                 );

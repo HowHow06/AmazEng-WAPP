@@ -236,7 +236,7 @@
                                     Display="Dynamic"
                                     ControlToValidate="uploadEditPronunciation"
                                     ErrorMessage="Only mp3 is allowed"
-                                    ValidationExpression="\.(mp3)$">
+                                    ValidationExpression="(.*?)\.(mp3)$">
                                 </asp:RegularExpressionValidator>
                             </div>
                         </div>
@@ -359,6 +359,13 @@
                             </div>
                             <div class="col-auto">
                                 <asp:FileUpload CssClass="form-control" ID="uploadNewPronunciation" runat="server" />
+                                 <asp:RegularExpressionValidator ID="regexValidator" runat="server"
+                                    CssClass="invalid-feedback"
+                                    Display="Dynamic"
+                                    ControlToValidate="uploadNewPronunciation"
+                                    ErrorMessage="Only mp3 is allowed"
+                                    ValidationExpression="(.*?)\.(mp3)$">
+                                </asp:RegularExpressionValidator>
                             </div>
                         </div>
                         <hr />

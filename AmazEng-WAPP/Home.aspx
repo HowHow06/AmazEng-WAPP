@@ -130,7 +130,7 @@
                 <div class="col-xl-6 col-lg-6 ">
                     <div class="section-heading mt-5 mt-lg-0 mb-4">
                         <h2 class="mb-60 font-lg">Get In Touch With Us!</h2>
-                        <a href="contact" class="btn btn-main rounded btn-cta">Contact Us<i class="fa fa-angle-right"></i></a>
+                        <a href="contact" class="btn btn-main rounded btn-cta">Contact Us</a>
                     </div>
                 </div>
                 <div class="col-xl-6 pe-xl-5 col-lg-6">
