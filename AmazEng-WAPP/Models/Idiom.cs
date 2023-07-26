@@ -28,6 +28,7 @@ namespace AmazEng_WAPP.Models
 
         public ICollection<Library> GetLibraries()
         {
+            // new changes
             return LibraryIdioms.Select(e => e.Library).ToList();
         }
     }
